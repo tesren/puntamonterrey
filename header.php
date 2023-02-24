@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <?php if( !is_front_page() ): ?>
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/splide.min.css">
+    <?php endif; ?>
+
     <!-- CSS -->
     <?php wp_head(); ?>
 </head>

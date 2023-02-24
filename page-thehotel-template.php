@@ -6,8 +6,6 @@ get_header();
 $images = acf_photo_gallery('gallery', get_the_ID());
 ?>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/splide.min.css">
-
 <div class="position-relative">
 
     <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>" alt="<?php echo get_the_title(); ?>" class="w-100" style="height:87vh; object-fit:cover;">
@@ -105,7 +103,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 <!-- Slides -->
 <?php if( count($images) > 4 ): ?>
-    <section class="splide" aria-label="Galería del Hotel Punta Monterrey">
+    <section class="splide" id="slides-punta"  aria-label="Galería del Hotel Punta Monterrey">
         <div class="splide__track">
 
             <ul class="splide__list">
@@ -127,7 +125,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
         <h2 class="text-center fw-bold le-10 my-5">AMENIDADES</h2>
 
         <div class="row mb-4">
-            <div class="col-6 col-lg-4">
+            <div class="col-12 col-lg-4">
                 
                     <div class="d-flex align-items-center justify-content-start mb-3">
                         <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-1.png">
@@ -159,7 +157,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
                     </div>
                 
             </div>
-            <div class="col-6 col-lg-4">
+            <div class="col-12 col-lg-4">
                 
                     <div class="d-flex align-items-center justify-content-start mb-3">
                         <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-8.png">
@@ -191,7 +189,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
                     </div>
                 
             </div>
-            <div class="col-6 col-lg-4">
+            <div class="col-12 col-lg-4">
                 
                     <div class="d-flex align-items-center justify-content-start mb-3">
                         <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-15.png">
@@ -230,26 +228,4 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 </div>
 
-
-<script src="<?php echo get_template_directory_uri();?>/assets/js/splide.min.js"></script>
-<script>
-    var splide = new Splide( '.splide', {
-        type   : 'loop',
-        padding: '5rem',
-        perPage: 3,
-
-        breakpoints: {
-            640: {
-                perPage: 2,
-                padding: '2.5rem',
-            },
-            480: {
-                perPage: 1,
-                padding: '0.5rem',
-            },
-        },
-    } );
-
-    splide.mount();
-</script>
 <?php get_footer(); ?>
