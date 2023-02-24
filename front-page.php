@@ -1,0 +1,169 @@
+<?php 
+get_header();?>
+
+<div id="frontCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
+
+    <div class="carousel-inner z-1">
+        <div class="carousel-item active">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/home-1.webp" class="d-block w-100" alt="Punta Monterrey vista" style="height:86vh; object-fit:cover;">
+        </div>
+        <div class="carousel-item">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/home-2.webp" class="d-block w-100" alt="Punta Monterrey vista Alberca" style="height:86vh; object-fit:cover;" loading="lazy">
+        </div>
+        <div class="carousel-item">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/home-3.webp" class="d-block w-100" alt="Punta Monterrey Recámara" style="height:86vh; object-fit:cover;" loading="lazy">
+        </div>
+    </div>
+
+    <button class="carousel-control-prev z-3" type="button" data-bs-target="#frontCarousel" data-bs-slide="prev" style="width:9%;">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next z-3" type="button" data-bs-target="#frontCarousel" data-bs-slide="next"style="width:9%;">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    
+    <div class="fondo-oscuro"></div>
+
+    <div class="row justify-content-evenly position-absolute top-0 start-0 h-100 z-2">
+
+        <div class="col-12 col-lg-5 align-self-center">
+            <h1 class="fs-0 text-white le-10 fw-normal">DESCONECTARTE DE TODO, PARA CONECTAR CON LO QUE REALMENTE IMPORTA.</h1>
+        </div>
+
+        <div class="col-12 col-lg-4"></div>
+        
+    </div>
+
+</div>
+
+
+<!-- PET & ECO FRIENDLY -->
+<div class="position-relative mb-5">
+
+    <img src="<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp" alt="" class="w-100 z-1" loading="lazy" style="padding-bottom:200px;">
+
+    <div class="row justify-content-center position-absolute z-2 top-0 start-0 h-100">
+
+        <div class="col-5 col-lg-2 align-self-center text-center">
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/pet-circle.webp" alt="Punta Monterrey Pet Friendly" class="w-100 mb-3" loading="lazy">
+            <a href="#" class="link-dark fw-bold">VER MÁS</a>
+        </div>
+        <div class="col-1 fs-1 align-self-center text-center">&</div>
+        <div class="col-5 col-lg-2 align-self-center text-center">
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/eco-circle.webp" alt="Punta Monterrey Eco Friendly" class="w-100 mb-3" loading="lazy">
+            <a href="#" class="link-dark fw-bold">VER MÁS</a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Habitaciones -->
+<h2 class="text-center fw-bold le-10 mb-5">NUESTRAS HABITACIONES</h2>
+
+<p class="col-11 col-lg-5 mx-auto text-center fw-bold fs-5">NUESTRAS HABITACIONES ESTÁN DISEÑADAS EN FUNCIÓN DE LA COMODIDAD Y LA ARMONÍA CON NATURALEZA, SON PERFECTAS PARA RELAJARSE Y DISFRUTAR UNA VACACIÓN TROPICAL.</p>
+
+<!-- Eventos Privados -->
+<div class="bg-light py-5 text-center">
+    <h3 class="fw-bold fs-2 my-5 le-10">EVENTOS PRIVADOS</h3>
+    <p class="fw-bold fs-5 col-11 col-lg-5 mx-auto">SI ESTÁS BUSCANDO LA LOCACIÓN PERFECTA PARA ESA REUNIÓN ESPECIAL, ¡YA LA ENCONTRASTE! TE OFRECEMOS LA PRIVACIDAD DE NUESTRA PROPIEDAD Y APOYO PARA LO QUE NECESITES.</p>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-4 mb-3">
+                <a href="#" class="text-decoration-none link-light">
+                    <div class="position-relative">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/bodas.webp" alt="Bodas y eventos" class="w-100 z-0" loading="lazy">
+                        <div class="fondo-oscuro-animated"></div>
+                        <div class="row position-absolute start-0 top-0 h-100">
+                            <div class="col-12 align-self-center text-white">
+                                <img class="z-3 position-relative" width="50px" src="<?php echo get_template_directory_uri();?>/assets/icons/weddings-icon.webp" alt="" loading="lazy">
+                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative">BODAS Y EVENTOS</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-lg-4 mb-3">
+                <a href="#" class="text-decoration-none link-light">
+                    <div class="position-relative">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/yoga.webp" alt="Yoga" class="w-100 z-0" loading="lazy">
+                        <div class="fondo-oscuro-animated"></div>
+                        <div class="row position-absolute start-0 top-0 h-100">
+                            <div class="col-12 align-self-center text-white">
+                                <img class="z-3 position-relative" width="50px" src="<?php echo get_template_directory_uri();?>/assets/icons/yoga-icon.webp" alt="" loading="lazy">
+                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative">RETIROS DE YOGA</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-lg-4 mb-3">
+                <a href="#" class="text-decoration-none link-light">
+                    <div class="position-relative">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/cocina.webp" alt="Celebraciones" class="w-100 z-0" loading="lazy">
+                        <div class="fondo-oscuro-animated"></div>
+                        <div class="row position-absolute start-0 top-0 h-100">
+                            <div class="col-12 align-self-center text-white">
+                                <img class="z-3 position-relative" width="50px" src="<?php echo get_template_directory_uri();?>/assets/icons/celebrations-icon.webp" alt="" loading="lazy">
+                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative">CELEBRACIONES</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Testimonios y clima -->
+<div class="position-relative" style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp'); padding:80px 0;">
+    <div class="container bg-white p-4">
+        <div class="text-center">
+            <h4 class="le-5 fw-bold fs-2 my-5">TESTIMONIOS</h4>
+            <div class="mb-4 fs-5 fw-normal col-11 col-lg-6 mx-auto">NUESTRA MEJOR PUBLICIDAD LA HACEN USTEDES,¡SUEÑOS QUE SE HACEN REALIDAD!</div>
+            <div class="home-review-slider">
+                <div class="elfsight-app-3a18efa3-ce0f-41b6-a125-01e555f60da1"></div>
+                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+            </div>
+
+            <div>
+                <?php// echo do_shortcode( '[trustindex no-registration=tripadvisor]' ); ?>
+            </div>
+        </div>
+
+        
+        
+        <!-- Clima -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-12">
+
+            <?php if($lg == 'es'): ?>
+                <a class="weatherwidget-io" href="https://forecast7.com/es/20d90n105d41/san-francisco/" data-label_1="San Pancho" data-label_2="CLIMA" data-theme="original" >San Pancho CLIMA</a>
+                <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                </script>
+            <?php else: ?>
+                <a class="weatherwidget-io" href="https://forecast7.com/en/20d90n105d41/san-francisco/?unit=us" data-label_1="San Pancho" data-label_2="WEATHER" data-theme="original" >San Pancho WEATHER</a>
+                <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                </script>
+            <?php endif; ?>
+
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+<!-- Mapa -->
+<div class="bg-black pb-1">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.3929581366665!2d-105.38917408473944!3d20.936728796288907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x41b203849aefa439!2sPunta%20Monterrey%20Tropical%20Beach%20Resort!5e0!3m2!1ses-419!2smx!4v1675359887863!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<?php get_footer(); ?>
