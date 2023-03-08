@@ -3,6 +3,7 @@ let pageSlides = document.getElementById('slides-punta');
 if(pageSlides){
   pageSlides= new Splide( '#slides-punta', {
     perPage: 3,
+    perMove:1,
     loop: true,
     padding: '4rem',
     breakpoints: {

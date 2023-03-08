@@ -61,13 +61,13 @@ get_header();?>
 </div>
 
 <!-- Habitaciones -->
-<h2 class="text-center fw-bold le-10 mb-5">NUESTRAS HABITACIONES</h2>
+<h2 class="text-center fw-superbold le-10 mb-5">NUESTRAS HABITACIONES</h2>
 
 <p class="col-11 col-lg-5 mx-auto text-center fw-bold fs-5">NUESTRAS HABITACIONES ESTÁN DISEÑADAS EN FUNCIÓN DE LA COMODIDAD Y LA ARMONÍA CON NATURALEZA, SON PERFECTAS PARA RELAJARSE Y DISFRUTAR UNA VACACIÓN TROPICAL.</p>
 
 <!-- Eventos Privados -->
 <div class="bg-light py-5 text-center">
-    <h3 class="fw-bold fs-2 my-5 le-10">EVENTOS PRIVADOS</h3>
+    <h3 class="fw-superbold fs-2 my-5 le-10">EVENTOS PRIVADOS</h3>
     <p class="fw-bold fs-5 col-11 col-lg-5 mx-auto">SI ESTÁS BUSCANDO LA LOCACIÓN PERFECTA PARA ESA REUNIÓN ESPECIAL, ¡YA LA ENCONTRASTE! TE OFRECEMOS LA PRIVACIDAD DE NUESTRA PROPIEDAD Y APOYO PARA LO QUE NECESITES.</p>
 
     <div class="container">
@@ -125,7 +125,7 @@ get_header();?>
 <div class="position-relative" style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp'); padding:80px 0;">
     <div class="container bg-white p-4">
         <div class="text-center">
-            <h4 class="le-5 fw-bold fs-2 my-5">TESTIMONIOS</h4>
+            <h4 class="le-5 fw-superbold fs-2 my-5">TESTIMONIOS</h4>
             <div class="mb-4 fs-5 fw-normal col-11 col-lg-6 mx-auto">NUESTRA MEJOR PUBLICIDAD LA HACEN USTEDES,¡SUEÑOS QUE SE HACEN REALIDAD!</div>
             <div class="home-review-slider">
                 <div class="elfsight-app-3a18efa3-ce0f-41b6-a125-01e555f60da1"></div>

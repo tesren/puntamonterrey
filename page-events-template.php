@@ -26,7 +26,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
     <div class="row justify-content-center position-absolute z-2 top-0 start-0 h-100">
 
-        <div class="col-11 col-lg-5 align-self-center bg-black px-4 px-lg-5 py-3 py-lg-4 position-relative overflow-hidden my-5 my-lg-0">
+        <div class="col-11 col-lg-5 align-self-center bg-black px-4 px-lg-5 py-3 py-lg-5 position-relative overflow-hidden my-5 my-lg-0">
             <p class="text-white fs-6 fw-semibold mb-0"><?php echo get_field('primer_parrafo');?></p>
             <img src="<?php echo get_template_directory_uri();?>/assets/images/leave-bg.webp" alt="" class="position-absolute end-0 col-6 col-lg-3" style="top:10%;">
         </div>

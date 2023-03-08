@@ -90,7 +90,7 @@ add_action( 'after_setup_theme', 'register_navwalker' );
  * Punta Monterrey Custom Post Types
 */
 
-require get_template_directory().'/inc/listing-cpt.php';
+require get_template_directory().'/inc/room-cpt.php';
 require get_template_directory().'/inc/messages-cpt.php';
 
 

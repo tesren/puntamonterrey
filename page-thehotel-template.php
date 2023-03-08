@@ -82,7 +82,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 <!-- PET & ECO FRIENDLY -->
 
-<h2 class="text-center mb-4 mb-lg-5">
+<h2 class="text-center mb-4 mb-lg-5 px-4 px-lg-0">
     <span class="fw-bold">Punta Monterrey</span>
      Beach Resort es
 </h2>
@@ -101,8 +101,14 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 </div>
 
+<div class="container mb-6">
+    <h2 class="text-center fw-bold le-10 mb-4 fs-1">TOUR VIRTUAL</h2>
+    <iframe src="https://holoesferica.com/workshop/rv_360_PuntaMonterrey2/" frameborder="0" width="100%" height="550px" loading="lazy"></iframe>
+</div>
+
 <!-- Slides -->
 <?php if( count($images) > 4 ): ?>
+    <h3 class="text-center fw-bold le-10 mb-4 fs-1">GALERÍA</h3>
     <section class="splide" id="slides-punta"  aria-label="Galería del Hotel Punta Monterrey">
         <div class="splide__track">
 
@@ -122,7 +128,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-center py-5"  style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp');">
 
     <div class="col-11 col-lg-10 col-xl-7 bg-light px-4 px-lg-5">
-        <h2 class="text-center fw-bold le-10 my-5">AMENIDADES</h2>
+        <h3 class="text-center fw-bold le-10 my-5 fs-1">AMENIDADES</h3>
 
         <div class="row mb-4">
             <div class="col-12 col-lg-4">
