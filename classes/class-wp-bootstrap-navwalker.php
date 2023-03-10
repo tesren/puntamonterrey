@@ -192,7 +192,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				if ( $depth > 0 ) {
 					$atts['class'] = 'dropdown-item px-3 text-capitalize';
 				} else {
-					$atts['class'] = 'nav-link mx-3 fs-5 link-dark text-uppercase';
+					$atts['class'] = 'nav-link mx-3 link-dark text-uppercase';
 				}
 			}
 

@@ -35,7 +35,7 @@ function room_register_post_type(){
             'title',
             //'editor',
             //'excerpt',
-            'thumbnail',
+            //'thumbnail',
             'revisions',
         ),
         //'taxonomies' => array('category', 'post_tag'),
@@ -110,7 +110,7 @@ function punta_rooms_register_meta_boxes( $meta_boxes ) {
                 'required'=> true,
                 'size' => 30,
             ],
-            [
+            /* [
                 'name'  => 'Precio temporada BAJA',
                 'desc'  => 'Precio por noche en temporada baja',
                 'id'    => 'price_low',
@@ -141,9 +141,9 @@ function punta_rooms_register_meta_boxes( $meta_boxes ) {
                 'placeholder'     => 'Seccione el tipo de moneda para los precios',
                 // Display "Select All / None" button?
                 'select_all_none' => false,
-            ],
+            ], */
             [
-                    'name'       => 'Tipo propiedad',
+                    'name'       => 'Tipo de Alojamiento',
                     'id'         => 'taxonomy_type',
                     'type'       => 'taxonomy',
 
@@ -192,7 +192,7 @@ function punta_rooms_register_meta_boxes( $meta_boxes ) {
                 'force_delete'     => false,
 
                 // Maximum file uploads.
-                'max_file_uploads' => 40,
+                'max_file_uploads' => 25,
 
                 // Do not show how many files uploaded/remaining.
                 'max_status'       => 'false',

@@ -1,0 +1,363 @@
+<?php 
+
+    /*
+    Template Name: Plantilla Cabañas de Lujo
+    */
+
+    if(pll_current_language() == 'en'){
+        $args = array(
+            'post_type' => 'alojamiento',
+            'numberposts' => '-1',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'tipo',
+                    'field' => 'slug',
+                    'terms' => 'luxury-cabins'
+                )
+            ),
+            'orderby' => 'date',
+            'order' => 'ASC',
+        );
+    }
+    else{
+        $args = array(
+            'post_type' => 'alojamiento',
+            'numberposts' => '-1',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'tipo',
+                    'field' => 'slug',
+                    'terms' => 'cabanas-de-lujo'
+                )
+            ),
+            'orderby' => 'date',
+            'order' => 'ASC',
+        );
+    }
+    
+
+    $posts = get_posts( $args );
+
+    get_header(); 
+?>
+
+    <article>
+  
+
+        <div class="position-relative">
+
+            <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" alt="<?php echo get_the_title(); ?> Punta Monterrey" class="w-100" style="height:87vh; object-fit:cover;">
+
+            <div class="fondo-oscuro"></div>
+
+            <div class="row position-absolute top-0 start-0 h-100 justify-content-center z-3">
+                <div class="col-12 col-lg-8 align-self-center text-center text-white">
+                    <h1 class="fw-bold text-uppercase"><?php echo get_the_title(); ?></h1>
+                    <hr class="col-10 col-lg-5 mx-auto">
+                    <h2 class="text-uppercase fw-normal">Tarifas</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="position-relative py-5 mb-5" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/stripe-bg-min.webp');">
+
+            <div class="row justify-content-center position-relative z-1 my-5">
+
+                <div class="col-10 col-lg-auto mb-3 text-center">
+                    <a href="#" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
+                        <div class="fw-bold fs-5 text-uppercase">Master Suite</div>
+                        2 Personas
+                    </a>
+                </div>
+
+                <div class="col-10 col-lg-auto mb-3 text-center">
+                    <a href="#" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
+                        <div class="fw-bold fs-5 text-uppercase">Suites de la selva</div>
+                        2-4 Personas
+                    </a>
+                </div>
+
+                <div class="col-10 col-lg-auto mb-3 text-center">
+                    <div class="btn btn-outline-dark rounded-0 px-5 active py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
+                        <div class="fw-bold fs-5 text-uppercase">Cabañas de Lujo</div>
+                        2-4 Personas
+                    </div>
+                </div>
+
+                <div class="col-10 col-lg-auto mb-3 text-center">
+                    <a href="#" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
+                        <div class="fw-bold fs-5 text-uppercase">Cabañas Ecológicas</div>
+                        2-4 Personas
+                    </a>
+                </div>
+            </div>
+
+            <div class="row justify-content-center position-relative z-1 my-5">
+                <div class="col-11 col-lg-6 bg-white p-3 p-lg-5" style="box-shadow: 5px 5px 0 0 #ccc;">
+                
+                    <div class="pt-2 mb-4 text-center text-uppercase">
+                        TARIFAS POR HABITACIÓN POR NOCHE EN <br>
+                        <?php echo get_the_title(); ?> desde:
+                    </div>
+
+                    <table class="table table-borderless mb-2">
+                        <tbody>
+                            <tr>
+                                <td class=""></td>
+                                <td class="">2 Personas</td>
+                                <td class="">3 Personas</td>
+                                <td class="">4 Personas</td>
+                            </tr>
+                            <tr>
+                                <td class="">Temporada alta</td>
+                                <td class="fw-bold text-decoration-underline">
+                                    $<?php echo number_format(get_field('tarifa_temporada_alta_2'), 2); ?> <?php echo get_field('currency'); ?>
+                                </td>
+                                <td class="fw-bold text-decoration-underline">
+                                    $<?php echo number_format(get_field('tarifa_temporada_alta_3'), 2); ?> <?php echo get_field('currency'); ?>
+                                </td>
+                                <td class="fw-bold text-decoration-underline">
+                                    $<?php echo number_format(get_field('tarifa_temporada_alta_4'), 2); ?> <?php echo get_field('currency'); ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="">Temporada baja</td>
+                                <td class="fw-bold text-decoration-underline">
+                                    $<?php echo number_format(get_field('tarifa_temporada_baja_2'), 2); ?> <?php echo get_field('currency'); ?>
+                                </td>
+                                <td class="fw-bold text-decoration-underline">
+                                    $<?php echo number_format(get_field('tarifa_temporada_baja_3'), 2); ?> <?php echo get_field('currency'); ?>
+                                </td>
+                                <td class="fw-bold text-decoration-underline">
+                                    $<?php echo number_format(get_field('tarifa_temporada_baja_4'), 2); ?> <?php echo get_field('currency'); ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-borderless mb-5">
+                        <tr>
+                            <td class="col-6 col-lg-3">Temporada alta</td>
+                            <td class="col-6 col-lg-9">
+                                Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Octubre, Noviembre, Diciembre
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-6 col-lg-3">Temporada baja</td>
+                            <td class="col-6 col-lg-9">
+                                Agosto, Septiembre
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="fs-6 fw-bold text-center">* Incluye hospedaje y 3 comidas al día, ¡Dejate sorprender por el cheff!</div>
+                    <div class="fs-6 fw-bold text-center">* Las bebidas del bar se venden aparte</div>
+                    <div class="fs-6 fw-bold text-center">* Tarifas sujetas a cambio sin previo aviso, aplican restricciones.</div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <?php if ( $posts ): ?>
+                
+            <?php $i=1; foreach( $posts as $post ): setup_postdata( $post ); ?>
+                    
+                <div class="row position-relative justify-content-center py-5 mb-5">
+
+                    <img style="width:230px;" src="<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-small.webp" alt="" class="position-absolute top-0 mt-4 <?php if($i%2==0){echo'end-0 me-4';}else{echo'start-0 ms-4';} ?>" loading="lazy">
+
+                    <div class="col-12 col-lg-5 mb-3 <?php if($i%2==0){echo'order-1 order-lg-2';} ?>">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                                <?php $images = rwmb_meta('gallery', ['size'=>'large'], $post->ID); ?>
+                                
+                                <?php $j=0; foreach($images as $img): ?>
+                                    <div class="carousel-item <?php if($j==0){echo 'active';} ?>">
+                                        <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:cover;" loading="lazy">
+                                    </div>
+                                <?php $j++; endforeach; ?>
+                                
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-5 align-self-center <?php if($i%2==0){echo'order-2 order-lg-1';} ?>">
+                        <h2 class="text-uppercase"><?php echo get_the_title($post->ID); ?></h2>
+                        <div class="fw-bold mb-3">Camas: <?php echo $post->bedrooms ?> | Personas: <?php echo $post->people ?></div>
+                        <p class="fs-5"><?php echo $post->description; ?></p>
+                        <div class="fw-bold">* El agua de todas las habitaciones es purificada.</div>
+                    </div>
+
+                </div>
+
+                <!-- Collapse -->
+                <div class="text-center position-relative">
+                    <button class="btn btn-outline-dark rounded-0 fw-superbold px-5 py-2 border border-2 border-dark z-1 position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        DETALLES
+                    </button>
+                    <hr class="w-75 mx-auto position-absolute top-50 m-0 border-bottom border-1 border-dark z-0" style="opacity:1; left:12.5%;">
+                </div>
+                
+                
+                <div class="collapse" id="collapseExample" style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp');">
+                    
+                    <div class="row justify-content-center py-5">
+
+                        <div class="col-11 col-lg-8 col-xl-6 px-0 bg-white" style="box-shadow: 8px 8px 0 0 #CCCCCC;">
+
+                            <!-- Nav pills -->
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item border-end border-4 border-light position-relative w-50" role="presentation">
+                                    <button class="nav-link active text-uppercase fw-normal py-4 rounded-0 w-100" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Comodidades</button>
+                                </li>
+                                <li class="nav-item position-relative w-50" role="presentation">
+                                    <button class="m-0 nav-link text-uppercase fw-normal py-4 rounded-0 w-100" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Políticas</button>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content" id="myTabContent">
+
+                                <!-- Comodidades -->
+                                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                    <div class="row p-5 fs-5">
+                                        <div class="col-12 col-lg-6">
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-1.png">
+                                                <div>
+                                                    Cama King Size
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/jacuzzi-black.svg">
+                                                <div>
+                                                    Jacuzzi
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-2.png">
+                                                <div>
+                                                    Regadera interior y exterior
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-3.png">
+                                                <div>
+                                                    Aire acondicionado y ventilador
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="25px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/icon-11.png">
+                                                <div>
+                                                    Hamaca
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-5.png">
+                                                <div>
+                                                    La mejor vista del lugar
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-6.png">
+                                                <div>
+                                                    Amplio deck de madera techado
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-12 col-lg-6">                                               
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-7.png">
+                                                <div>
+                                                    Cocineta con frigobar y comedor
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-8.png">
+                                                <div>
+                                                    Pet Friendly
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/faq-icon-3.png">
+                                                <div>
+                                                    Eco Friendly
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="25px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-10.png">
+                                                <div>
+                                                    No hay señal telefónica en el hotel
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="25px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/comida.png">
+                                                <div>
+                                                    Incluye las 3 comidas
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="25px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/est.png">
+                                                <div>
+                                                    Estacionamiento gratis
+                                                </div>
+                                            </div>
+                                                                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Políticas -->
+                                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                    <div class="row p-5 fs-5">
+                                        <div class="col-lg-6">
+                                            <ul class="room-list">
+                                                <li class="mb-4">Registrarse a la 2 pm.</li>
+                                                <li class="mb-4">Salida 12 pm.</li>
+                                                <li class="mb-4">Máximo 2 personas en la habitación.</li>
+                                                <li class="mb-4">Está prohibido alimentar a las mascotas en la habitación.</li>
+                                                <li class="mb-4">Nos reservamos el derecho de admisión.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <ul class="room-list">
+                                                <li class="mb-4">Se aplican políticas de cancelación.</li>
+                                                <li class="mb-4">Está prohibido hacer ruido en las habitaciones después de las 22:00 horas.</li>
+                                                <li class="mb-4">Tenemos un menú vegetariano, por favor avísanos al hacer la reserva.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                                    
+                    </div>
+                                   
+                    <!-- Close button -->
+                    <div class="text-center pb-5">
+                        <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" class="btn-close fs-4" aria-label="Close"></button>
+                    </div>
+
+                </div>
+
+                <div class="mb-6"></div>
+
+            <?php $i++; endforeach; ?>
+
+            <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
+
+    </article>
+
+<?php get_footer(); ?>
