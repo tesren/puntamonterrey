@@ -1,7 +1,7 @@
 <?php 
 
     /*
-    Template Name: Plantilla Cabañas de Lujo
+    Template Name: Plantilla Cabañas Ecológicas
     */
 
     if(pll_current_language() == 'en'){
@@ -12,7 +12,7 @@
                 array(
                     'taxonomy' => 'tipo',
                     'field' => 'slug',
-                    'terms' => 'luxury-cabins'
+                    'terms' => 'eco-cabins'
                 )
             ),
             'orderby' => 'date',
@@ -27,14 +27,13 @@
                 array(
                     'taxonomy' => 'tipo',
                     'field' => 'slug',
-                    'terms' => 'cabanas-de-lujo'
+                    'terms' => 'cabanas-ecologicas'
                 )
             ),
             'orderby' => 'date',
             'order' => 'ASC',
         );
     }
-    
 
     $posts = get_posts( $args );
 
@@ -79,17 +78,17 @@
                 </div>
 
                 <div class="col-10 col-lg-auto mb-3 text-center">
-                    <div class="btn btn-outline-dark rounded-0 px-5 active py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
+                    <a href="#" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
                         <div class="fw-bold fs-5 text-uppercase">Cabañas de Lujo</div>
                         2-4 Personas
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-10 col-lg-auto mb-3 text-center">
-                    <a href="#" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
+                    <div class="btn btn-outline-dark active rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
                         <div class="fw-bold fs-5 text-uppercase">Cabañas Ecológicas</div>
                         2-4 Personas
-                    </a>
+                    </div>
                 </div>
             </div>
 
@@ -105,33 +104,18 @@
                         <table class="table table-borderless mb-2">
                             <tbody>
                                 <tr>
-                                    <td class=""></td>
-                                    <td class="">2 Personas</td>
-                                    <td class="">3 Personas</td>
-                                    <td class="">4 Personas</td>
+                                    <td class="col-6 col-lg-3"></td>
+                                    <td class="col-6 col-lg-9">2 Personas</td>
                                 </tr>
                                 <tr>
-                                    <td class="">Temporada alta</td>
-                                    <td class="fw-bold text-decoration-underline">
+                                    <td class="col-6 col-lg-3">Temporada alta</td>
+                                    <td class="fw-bold text-decoration-underline col-6 col-lg-9">
                                         $<?php echo number_format(get_field('tarifa_temporada_alta_2'), 2); ?> <?php echo get_field('currency'); ?>
                                     </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_alta_3'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_alta_4'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                </tr>
                                 <tr>
-                                    <td class="">Temporada baja</td>
-                                    <td class="fw-bold text-decoration-underline">
+                                    <td class="col-6 col-lg-3">Temporada baja</td>
+                                    <td class="fw-bold text-decoration-underline col-6 col-lg-9">
                                         $<?php echo number_format(get_field('tarifa_temporada_baja_2'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_baja_3'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_baja_4'), 2); ?> <?php echo get_field('currency'); ?>
                                     </td>
                                 </tr>
                             </tbody>
@@ -161,6 +145,10 @@
                 </div>
             </div>
 
+        </div>
+
+        <div class="container mb-6">
+            <p class="fs-5"><?php echo get_field('description')?></p>
         </div>
 
         <?php if ( $posts ): ?>
@@ -236,90 +224,59 @@
 
                                 <!-- Comodidades -->
                                 <div class="tab-pane fade show active" id="home-tab-<?php echo $post->ID?>-pane" role="tabpanel" aria-labelledby="home-tab-<?php echo $post->ID?>" tabindex="0">
-                                    <div class="row p-5 fs-5">
+                                    <div class="row fs-5 p-5">
                                         <div class="col-lg-6">
-                                            <div class="d-flex justify-content-start mb-4">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-1.png"></div>
+                                            <div class="mb-4 d-flex justify-content-start align-items-center">
+                                                <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-2.png"></div>
                                                 <div>
-                                                    1 cama King size y tapanco con 2 camas individuales.
+                                                    <p class="mb-0">Baño espacioso con vestidor.</p>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-2.png"></div>
+                                            <div class="mb-4 d-flex justify-content-start align-items-center">
+                                                <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-8.png"></div>
                                                 <div>
-                                                    Regadera y baño con luz solar natural
+                                                    <p class="mb-0">Pet Friendly.</p>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-3.png"></div>
+                                            <div class="mb-4 d-flex justify-content-start align-items-center">
+                                                <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-6.png"></div>
                                                 <div>
-                                                    Aire Acondicionado y ventilador
+                                                    <p class="mb-0">Terraza privada.</p>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-start mb-4">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-4.png"></div>
+                                            <div class="mb-4 d-flex justify-content-start align-items-center">
+                                                <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-3.png"></div>
                                                 <div>
-                                                    El hotel cuenta con bar.
-                                                    <small><i>(Nos reservamos el derecho de venta de bebidas alcohólicas que se cobran separadamente del hospedaje)</i></small>
+                                                    <p class="mb-0">Ventilador de techo.</p>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-5.png"></div>
+                                            <div class="mb-4 d-flex justify-content-start align-items-center">
+                                                <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-5.png"></div>
                                                 <div>
-                                                    Cabaña con vista a la selva.
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-6.png"></div>
-                                                <div>
-                                                    Amplio “deck” de madera techado.
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-7.png"></div>
-                                                <div>
-                                                    Todas las Cabañas de lujo cuentan con Frigobar.
+                                                    <p class="mb-0">Vista al mar y a la selva.</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">                                               
-                                            <div class="d-flex justify-content-start mb-4">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-8.png"></div>
+                                        <div class="col-lg-6">                                                      
+                                            <div class="mb-4 d-flex justify-content-start align-items-center">
+                                                <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/comida.png"></div>
                                                 <div>
-                                                    El hotel es <span class="medium-font text-underline">Pet Friendly</span>.
+                                                    <p class="mb-0">Incluye 3 comidas al día.</p>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-start mb-4">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-9.png"></div>
+                                            <div class="mb-4 d-flex justify-content-start align-items-center">
+                                                <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/est.png"></div>
                                                 <div>
-                                                    El hotel cuenta con sistema doméstico satelital de wifi.
+                                                    <p class="mb-0">Estacionamiento gratis</p>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 d-flex justify-content-start">
+                                                <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-9.png"></div>
+                                                <div>
+                                                    <p class="mb-0">WIFI.</p>
                                                     <small><i>(Cuando el cupo está lleno y los huéspedes usan el internet al mismo tiempo, el sistema colapsa. Si sólo se usa para mensajes de WhatsApp y correos electrónicos la señal es suficiente)</i></small>
                                                 </div>
-                                            </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-10.png"></div>
-                                                <div>
-                                                    No hay señal telefónica en el hotel.
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/yoga.png"></div>
-                                                <div>
-                                                    Junto a la sala de Yoga.
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/comida.png"></div>
-                                                <div>
-                                                     Incluye 3 comidas al día.
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/est.png"></div>
-                                                <div>
-                                                     Estacionamiento gratis.
-                                                </div>
-                                            </div>
+                                            </div>                                                        
                                         </div>
                                     </div>
                                 </div>

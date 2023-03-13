@@ -1,3 +1,42 @@
+<?php use Carbon\Carbon; ?>
+
+<!-- Boton de whatsapp -->
+<a href="https://wa.me/523221509785?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Punta%20Monterrey" id="whatsapp" target="_blank" rel="noopener" aria-label="Whatsapp contact"> 
+	<img src="<?php echo get_template_directory_uri();?>/assets/icons/whatsapp-white.svg" alt="Contactar por Whatsapp">
+</a>
+
+<!-- Boton de Reservar -->
+<button type="button" class="btn btn-outline-dark rounded-4 text-uppercase fw-bold" id="reservation-button" data-bs-toggle="modal" data-bs-target="#reservationModal">
+  Reserva ya
+</button>
+
+<!-- Modal de reservar -->
+<div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div class="modal-title fs-5 fw-superbold text-uppercase" id="reservationModalLabel">Selecciona las fechas</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <label for="check-in">Llegada</label>
+        <input class="form-control mb-3" type="date" name="check-in" id="check-in" min="<?php echo Carbon::now()->addDay()->format('Y-m-d'); ?>">
+
+        <label for="check-out">Salida</label>
+        <input class="form-control" type="date" name="check-out" id="check-out" min="<?php echo Carbon::now()->addDays(2)->format('Y-m-d'); ?>">
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" id="book_now" class="btn btn-outline-dark w-100 rounded-0 text-uppercase fw-bold">Reservar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <footer class="bg-black pt-5 text-white px-4 px-lg-5">
 
     
@@ -64,6 +103,62 @@
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.bundle.min.js" defer></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/puntamont.js" defer></script>
+
+<script>
+    // Variables para almacenar la fecha de llegada y la fecha de salida
+    var start = "";
+    var end = "";
+    var lang = '<?php echo pll_current_language(); ?>';
+
+
+    // Selección de fecha de llegada
+    var fecha1Input = document.getElementById("check-in");
+    fecha1Input.addEventListener("input", function(e) {
+        console.log(e.target.value);
+        fecha1 = e.target.value;
+        start = fecha1;
+    });
+
+    // Selección de fecha de salida
+    var fecha2Input = document.getElementById("check-out");
+    fecha2Input.addEventListener("input", function(e) {
+        endDate = new Date(e.target.value);
+        end = e.target.value;
+    });
+
+    fecha1Input.addEventListener("change", () => {
+        const checkInDate = new Date(fecha1Input.value);
+        const nextDay = new Date(checkInDate);
+        nextDay.setDate(checkInDate.getDate() + 2);
+
+        const year = nextDay.getFullYear();
+        const month = (nextDay.getMonth() + 1).toString().padStart(2, "0");
+        const day = nextDay.getDate().toString().padStart(2, "0");
+
+        const nextDayFormatted = `${year}-${month}-${day}`;
+
+        fecha2Input.setAttribute("min", nextDayFormatted);
+    });
+
+    // Función para abrir la página de reservas del hotel en una nueva ventana
+    function openReservationPage() {
+    if (end !== "" && start !== "") {
+        window.open("https://hotels.cloudbeds.com/reservation/gcIxzG#checkin=" + start + "&checkout=" + end);
+    } else {
+        if (lang == "es") {
+            alert("Debes de ingresar un rango de fechas.", "error");
+        } else {
+            alert("You must enter a date range.", "error");
+        }
+    }
+    }
+
+
+    // Botón de reservar
+    var reservarButton = document.getElementById("book_now");
+    reservarButton.addEventListener("click", openReservationPage);
+
+</script>
 
 </body>
 </html>             

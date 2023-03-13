@@ -1,5 +1,104 @@
 <?php 
-get_header();?>
+    if(pll_current_language() == 'en'){
+        $args_ecocabins = array(
+            'post_type' => 'alojamiento',
+            'numberposts' => '1',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'tipo',
+                    'field' => 'slug',
+                    'terms' => 'eco-cabins'
+                )
+            ),
+        );
+        $args_jungle = array(
+            'post_type' => 'alojamiento',
+            'numberposts' => '1',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'tipo',
+                    'field' => 'slug',
+                    'terms' => 'jungle-suites'
+                )
+            ),
+        );
+        $args_luxury = array(
+            'post_type' => 'alojamiento',
+            'numberposts' => '1',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'tipo',
+                    'field' => 'slug',
+                    'terms' => 'luxury-cabins'
+                )
+            ),
+        );
+        $args_master = array(
+            'post_type' => 'alojamiento',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'tipo',
+                    'field' => 'slug',
+                    'terms' => 'master-suites'
+                )
+            )
+        );
+    }
+    else{
+        $args_ecocabins = array(
+            'post_type' => 'alojamiento',
+            'numberposts' => '1',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'tipo',
+                    'field' => 'slug',
+                    'terms' => 'cabanas-ecologicas'
+                )
+            ),
+        );
+        $args_jungle = array(
+            'post_type' => 'alojamiento',
+            'numberposts' => '1',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'tipo',
+                    'field' => 'slug',
+                    'terms' => 'suites-de-la-selva'
+                )
+            ),
+        );
+        $args_luxury = array(
+            'post_type' => 'alojamiento',
+            'numberposts' => '1',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'tipo',
+                    'field' => 'slug',
+                    'terms' => 'cabanas-de-lujo'
+                )
+            ),
+        );
+        $args_master = array(
+            'post_type' => 'alojamiento',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'tipo',
+                    'field' => 'slug',
+                    'terms' => 'master-suite'
+                )
+            )
+        );
+    }
+
+    $eco_cabins = get_posts( $args_ecocabins );
+    $jungle_suites = get_posts( $args_jungle );
+    $luxury_cabins = get_posts( $args_luxury );
+    $master_suites = get_posts( $args_master );
+
+    $rooms = array_merge($master_suites, $eco_cabins, $jungle_suites, $luxury_cabins);
+
+    get_header();
+?>
 
 <div id="frontCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
 
@@ -61,9 +160,59 @@ get_header();?>
 </div>
 
 <!-- Habitaciones -->
-<h2 class="text-center fw-superbold le-10 mb-5">NUESTRAS HABITACIONES</h2>
+<h2 class="text-center fw-superbold le-10 mb-3">NUESTRAS HABITACIONES</h2>
+<p class="col-11 col-lg-5 mx-auto text-center fw-bold fs-5 mb-5">NUESTRAS HABITACIONES ESTÁN DISEÑADAS EN FUNCIÓN DE LA COMODIDAD Y LA ARMONÍA CON NATURALEZA, SON PERFECTAS PARA RELAJARSE Y DISFRUTAR UNA VACACIÓN TROPICAL.</p>
 
-<p class="col-11 col-lg-5 mx-auto text-center fw-bold fs-5">NUESTRAS HABITACIONES ESTÁN DISEÑADAS EN FUNCIÓN DE LA COMODIDAD Y LA ARMONÍA CON NATURALEZA, SON PERFECTAS PARA RELAJARSE Y DISFRUTAR UNA VACACIÓN TROPICAL.</p>
+<?php $i==1; foreach($rooms as $room):?>
+    <div class="row position-relative justify-content-evenly py-5 mb-5">
+
+        <img style="width:230px;" src="<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-small.webp" alt="" class="position-absolute top-0 mt-4 <?php if($i%2==0){echo'end-0 me-4';}else{echo'start-0 ms-4';} ?>" loading="lazy">
+
+        <div class="col-12 col-lg-5 mb-3 <?php if($i%2==0){echo'order-1 order-lg-2';} ?>">
+            <div id="carousel-cabin-<?php echo $room->ID; ?>" class="carousel slide">
+                <div class="carousel-inner">
+                    <?php $images = rwmb_meta('gallery', ['size'=>'large'], $room->ID); ?>
+                    
+                    <?php $j=0; foreach($images as $img): ?>
+                        <div class="carousel-item <?php if($j==0){echo 'active';} ?>">
+                            <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:cover;" loading="lazy">
+                        </div>
+                    <?php $j++; endforeach; ?>
+                    
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-cabin-<?php echo $room->ID; ?>" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-cabin-<?php echo $room->ID; ?>" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-5 text-center align-self-center <?php if($i%2==0){echo'order-2 order-lg-1';} ?>">
+            <?php $term = rwmb_meta('taxonomy_type', [], $room->ID);?>
+
+            <h2 class="text-uppercase"><?php echo get_the_title($room->ID); ?></h2>
+            <div class="fw-bold mb-3">Camas: <?php echo $room->bedrooms ?> | Personas: <?php echo $room->people ?></div>
+            <p class="fs-5 mb-4"><?php echo $room->description; ?></p>
+
+            <?php if($term->slug == 'cabanas-ecologicas'):?>
+                <a href="<?php echo get_the_permalink(462);?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark">Visitar <?php echo $term->name; ?></a>
+            <?php elseif($term->slug == 'suites-de-la-selva'):?>
+                <a href="<?php echo get_the_permalink(348);?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark">Visitar <?php echo $term->name; ?></a>
+            <?php elseif($term->slug == 'cabanas-de-lujo'):?>
+                <a href="<?php echo get_the_permalink(216);?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark">Visitar <?php echo $term->name; ?></a>
+            <?php elseif($term->slug == 'master-suite'):?>
+                <a href="<?php echo get_the_permalink(207);?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark">Visitar <?php echo $term->name; ?></a>
+            <?php endif;?>
+
+        </div>
+
+    </div>
+<?php $i++; endforeach; ?>
+
 
 <!-- Eventos Privados -->
 <div class="bg-light py-5 text-center">
