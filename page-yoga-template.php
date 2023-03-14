@@ -39,7 +39,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-evenly mb-6">
     <div class="col-11 col-lg-4 align-self-center order-2 order-lg-1 mt-3 mt-lg-0 text-center">
         <div class="fs-5 mb-5 text-start"><?php echo get_field('segundo_parrafo');?></div>
-        <a href="#" class="btn btn-outline-dark rounded-0 fw-bold border-3">RESERVA TU RETIRO</a>
+        <a href="https://wa.me/523221509785?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Punta%20Monterrey" class="btn btn-outline-dark rounded-0 fw-bold border-3">RESERVA TU RETIRO</a>
     </div>
 
     <div class="col-12 col-lg-6 order-1 order-lg-2">

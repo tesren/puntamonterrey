@@ -25,7 +25,7 @@ get_header();
 
     <div class="row justify-content-center position-absolute bottom-0 start-0 pb-5">
         <div class="col-auto text-center align-self-center z-3">
-            <h2 class="text-white le-5 fw-normal fs-3 bg-black border border-white border-3 text-uppercase p-3 font-caveat">"Para las penas, las copas llenas"</h2>
+            <h2 class="text-white le-5 fw-normal fs-3 bg-black border border-white border-3 text-uppercase p-3 font-caveat"><?php pll_e('"Para las penas, las copas llenas"');?></h2>
         </div>
     </div>
 

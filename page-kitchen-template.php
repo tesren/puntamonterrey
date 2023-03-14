@@ -15,11 +15,11 @@ $images = acf_photo_gallery('kitchen_gallery', get_the_ID());
 
 <div class="container my-6 bg-black text-white p-3 p-lg-5 position-relative">
     <h1 class="text-center fw-superbold text-uppercase mb-4"><?php echo get_the_title();?></h1>
-    <h2 class="text-center font-caveat mb-6">"EL AMOR PUEDE ESPERAR, EL HAMBRE NO"</h2>
+    <h2 class="text-center font-caveat mb-6"><?php pll_e('"EL AMOR PUEDE ESPERAR, EL HAMBRE NO"');?></h2>
 
-    <div class="font-caveat position-absolute start-0 le-10 ps-5 d-none d-lg-block" style="font-size:180px; top:120px; color:#333333;">LA COCINA</div>
+    <div class="font-caveat position-absolute start-0 le-10 ps-5 d-none d-lg-block" style="font-size:180px; top:120px; color:#333333;"><?php pll_e('LA COCINA');?></div>
 
-    <div class="font-caveat position-absolute text-center start-0 le-10 ps-5 d-block d-lg-none z-3 text-white" style="font-size:60px; top:220px;">LA COCINA</div>
+    <div class="font-caveat position-absolute text-center start-0 le-10 ps-5 d-block d-lg-none z-3 text-white" style="font-size:60px; top:220px;"><?php pll_e('LA COCINA');?></div>
 
     <div class="row position-relative z-2">
         <div class="col-12 col-lg-4 align-self-center">
@@ -36,7 +36,7 @@ $images = acf_photo_gallery('kitchen_gallery', get_the_ID());
 
 <!-- Slides -->
 <?php if( count($images) > 1 ): ?>
-    <h3 class="text-center fw-bold le-10 mb-4 fs-1">GALERÍA</h3>
+    <h3 class="text-center fw-bold le-10 mb-4 fs-1"><?php pll_e('GALERÍA');?></h3>
     <section class="splide mb-6" id="slides-punta"  aria-label="Galería del Hotel Punta Monterrey">
         <div class="splide__track">
 

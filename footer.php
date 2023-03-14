@@ -7,7 +7,7 @@
 
 <!-- Boton de Reservar -->
 <button type="button" class="btn btn-outline-dark rounded-4 text-uppercase fw-bold" id="reservation-button" data-bs-toggle="modal" data-bs-target="#reservationModal">
-  Reserva ya
+  <?php pll_e('Reserva ya');?>
 </button>
 
 <!-- Modal de reservar -->
@@ -16,20 +16,20 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <div class="modal-title fs-5 fw-superbold text-uppercase" id="reservationModalLabel">Selecciona las fechas</div>
+        <div class="modal-title fs-5 fw-superbold text-uppercase" id="reservationModalLabel"><?php pll_e('Selecciona las fechas');?></div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
       <div class="modal-body">
-        <label for="check-in">Llegada</label>
+        <label for="check-in"><?php pll_e('Llegada');?></label>
         <input class="form-control mb-3" type="date" name="check-in" id="check-in" min="<?php echo Carbon::now()->addDay()->format('Y-m-d'); ?>">
 
-        <label for="check-out">Salida</label>
+        <label for="check-out"><?php pll_e('Salida');?></label>
         <input class="form-control" type="date" name="check-out" id="check-out" min="<?php echo Carbon::now()->addDays(2)->format('Y-m-d'); ?>">
       </div>
 
       <div class="modal-footer">
-        <button type="button" id="book_now" class="btn btn-outline-dark w-100 rounded-0 text-uppercase fw-bold">Reservar</button>
+        <button type="button" id="book_now" class="btn btn-outline-dark w-100 rounded-0 text-uppercase fw-bold"><?php pll_e('Reservar');?></button>
       </div>
 
     </div>
@@ -50,31 +50,35 @@
                     'container'         => 'div',
                     'container_class'   => 'w-100',
                     //'container_id'      => 'navbarSupportedContent',
-                    'menu_class'        => 'list-unstyled',
+                    'menu_class'        => 'list-unstyled fw-bold',
                     'menu_id'           => 'footer_menu',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'            => new WP_Bootstrap_Navwalker(),
                 ) );
             ?>
 
-            <a href="#" class="text-decoration-none d-block mb-2 fw-bold" style="color:#6fc401">ECO FRIENDLY</a>
-            <a href="#" class="text-decoration-none d-block fw-bold" style="color:#40bcd0">PET FRIENDLY</a>
+            <a href="<?php echo get_the_permalink( pll_get_post(511) );?>" class="text-decoration-none d-block mb-2 fw-bold" style="color:#6fc401">
+                <img width="20px" src="<?php echo get_template_directory_uri();?>/assets/icons/hojas.webp" loading="lazy" alt=""> ECO FRIENDLY
+            </a>
+            <a href="<?php echo get_the_permalink( pll_get_post(514) );?>" class="text-decoration-none d-block fw-bold" style="color:#40bcd0">
+                <img width="20px" src="<?php echo get_template_directory_uri();?>/assets/icons/huella.webp" loading="lazy" alt=""> PET FRIENDLY
+            </a>
 
         </div>
         
 
         <div class="col-12 col-lg-3 text-center">
-            <a href="#" class="link-light border border-2 border-white p-3 fw-bold d-block">puntamonterreyresort@gmail.com</a>
+            <a href="<?php echo get_the_permalink( pll_get_post(525) ); ?>" class="link-light border border-2 border-white p-3 fw-bold d-block">puntamonterreyresort@gmail.com</a>
 
             <address class="mt-4 d-block">
-                Carretera Intl. Tepic - Vallarta Km. 113,Las Lomas, Bahía de Banderas, Nayarit, México.
+                <?php pll_e('Carretera Intl.');?> Tepic - Vallarta Km. 113,Las Lomas, Bahía de Banderas, Nayarit, México.
             </address>
         </div>
 
         <div class="col-12 col-lg-3 text-center">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_footer.webp" alt="Logo Punta Monterrey" class="w-75 mx-auto mb-5" loading="lazy">
 
-            <h6>Síguenos en</h6>
+            <h6><?php pll_e('Síguenos en');?></h6>
             <div class="d-flex justify-content-center">
                 <a href="https://www.facebook.com/PuntaMonterreyBeach" target="_blank" rel="noopener noreferrer" class="text-decoration-none me-3" aria-label="Punta Monterrey Facebook">
                     <img width="30px" src="<?php echo get_template_directory_uri(); ?>/assets/icons/facebook.svg" alt="Punta Monterrey Facebook">
@@ -90,7 +94,9 @@
     
 
     <div class="d-flex justify-content-center text-center py-2">
-        <a href="#" class="link-light d-block me-2">Términos y Condiciones</a> | <a href="#" class="link-light d-block ms-2">Política de Privacidad</a>
+        <a href="<?php echo get_the_permalink(pll_get_post(88)); ?>" class="link-light d-block me-2"><?php echo get_the_title(pll_get_post(88));?></a>
+         | 
+        <a href="<?php echo get_the_permalink(pll_get_post(3)); ?>" class="link-light d-block ms-2"><?php echo get_the_title(pll_get_post(3));?></a>
     </div>
 
 </footer>

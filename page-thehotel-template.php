@@ -39,7 +39,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-evenly mb-6">
     <div class="col-11 col-lg-4 align-self-center order-2 order-lg-1 mt-3 mt-lg-0 text-center">
         <div class="fs-5 mb-0 text-start mb-5"><?php echo get_field('segundo_parrafo');?></div>
-        <a href="#" class="btn btn-outline-dark rounded-0 fw-bold border-3">VER HABITACIONES</a>
+        <a href="<?php echo get_the_permalink( pll_get_post(216) );?>" class="btn btn-outline-dark rounded-0 fw-bold border-3">VER HABITACIONES</a>
     </div>
 
     <div class="col-12 col-lg-6 order-1 order-lg-2">
@@ -91,12 +91,12 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
     <div class="col-5 col-lg-2 align-self-center text-center">
         <img src="<?php echo get_template_directory_uri();?>/assets/images/pet-circle.webp" alt="Punta Monterrey Pet Friendly" class="w-100 mb-3" loading="lazy">
-        <a href="#" class="link-dark fw-bold">VER MÁS</a>
+        <a href="<?php echo get_the_permalink( pll_get_post(514) );?>" class="link-dark fw-bold">VER MÁS</a>
     </div>
     <div class="col-1 fs-1 align-self-center text-center">&</div>
     <div class="col-5 col-lg-2 align-self-center text-center">
         <img src="<?php echo get_template_directory_uri();?>/assets/images/eco-circle.webp" alt="Punta Monterrey Eco Friendly" class="w-100 mb-3" loading="lazy">
-        <a href="#" class="link-dark fw-bold">VER MÁS</a>
+        <a href="<?php echo get_the_permalink( pll_get_post(511) );?>" class="link-dark fw-bold">VER MÁS</a>
     </div>
 
 </div>

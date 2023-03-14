@@ -9,7 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Punta Monterrey | Beach Resort Hotel Riviera Nayarit</title>
+    <?php if(is_front_page()): ?>
+      <title>Punta Monterrey | Beach Resort Hotel Riviera Nayarit</title>
+    <?php elseif(is_post_type_archive()):?>
+      <title>Punta Monterrey | <?php echo post_type_archive_title(); ?></title>
+    <?php else: ?>
+      <title>Punta Monterrey | <?php echo the_title(); ?></title>
+    <?php endif; ?>
+
     <meta name="description" content="<?php pll_e('Punta Monterrey Tropical Beach Resort es un hotel dentro de una reserva ecológica de más de 300 acres de selva con 16 habitaciones de arquitectura bioclimática y capacidad para 48 personas. Se especializan en grupos pequeños que quieren conectar con la naturaleza y ofrecen atención personalizada para eventos privados, retiros de yoga, bodas y servicios de spa. Además, el resort se preocupa por mantener la belleza natural que lo rodea, permitiendo a los huéspedes disfrutar de la privacidad y de increíbles puestas de sol, sabores del mar y la compañía de sus mascotas.');?>">
 
     <!-- Font -->
@@ -46,7 +53,15 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        
+        <div class="offcanvas-title" id="offcanvasNavbarLabel">
+          <img src="<?php echo get_template_directory_uri();?>/assets/images/logo-punta.webp"
+            width="185"
+            height="auto"
+            alt="Logo de Punta Monterrey">
+          </img>
+        </div>
+
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
 

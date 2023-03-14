@@ -40,7 +40,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-center py-5"  style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp');">
 
     <div class="col-11 col-lg-10 col-xl-8 bg-light px-4 px-lg-5 my-6">
-        <h2 class="text-center fw-superbold le-10 my-5">ACTIVIDADES DISPONIBLES</h2>
+        <h2 class="text-center fw-superbold le-10 my-5"><?php pll_e('ACTIVIDADES DISPONIBLES');?></h2>
 
         <div class="row pb-5">
             <div class="col-12 mb-5">
@@ -51,15 +51,15 @@ $images = acf_photo_gallery('gallery', get_the_ID());
                 <ul>
                     <li class="mb-4 d-flex align-items-center justify-content-start">
                         <img width="35px" class="me-1" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-8.png">
-                        <span>Caminata a la playa del barro</span>
+                        <span><?php pll_e('Caminata a la playa del barro');?></span>
                     </li>
                     <li class="mb-4 d-flex align-items-center justify-content-start">
                         <img width="35px" class="me-1" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-21.png">
-                        <span>Caminata a las tinajas (albercas de piedra natural)</span>
+                        <span><?php pll_e('Caminata a las tinajas (albercas de piedra natural)');?></span>
                     </li>
                     <li class="mb-4 d-flex align-items-center justify-content-start">
                         <img width="35px" class="me-1" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-31.png">
-                        <span>Caminata al orquideario</span>
+                        <span><?php pll_e('Caminata al orquideario');?></span>
                     </li>
                     
                 </ul>
@@ -68,15 +68,15 @@ $images = acf_photo_gallery('gallery', get_the_ID());
                 <ul>
                     <li class="mb-4 d-flex align-items-center justify-content-start">
                         <img width="35px" class="me-1" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/fishing.png">
-                        <span>Pesca deportiva de playa</span>
+                        <span><?php pll_e('Pesca deportiva de playa');?></span>
                     </li>
                     <li class="mb-4 d-flex align-items-center justify-content-start">
                         <img width="35px" class="me-1" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/sailboat.png">
-                        <span>Pesca deportiva en mar abierto</span>
+                        <span><?php pll_e('Pesca deportiva en mar abierto');?></span>
                     </li>
                     <li class="mb-4 d-flex align-items-center justify-content-start">
                         <img width="35px" class="me-1" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-18.png">
-                        <span>Paseo en Kayak y SUP</span>
+                        <span><?php pll_e('Paseo en Kayak y SUP');?></span>
                     </li>
                     
                 </ul>

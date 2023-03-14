@@ -128,7 +128,7 @@
     <div class="row justify-content-evenly position-absolute top-0 start-0 h-100 z-2">
 
         <div class="col-12 col-lg-5 align-self-center">
-            <h1 class="fs-0 text-white le-10 fw-normal">DESCONECTARTE DE TODO, PARA CONECTAR CON LO QUE REALMENTE IMPORTA.</h1>
+            <h1 class="fs-0 text-white le-10 fw-normal"><?php pll_e('DESCONECTARTE DE TODO, PARA CONECTAR CON LO QUE REALMENTE IMPORTA.');?></h1>
         </div>
 
         <div class="col-12 col-lg-4"></div>
@@ -147,12 +147,12 @@
 
         <div class="col-5 col-lg-2 align-self-center text-center">
             <img src="<?php echo get_template_directory_uri();?>/assets/images/pet-circle.webp" alt="Punta Monterrey Pet Friendly" class="w-100 mb-3" loading="lazy">
-            <a href="#" class="link-dark fw-bold">VER MÁS</a>
+            <a href="<?php echo get_the_permalink( pll_get_post(514) );?>" class="link-dark fw-bold"><?php pll_e('VER MÁS');?></a>
         </div>
         <div class="col-1 fs-1 align-self-center text-center">&</div>
         <div class="col-5 col-lg-2 align-self-center text-center">
             <img src="<?php echo get_template_directory_uri();?>/assets/images/eco-circle.webp" alt="Punta Monterrey Eco Friendly" class="w-100 mb-3" loading="lazy">
-            <a href="#" class="link-dark fw-bold">VER MÁS</a>
+            <a href="<?php echo get_the_permalink( pll_get_post(511) );?>" class="link-dark fw-bold"><?php pll_e('VER MÁS');?></a>
         </div>
 
     </div>
@@ -160,8 +160,8 @@
 </div>
 
 <!-- Habitaciones -->
-<h2 class="text-center fw-superbold le-10 mb-3">NUESTRAS HABITACIONES</h2>
-<p class="col-11 col-lg-5 mx-auto text-center fw-bold fs-5 mb-5">NUESTRAS HABITACIONES ESTÁN DISEÑADAS EN FUNCIÓN DE LA COMODIDAD Y LA ARMONÍA CON NATURALEZA, SON PERFECTAS PARA RELAJARSE Y DISFRUTAR UNA VACACIÓN TROPICAL.</p>
+<h2 class="text-center fw-superbold le-10 mb-3"><?php pll_e('NUESTRAS HABITACIONES');?></h2>
+<p class="col-11 col-lg-5 mx-auto text-center fw-bold fs-5 mb-5"><?php pll_e('NUESTRAS HABITACIONES ESTÁN DISEÑADAS EN FUNCIÓN DE LA COMODIDAD Y LA ARMONÍA CON NATURALEZA, SON PERFECTAS PARA RELAJARSE Y DISFRUTAR UNA VACACIÓN TROPICAL.');?></p>
 
 <?php $i==1; foreach($rooms as $room):?>
     <div class="row position-relative justify-content-evenly py-5 mb-5">
@@ -195,17 +195,25 @@
             <?php $term = rwmb_meta('taxonomy_type', [], $room->ID);?>
 
             <h2 class="text-uppercase"><?php echo get_the_title($room->ID); ?></h2>
-            <div class="fw-bold mb-3">Camas: <?php echo $room->bedrooms ?> | Personas: <?php echo $room->people ?></div>
+            <div class="fw-bold mb-3"><?php pll_e('Camas');?>: <?php echo $room->bedrooms ?> | <?php pll_e('Personas');?>: <?php echo $room->people ?></div>
             <p class="fs-5 mb-4"><?php echo $room->description; ?></p>
 
-            <?php if($term->slug == 'cabanas-ecologicas'):?>
-                <a href="<?php echo get_the_permalink(462);?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark">Visitar <?php echo $term->name; ?></a>
-            <?php elseif($term->slug == 'suites-de-la-selva'):?>
-                <a href="<?php echo get_the_permalink(348);?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark">Visitar <?php echo $term->name; ?></a>
-            <?php elseif($term->slug == 'cabanas-de-lujo'):?>
-                <a href="<?php echo get_the_permalink(216);?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark">Visitar <?php echo $term->name; ?></a>
-            <?php elseif($term->slug == 'master-suite'):?>
-                <a href="<?php echo get_the_permalink(207);?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark">Visitar <?php echo $term->name; ?></a>
+            <?php if($term->slug == 'cabanas-ecologicas' or $term->slug == 'eco-cabins'):?>
+
+                <a href="<?php echo get_the_permalink(pll_get_post(462));?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark"><?php pll_e('Visitar');?> <?php echo $term->name; ?></a>
+
+            <?php elseif($term->slug == 'suites-de-la-selva' or $term->slug == 'jungle-suites'):?>
+
+                <a href="<?php echo get_the_permalink(pll_get_post(348));?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark"><?php pll_e('Visitar');?> <?php echo $term->name; ?></a>
+
+            <?php elseif($term->slug == 'cabanas-de-lujo' or $term->slug == 'luxury-cabins'):?>
+
+                <a href="<?php echo get_the_permalink(pll_get_post(216));?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark"><?php pll_e('Visitar');?> <?php echo $term->name; ?></a>
+
+            <?php elseif($term->slug == 'master-suite' or $term->slug == 'master-suites'):?>
+
+                <a href="<?php echo get_the_permalink(pll_get_post(207));?>" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark"><?php pll_e('Visitar');?> <?php echo $term->name; ?></a>
+
             <?php endif;?>
 
         </div>
@@ -216,20 +224,20 @@
 
 <!-- Eventos Privados -->
 <div class="bg-light py-5 text-center">
-    <h3 class="fw-superbold fs-2 my-5 le-10">EVENTOS PRIVADOS</h3>
-    <p class="fw-bold fs-5 col-11 col-lg-5 mx-auto">SI ESTÁS BUSCANDO LA LOCACIÓN PERFECTA PARA ESA REUNIÓN ESPECIAL, ¡YA LA ENCONTRASTE! TE OFRECEMOS LA PRIVACIDAD DE NUESTRA PROPIEDAD Y APOYO PARA LO QUE NECESITES.</p>
+    <h3 class="fw-superbold fs-2 my-5 le-10"><?php pll_e('EVENTOS PRIVADOS');?></h3>
+    <p class="fw-bold fs-5 col-11 col-lg-5 mx-auto"><?php pll_e('SI ESTÁS BUSCANDO LA LOCACIÓN PERFECTA PARA ESA REUNIÓN ESPECIAL, ¡YA LA ENCONTRASTE! TE OFRECEMOS LA PRIVACIDAD DE NUESTRA PROPIEDAD Y APOYO PARA LO QUE NECESITES.');?></p>
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-4 mb-3">
-                <a href="#" class="text-decoration-none link-light">
+                <a href="<?php echo get_the_permalink( pll_get_post(58) );?>" class="text-decoration-none link-light">
                     <div class="position-relative">
                         <img src="<?php echo get_template_directory_uri();?>/assets/images/bodas.webp" alt="Bodas y eventos" class="w-100 z-0" loading="lazy">
                         <div class="fondo-oscuro-animated"></div>
                         <div class="row position-absolute start-0 top-0 h-100">
                             <div class="col-12 align-self-center text-white">
                                 <img class="z-3 position-relative" width="50px" src="<?php echo get_template_directory_uri();?>/assets/icons/weddings-icon.webp" alt="" loading="lazy">
-                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative">BODAS Y EVENTOS</h3>
+                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative"><?php echo get_the_title(pll_get_post(58));?></h3>
                             </div>
                         </div>
                     </div>
@@ -237,14 +245,14 @@
             </div>
 
             <div class="col-12 col-lg-4 mb-3">
-                <a href="#" class="text-decoration-none link-light">
+                <a href="<?php echo get_the_permalink( pll_get_post(82) );?>" class="text-decoration-none link-light">
                     <div class="position-relative">
                         <img src="<?php echo get_template_directory_uri();?>/assets/images/yoga.webp" alt="Yoga" class="w-100 z-0" loading="lazy">
                         <div class="fondo-oscuro-animated"></div>
                         <div class="row position-absolute start-0 top-0 h-100">
                             <div class="col-12 align-self-center text-white">
                                 <img class="z-3 position-relative" width="50px" src="<?php echo get_template_directory_uri();?>/assets/icons/yoga-icon.webp" alt="" loading="lazy">
-                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative">RETIROS DE YOGA</h3>
+                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative"><?php echo get_the_title(pll_get_post(82));?></h3>
                             </div>
                         </div>
                     </div>
@@ -252,14 +260,14 @@
             </div>
 
             <div class="col-12 col-lg-4 mb-3">
-                <a href="#" class="text-decoration-none link-light">
+                <a href="<?php echo get_the_permalink( pll_get_post(142) );?>" class="text-decoration-none link-light">
                     <div class="position-relative">
                         <img src="<?php echo get_template_directory_uri();?>/assets/images/cocina.webp" alt="Celebraciones" class="w-100 z-0" loading="lazy">
                         <div class="fondo-oscuro-animated"></div>
                         <div class="row position-absolute start-0 top-0 h-100">
                             <div class="col-12 align-self-center text-white">
                                 <img class="z-3 position-relative" width="50px" src="<?php echo get_template_directory_uri();?>/assets/icons/celebrations-icon.webp" alt="" loading="lazy">
-                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative">CELEBRACIONES</h3>
+                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative"><?php pll_e('CELEBRACIONES');?></h3>
                             </div>
                         </div>
                     </div>
@@ -274,8 +282,8 @@
 <div class="position-relative" style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp'); padding:80px 0;">
     <div class="container bg-white p-4">
         <div class="text-center">
-            <h4 class="le-5 fw-superbold fs-2 my-5">TESTIMONIOS</h4>
-            <div class="mb-4 fs-5 fw-normal col-11 col-lg-6 mx-auto">NUESTRA MEJOR PUBLICIDAD LA HACEN USTEDES,¡SUEÑOS QUE SE HACEN REALIDAD!</div>
+            <h4 class="le-5 fw-superbold fs-2 my-5"><?php pll_e('TESTIMONIOS');?></h4>
+            <div class="mb-4 fs-5 fw-normal col-11 col-lg-6 mx-auto"><?php pll_e('NUESTRA MEJOR PUBLICIDAD LA HACEN USTEDES,¡SUEÑOS QUE SE HACEN REALIDAD!');?></div>
             <div class="home-review-slider">
                 <div class="elfsight-app-3a18efa3-ce0f-41b6-a125-01e555f60da1"></div>
                 <script src="https://apps.elfsight.com/p/platform.js" defer></script>

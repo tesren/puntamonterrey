@@ -58,28 +58,28 @@
 
                 <div class="col-10 col-lg-auto mb-3 text-center">
                     <div class="btn btn-outline-dark rounded-0 active px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
-                        <div class="fw-bold fs-5 text-uppercase">Master Suite</div>
+                        <div class="fw-bold fs-5 text-uppercase"><?php echo get_the_title();?></div>
                         2 Personas
                     </div>
                 </div>
 
                 <div class="col-10 col-lg-auto mb-3 text-center">
-                    <a href="#" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
-                        <div class="fw-bold fs-5 text-uppercase">Suites de la selva</div>
+                    <a href="<?php echo get_the_permalink(pll_get_post(348));?>" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
+                        <div class="fw-bold fs-5 text-uppercase"><?php echo get_the_title(pll_get_post(348));?></div>
                         2-4 Personas
                     </a>
                 </div>
 
                 <div class="col-10 col-lg-auto mb-3 text-center">
-                    <a href="#" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
-                        <div class="fw-bold fs-5 text-uppercase">Cabañas de Lujo</div>
+                    <a href="<?php echo get_the_permalink(pll_get_post(216));?>" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
+                        <div class="fw-bold fs-5 text-uppercase"><?php echo get_the_title(pll_get_post(216));?></div>
                         2-4 Personas
                     </a>
                 </div>
 
                 <div class="col-10 col-lg-auto mb-3 text-center">
-                    <a href="#" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
-                        <div class="fw-bold fs-5 text-uppercase">Cabañas Ecológicas</div>
+                    <a href="<?php echo get_the_permalink(pll_get_post(462)); ?>" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
+                        <div class="fw-bold fs-5 text-uppercase"><?php echo get_the_title(pll_get_post(462));?></div>
                         2-4 Personas
                     </a>
                 </div>

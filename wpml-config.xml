@@ -1,0 +1,9 @@
+<wpml-config>
+    <custom-fields>
+        <!--Alojamientos-->
+        <custom-field action="copy">bedrooms</custom-field>
+        <custom-field action="copy">gallery</custom-field>
+        <custom-field action="copy">people</custom-field>
+        
+    </custom-fields>
+</wpml-config>

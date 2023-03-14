@@ -39,7 +39,9 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-evenly mb-6">
     <div class="col-11 col-lg-4 align-self-center order-2 order-lg-1 mt-3 mt-lg-0 text-center">
         <div class="fs-5 mb-0 text-start mb-5"><?php echo get_field('segundo_parrafo');?></div>
-        <a href="#" class="btn btn-outline-dark rounded-0 fw-bold border-3">PÓNTE EN CONTACTO</a>
+        <a href="https://wa.me/523221509785?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Punta%20Monterrey" class="btn btn-outline-dark rounded-0 fw-bold border-3">
+            <?php pll_e('PÓNTE EN CONTACTO');?>
+        </a>
     </div>
 
     <div class="col-12 col-lg-6 order-1 order-lg-2">
@@ -101,28 +103,28 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-center py-5"  style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp');">
 
     <div class="col-11 col-lg-10 col-xl-7 bg-light px-4 px-lg-5">
-        <h2 class="text-center fw-bold le-10 mt-5 mb-4">AMENIDADES PARA BODAS</h2>
+        <h2 class="text-center fw-bold le-10 mt-5 mb-4"><?php pll_e('AMENIDADES PARA BODAS');?></h2>
 
-        <h3 class="fs-6 text-center mb-5">Punta Monterrey cuenta con una cartera de proveedores para los siguientes servicios.</h3>
+        <h3 class="fs-6 text-center mb-5"><?php pll_e('Punta Monterrey cuenta con una cartera de proveedores para los siguientes servicios.');?></h3>
 
         <div class="row">
             <div class="col-12 col-lg-4">
                 
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-22.png">
-                    <span class="ms-2">SERVICIO DE CATERING</span>
+                    <span class="ms-2"><?php pll_e('SERVICIO DE CATERING');?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-23.png">
-                    <span class="ms-2">MESEROS</span>
+                    <span class="ms-2"><?php pll_e('MESEROS');?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-24.png">
-                    <span class="ms-2">CHEF &amp; COCINEROS</span>
+                    <span class="ms-2"><?php pll_e('CHEF & COCINEROS');?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-25.png">
-                    <span class="ms-2">TÉ &amp; CAFÉ</span>
+                    <span class="ms-2"><?php pll_e('TÉ & CAFÉ');?></span>
                 </div>
                 
             </div>
@@ -130,7 +132,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
             <div class="col-12 col-lg-4">
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-26.png">
-                    <span class="ms-2">LUZ Y SONIDO</span>
+                    <span class="ms-2"><?php pll_e('LUZ Y SONIDO');?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-27.png">
@@ -138,36 +140,36 @@ $images = acf_photo_gallery('gallery', get_the_ID());
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-28.png">
-                    <span class="ms-2">PISTA DE BAILE</span>
+                    <span class="ms-2"><?php pll_e('PISTA DE BAILE');?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-29.png">
-                    <span class="ms-2">MOBILIARIO</span>
+                    <span class="ms-2"><?php pll_e('MOBILIARIO');?></span>
                 </div>
             </div>
 
             <div class="col-12 col-lg-4">
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-30.png">
-                    <span class="ms-2">SERVICIO DE TAXI</span>
+                    <span class="ms-2"><?php pll_e('SERVICIO DE TAXI');?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-31.png">
-                    <span class="ms-2">DECORACIÓN</span>
+                    <span class="ms-2"><?php pll_e('DECORACIÓN');?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-32.png">
-                    <span class="ms-2">VINOS &amp; LICORES</span>
+                    <span class="ms-2"><?php pll_e('VINOS & LICORES');?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-33.png">
-                    <span class="ms-2">REPOSTERÍA</span>
+                    <span class="ms-2"><?php pll_e('REPOSTERÍA');?></span>
                 </div>
             </div>
 
         </div>
 
-        <div class="text-center my-5">Te contactamos con los mejores proveedores de la region.</div>
+        <div class="text-center my-5"><?php pll_e('Te contactamos con los mejores proveedores de la region.');?></div>
     </div>
 
 </div>
