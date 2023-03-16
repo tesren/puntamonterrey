@@ -39,7 +39,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-evenly mb-6">
     <div class="col-11 col-lg-4 align-self-center order-2 order-lg-1 mt-3 mt-lg-0 text-center">
         <div class="fs-5 mb-0 text-start mb-5"><?php echo get_field('segundo_parrafo');?></div>
-        <a href="<?php echo get_the_permalink( pll_get_post(216) );?>" class="btn btn-outline-dark rounded-0 fw-bold border-3">VER HABITACIONES</a>
+        <a href="<?php echo get_the_permalink( pll_get_post(216) );?>" class="btn btn-outline-dark rounded-0 fw-bold border-3"><?php pll_e('VER HABITACIONES')?></a>
     </div>
 
     <div class="col-12 col-lg-6 order-1 order-lg-2">
@@ -84,31 +84,31 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 <h2 class="text-center mb-4 mb-lg-5 px-4 px-lg-0">
     <span class="fw-bold">Punta Monterrey</span>
-     Beach Resort es
+     Beach Resort <?php pll_e('es')?>
 </h2>
 
 <div class="row justify-content-center mb-6">
 
     <div class="col-5 col-lg-2 align-self-center text-center">
         <img src="<?php echo get_template_directory_uri();?>/assets/images/pet-circle.webp" alt="Punta Monterrey Pet Friendly" class="w-100 mb-3" loading="lazy">
-        <a href="<?php echo get_the_permalink( pll_get_post(514) );?>" class="link-dark fw-bold">VER MÁS</a>
+        <a href="<?php echo get_the_permalink( pll_get_post(514) );?>" class="link-dark fw-bold"><?php pll_e('VER MÁS')?></a>
     </div>
     <div class="col-1 fs-1 align-self-center text-center">&</div>
     <div class="col-5 col-lg-2 align-self-center text-center">
         <img src="<?php echo get_template_directory_uri();?>/assets/images/eco-circle.webp" alt="Punta Monterrey Eco Friendly" class="w-100 mb-3" loading="lazy">
-        <a href="<?php echo get_the_permalink( pll_get_post(511) );?>" class="link-dark fw-bold">VER MÁS</a>
+        <a href="<?php echo get_the_permalink( pll_get_post(511) );?>" class="link-dark fw-bold"><?php pll_e('VER MÁS')?></a>
     </div>
 
 </div>
 
 <div class="container mb-6">
-    <h2 class="text-center fw-bold le-10 mb-4 fs-1">TOUR VIRTUAL</h2>
+    <h2 class="text-center fw-bold le-10 mb-4 fs-1"><?php pll_e('TOUR VIRTUAL')?></h2>
     <iframe src="https://holoesferica.com/workshop/rv_360_PuntaMonterrey2/" frameborder="0" width="100%" height="550px" loading="lazy"></iframe>
 </div>
 
 <!-- Slides -->
 <?php if( count($images) > 4 ): ?>
-    <h3 class="text-center fw-bold le-10 mb-4 fs-1">GALERÍA</h3>
+    <h3 class="text-center fw-bold le-10 mb-4 fs-1"><?php pll_e('GALERÍA')?></h3>
     <section class="splide" id="slides-punta"  aria-label="Galería del Hotel Punta Monterrey">
         <div class="splide__track">
 
@@ -128,78 +128,74 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-center py-5"  style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp');">
 
     <div class="col-11 col-lg-10 col-xl-7 bg-light px-4 px-lg-5">
-        <h3 class="text-center fw-bold le-10 my-5 fs-1">AMENIDADES</h3>
+        <h3 class="text-center fw-bold le-10 my-5 fs-1"><?php pll_e('AMENIDADES')?></h3>
 
         <div class="row mb-4">
             <div class="col-12 col-lg-4">
                 
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-1.png">
-                        <span class="ms-2">COMEDOR</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-2.png">
-                        <span class="ms-2">ASADOR</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-3.png">
-                        <span class="ms-2">CHEF</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-4.png">
-                        <span class="ms-2">TÉ &amp; CAFÉ</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-5.png">
-                        <span class="ms-2">ESTACIONAMIENTO</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-6.png">
-                        <span class="ms-2">PET FRIENDLY</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <!--<img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-7.png">
-                        <span class="ms-2"></span>-->
-                    </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-1.png">
+                    <span class="ms-2"><?php pll_e('COMEDOR')?></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-2.png">
+                    <span class="ms-2"><?php pll_e('ASADOR')?></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-3.png">
+                    <span class="ms-2">CHEF</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-4.png">
+                    <span class="ms-2"><?php pll_e('TÉ & CAFÉ')?></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-5.png">
+                    <span class="ms-2"><?php pll_e('ESTACIONAMIENTO')?></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-6.png">
+                    <span class="ms-2">PET FRIENDLY</span>
+                </div>                    
                 
             </div>
             <div class="col-12 col-lg-4">
                 
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-8.png">
-                        <span class="ms-2">SOMBRILLAS</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-9.png">
-                        <span class="ms-2">TOALLAS DE PLAYA</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-10.png">
-                        <span class="ms-2">PETATES</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-11.png">
-                        <span class="ms-2">HAMACAS</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-12.png">
-                        <span class="ms-2">PALAPAS</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-13.png">
-                        <span class="ms-2">ÁREA DE DESCANSO</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start mb-3">
-                        <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-14.png">
-                        <span class="ms-2">REGADERAS</span>
-                    </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-8.png">
+                    <span class="ms-2"><?php pll_e('SOMBRILLAS')?></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-9.png">
+                    <span class="ms-2"><?php pll_e('TOALLAS DE PLAYA')?></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-10.png">
+                    <span class="ms-2"><?php pll_e('PETATES')?></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-11.png">
+                    <span class="ms-2"><?php pll_e('HAMACAS')?></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-12.png">
+                    <span class="ms-2"><?php pll_e('PALAPAS')?></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-13.png">
+                    <span class="ms-2"><?php pll_e('ÁREA DE DESCANSO')?></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mb-3">
+                    <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-14.png">
+                    <span class="ms-2"><?php pll_e('REGADERAS')?></span>
+                </div>
                 
             </div>
             <div class="col-12 col-lg-4">
                 
                     <div class="d-flex align-items-center justify-content-start mb-3">
                         <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-15.png">
-                        <span class="ms-2">SALÓN DE YOGA</span>
+                        <span class="ms-2"><?php pll_e('SALÓN DE YOGA')?></span>
                     </div>
                     <div class="d-flex align-items-center justify-content-start mb-3">
                         <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-16.png">
@@ -207,7 +203,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
                     </div>
                     <div class="d-flex align-items-center justify-content-start mb-3">
                         <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-17.png">
-                        <span class="ms-2">ÁREA DE LECTURA</span>
+                        <span class="ms-2"><?php pll_e('ÁREA DE LECTURA')?></span>
                     </div>
                     <div class="d-flex align-items-center justify-content-start mb-3">
                         <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-18.png">
@@ -215,21 +211,21 @@ $images = acf_photo_gallery('gallery', get_the_ID());
                     </div>
                     <div class="d-flex align-items-center justify-content-start mb-3">
                         <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-19.png">
-                        <span class="ms-2">MASAJES</span>
+                        <span class="ms-2"><?php pll_e('MASAJES')?></span>
                     </div>
                     <div class="d-flex align-items-center justify-content-start mb-3">
                         <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-20.png">
-                        <span class="ms-2">ÁREA DE FOGATAS</span>
+                        <span class="ms-2"><?php pll_e('ÁREA DE FOGATAS')?></span>
                     </div>
                     <div class="d-flex align-items-center justify-content-start mb-3">
                         <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-21.png">
-                        <span class="ms-2">SENDERISMO</span>
+                        <span class="ms-2"><?php pll_e('SENDERISMO')?></span>
                     </div>
                 
             </div>
         </div>
 
-        <div class="text-center mb-5">Algunas actividades se subcontratan, hay que reservar con tiempo</div>
+        <div class="text-center mb-5"><?php pll_e('Algunas actividades se subcontratan, hay que reservar con tiempo')?></div>
     </div>
 
 </div>

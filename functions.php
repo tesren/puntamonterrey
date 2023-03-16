@@ -89,7 +89,40 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 */
 
 require get_template_directory().'/inc/room-cpt.php';
+require get_template_directory().'/inc/wedding-cpt.php';
 require get_template_directory().'/inc/messages-cpt.php';
+
+
+/**
+ * Punta Monterrey Custom Columns
+*/
+
+add_filter( 'manage_wedding_posts_columns', 'wedding_custom_column' );
+function wedding_custom_column( $columns ) {
+    $columns['status'] = __( 'Estado' );
+    $columns['wed_date'] = __( 'Fecha' );
+    return $columns;
+}
+
+add_action( 'manage_wedding_posts_custom_column', 'mostrar_contenido_columna_personalizada', 10, 2 );
+function mostrar_contenido_columna_personalizada( $column_name, $post_id ) {
+    if ( 'status' === $column_name ) {
+        echo  rwmb_meta('status', [], $post_id);
+    }
+	elseif( 'wed_date' === $column_name ) {
+        echo  rwmb_meta('wed_date', [], $post_id);
+	}
+}
+
+add_filter( 'manage_wedding_posts_columns', 'ordenar_columna_personalizada' );
+function ordenar_columna_personalizada( $columns ) {
+    $date = $columns['date'];
+    unset( $columns['date'] );
+    $columns['status'] = __( 'Estado' );
+    $columns['wed_date'] = __( 'Fecha' );
+    return $columns;
+}
+
 
 
 /**
@@ -576,5 +609,324 @@ function gyw_set_strings_transtaltion(){
 			'group'    =>'Rooms',
 			'multiline'=>false,
 		),
+		array(
+			'name'     =>'king size bed',
+			'string'   =>'Cama king size',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'shower_bath_natural',
+			'string'   =>'Regadera y baño con luz solar natural.',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'ac_fan',
+			'string'   =>'Aire Acondicionado y ventilador.',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'hotel_has_bar',
+			'string'   =>'El hotel cuenta con bar.',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'bar_disclaimer',
+			'string'   =>'(Nos reservamos el derecho de venta de bebidas alcohólicas que se cobran separadamente del hospedaje)',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'jungle_view',
+			'string'   =>'Vista de la selva.',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'the_hotel_is',
+			'string'   =>'El hotel es',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'no_phone_signal',
+			'string'   =>'No hay señal telefónica en el hotel.',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'king_bed_2_singles',
+			'string'   =>'cama King size y tapanco con 2 camas individuales.',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'wide_deck',
+			'string'   =>'Amplio “deck” de madera techado.',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'cabins_minifridge',
+			'string'   =>'Todas las Cabañas de lujo cuentan con Frigobar.',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'nexto_to_yoga',
+			'string'   =>'Junto a la sala de Yoga.',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'exterior_interior_shower',
+			'string'   =>'Regadera interior y exterior',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'hammock',
+			'string'   =>'Hamaca',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'the_best_view',
+			'string'   =>'La mejor vista del lugar',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'wide_roofed_deck',
+			'string'   =>'Amplio deck de madera techado',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'kitchennete_frigobar',
+			'string'   =>'Cocineta con frigobar y comedor',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'view_rooms',
+			'string'   =>'VER HABITACIONES',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'is',
+			'string'   =>'es',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'virtual_tour',
+			'string'   =>'TOUR VIRTUAL',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'dinning_area',
+			'string'   =>'COMEDOR',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'grill',
+			'string'   =>'ASADOR',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'tea_coffee',
+			'string'   =>'TÉ & CAFÉ',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'parking',
+			'string'   =>'ESTACIONAMIENTO',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'beach_umbrella',
+			'string'   =>'SOMBRILLAS',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'beach_towels',
+			'string'   =>'TOALLAS DE PLAYA',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'petates',
+			'string'   =>'PETATES',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'hammocks',
+			'string'   =>'HAMACAS',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'palm_roof',
+			'string'   =>'PALAPAS',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'resting_area',
+			'string'   =>'ÁREA DE DESCANSO',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'showers',
+			'string'   =>'REGADERAS',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'yoga_area',
+			'string'   =>'SALÓN DE YOGA',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'reading_area',
+			'string'   =>'ÁREA DE LECTURA',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'massage',
+			'string'   =>'MASAJES',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'fire_place',
+			'string'   =>'ÁREA DE FOGATAS',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'hiking',
+			'string'   =>'SENDERISMO',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'activities_disclaimer',
+			'string'   =>'Algunas actividades se subcontratan, hay que reservar con tiempo',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'located_at',
+			'string'   =>'Estamos ubicados en',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'From_2',
+			'string'   =>'Desde',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'location',
+			'string'   =>'Ubicación',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'book_retirement',
+			'string'   =>'RESERVA TU RETIRO',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'has_food',
+			'string'   =>'cuenta con platillos',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'yoga_stuff',
+			'string'   =>'INSTALACIONES Y PROPS DE YOGA',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'palapa_roof',
+			'string'   =>'TECHO DE PALAPA',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'wooden_deck',
+			'string'   =>'DECK DE MADERA',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'fans',
+			'string'   =>'VENTILADORES',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'yoga_carpets',
+			'string'   =>'TAPETES DE YOGA',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'belts',
+			'string'   =>'CINTURONES',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'blocks',
+			'string'   =>'BLOQUES',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'blanket',
+			'string'   =>'COBIJAS',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'gluten_free_options',
+			'string'   =>'OPCIONES GLUTEN FREE',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'vegan_and_vegetarian_diet',
+			'string'   =>'DIETA VEGANA & VEGETARIANA',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		)
 	);
+
+	foreach ($strings as $string ) {
+            
+		pll_register_string( $string['name'], $string['string'], $string['group'], $string['multiline'] );
+	};
 }
+
+add_action('init', 'gyw_set_strings_transtaltion');

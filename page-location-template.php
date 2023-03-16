@@ -65,9 +65,9 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-center mb-6 position-relative">
     <div class="col-11 col-lg-4 p-3 p-lg-5 border border-dark border-3 text-center position-relative z-2">
         <img width="48px" src="<?php echo get_template_directory_uri();?>/assets/icons/location-pin-grey.svg" alt="" loading="lazy" class="position-absolute start-50" style="top:-30px;transform: translateX(-50%);">
-        <h2 class="text-uppercase fs-6 mb-4">Estamos ubicados en...</h2>
+        <h2 class="text-uppercase fs-6 mb-4"><?php pll_e('Estamos ubicados en')?>...</h2>
         <address class="fw-bold">
-            Carretera Intl. Tepic - Vallarta Km. 113, Las Lomas, Bahía de Banderas, Nayarit, México.
+            <?php pll_e('Carretera Intl.')?> Tepic - Vallarta Km. 113, Las Lomas, Bahía de Banderas, Nayarit, México.
         </address>
     </div>
 
@@ -78,7 +78,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-center mb-6">
 
     <div class="col-12 col-lg-6 mb-5">
-        <h2 class="text-uppercase text-center fs-4 mb-3">Desde Puerto Vallarta</h2>
+        <h2 class="text-uppercase text-center fs-4 mb-3"><?php pll_e('Desde')?> Puerto Vallarta</h2>
         <p>
             <?php echo get_field('vallarta_route') ?>
         </p>
@@ -87,7 +87,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
     <div class="w-100"></div>
 
     <div class="col-12 col-lg-6">
-        <h3 class="text-uppercase text-center fs-4 mb-3">Desde Guadalajara</h3>
+        <h3 class="text-uppercase text-center fs-4 mb-3"><?php pll_e('Desde')?> Guadalajara</h3>
         <p>
             <?php echo get_field('vallarta_route') ?>
         </p>
@@ -96,7 +96,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 </div>
 
 <div class="container mb-6 position-relative px-2 px-lg-5">
-    <h3 class="text-uppercase fw-bold">Ubicación</h3>
+    <h3 class="text-uppercase fw-bold"><?php pll_e('Ubicación')?></h3>
     <iframe class="z-3 position-relative" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3791.5453481905665!2d-105.3868452196413!3d20.935452704446032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84213d41a5051e37%3A0x41b203849aefa439!2sPunta%20Monterrey%20Tropical%20Beach%20Resort!5e0!3m2!1ses-419!2smx!4v1678224348013!5m2!1ses-419!2smx" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <img class="d-none d-lg-block position-absolute z-1" style="width:300px; right:0; bottom:-25px;" src="<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-small.webp" alt="" loading="lazy">
 

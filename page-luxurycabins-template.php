@@ -54,7 +54,7 @@
                 <div class="col-12 col-lg-8 align-self-center text-center text-white">
                     <h1 class="fw-bold text-uppercase"><?php echo get_the_title(); ?></h1>
                     <hr class="col-10 col-lg-5 mx-auto">
-                    <h2 class="text-uppercase fw-normal">Tarifas</h2>
+                    <h2 class="text-uppercase fw-normal"><?php pll_e('Tarifas');?></h2>
                 </div>
             </div>
 
@@ -67,28 +67,28 @@
                 <div class="col-10 col-lg-auto mb-3 text-center">
                     <a href="<?php echo get_the_permalink(pll_get_post(207));?>" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
                         <div class="fw-bold fs-5 text-uppercase"><?php echo get_the_title(pll_get_post(207));?></div>
-                        2 Personas
+                        2 <?php pll_e('Personas');?>
                     </a>
                 </div>
 
                 <div class="col-10 col-lg-auto mb-3 text-center">
                     <a href="<?php echo get_the_permalink(pll_get_post(348));?>" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
                         <div class="fw-bold fs-5 text-uppercase"><?php echo get_the_title(pll_get_post(348));?></div>
-                        2-4 Personas
+                        2-4 <?php pll_e('Personas');?>
                     </a>
                 </div>
 
                 <div class="col-10 col-lg-auto mb-3 text-center">
                     <div class="btn btn-outline-dark rounded-0 px-5 active py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
                         <div class="fw-bold fs-5 text-uppercase"><?php echo get_the_title();?></div>
-                        2-4 Personas
+                        2-4 <?php pll_e('Personas');?>
                     </div>
                 </div>
 
                 <div class="col-10 col-lg-auto mb-3 text-center">
                     <a href="<?php echo get_the_permalink(pll_get_post(462)); ?>" class="btn btn-outline-dark rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
                         <div class="fw-bold fs-5 text-uppercase"><?php echo get_the_title(pll_get_post(462));?></div>
-                        2-4 Personas
+                        2-4 <?php pll_e('Personas');?>
                     </a>
                 </div>
             </div>
@@ -97,8 +97,8 @@
                 <div class="col-11 col-lg-6 bg-white p-3 p-lg-5" style="box-shadow: 5px 5px 0 0 #ccc;">
                 
                     <div class="pt-2 mb-4 text-center text-uppercase">
-                        TARIFAS POR HABITACIÓN POR NOCHE EN <br>
-                        <?php echo get_the_title(); ?> desde:
+                        <?php pll_e('TARIFAS POR HABITACIÓN POR NOCHE EN');?> <br>
+                        <?php echo get_the_title(); ?> <?php pll_e('desde');?>:
                     </div>
 
                     <div class="table-responsive">
@@ -106,12 +106,12 @@
                             <tbody>
                                 <tr>
                                     <td class=""></td>
-                                    <td class="">2 Personas</td>
-                                    <td class="">3 Personas</td>
-                                    <td class="">4 Personas</td>
+                                    <td class="">2 <?php pll_e('Personas');?></td>
+                                    <td class="">3 <?php pll_e('Personas');?></td>
+                                    <td class="">4 <?php pll_e('Personas');?></td>
                                 </tr>
                                 <tr>
-                                    <td class="">Temporada alta</td>
+                                    <td class=""><?php pll_e('Temporada alta');?></td>
                                     <td class="fw-bold text-decoration-underline">
                                         $<?php echo number_format(get_field('tarifa_temporada_alta_2'), 2); ?> <?php echo get_field('currency'); ?>
                                     </td>
@@ -123,7 +123,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="">Temporada baja</td>
+                                    <td class=""><?php pll_e('Temporada baja');?></td>
                                     <td class="fw-bold text-decoration-underline">
                                         $<?php echo number_format(get_field('tarifa_temporada_baja_2'), 2); ?> <?php echo get_field('currency'); ?>
                                     </td>
@@ -141,22 +141,22 @@
 
                     <table class="table table-borderless mb-5">
                         <tr>
-                            <td class="col-6 col-lg-3">Temporada alta</td>
+                            <td class="col-6 col-lg-3"><?php pll_e('Temporada alta');?></td>
                             <td class="col-6 col-lg-9">
-                                Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Octubre, Noviembre, Diciembre
+                                <?php pll_e('Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Octubre, Noviembre, Diciembre');?>
                             </td>
                         </tr>
                         <tr>
-                            <td class="col-6 col-lg-3">Temporada baja</td>
+                            <td class="col-6 col-lg-3"><?php pll_e('Temporada baja');?></td>
                             <td class="col-6 col-lg-9">
-                                Agosto, Septiembre
+                                <?php pll_e('Agosto, Septiembre');?>
                             </td>
                         </tr>
                     </table>
 
-                    <div class="fs-6 fw-bold text-center">* Incluye hospedaje y 3 comidas al día, ¡Dejate sorprender por el cheff!</div>
-                    <div class="fs-6 fw-bold text-center">* Las bebidas del bar se venden aparte</div>
-                    <div class="fs-6 fw-bold text-center">* Tarifas sujetas a cambio sin previo aviso, aplican restricciones.</div>
+                    <div class="fs-6 fw-bold text-center">* <?php pll_e('Incluye hospedaje y 3 comidas al día, ¡Dejate sorprender por el cheff!');?></div>
+                    <div class="fs-6 fw-bold text-center">* <?php pll_e('Las bebidas del bar se venden aparte');?></div>
+                    <div class="fs-6 fw-bold text-center">* <?php pll_e('Tarifas sujetas a cambio sin previo aviso, aplican restricciones.');?></div>
 
                 </div>
             </div>
@@ -196,9 +196,9 @@
 
                     <div class="col-12 col-lg-5 align-self-center <?php if($i%2==0){echo'order-2 order-lg-1';} ?>">
                         <h2 class="text-uppercase"><?php echo get_the_title($post->ID); ?></h2>
-                        <div class="fw-bold mb-3">Camas: <?php echo $post->bedrooms ?> | Personas: <?php echo $post->people ?></div>
+                        <div class="fw-bold mb-3"><?php pll_e('Camas');?>: <?php echo $post->bedrooms ?> | <?php pll_e('Personas');?>: <?php echo $post->people ?></div>
                         <p class="fs-5"><?php echo $post->description; ?></p>
-                        <div class="fw-bold">* El agua de todas las habitaciones es purificada.</div>
+                        <div class="fw-bold">* <?php pll_e('El agua de todas las habitaciones es purificada.');?></div>
                     </div>
 
                 </div>
@@ -206,7 +206,7 @@
                 <!-- Collapse -->
                 <div class="text-center position-relative">
                     <button class="btn btn-outline-dark rounded-0 fw-superbold px-5 py-2 border border-2 border-dark z-1 position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-details-<?php echo $post->ID?>" aria-expanded="false" aria-controls="collapse-details-<?php echo $post->ID?>">
-                        DETALLES
+                        <?php pll_e('DETALLES');?>
                     </button>
                     <hr class="w-75 mx-auto position-absolute top-50 m-0 border-bottom border-1 border-dark z-0" style="opacity:1; left:12.5%;">
                 </div>
@@ -222,12 +222,12 @@
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item border-end border-4 border-light position-relative w-50" role="presentation">
                                     <button class="nav-link active text-uppercase fw-normal py-4 rounded-0 w-100" id="home-tab-<?php echo $post->ID?>" data-bs-toggle="tab" data-bs-target="#home-tab-<?php echo $post->ID?>-pane" type="button" role="tab" aria-controls="home-tab-<?php echo $post->ID?>-pane" aria-selected="true">
-                                        Comodidades
+                                        <?php pll_e('Comodidades');?>
                                     </button>
                                 </li>
                                 <li class="nav-item position-relative w-50" role="presentation">
                                     <button class="m-0 nav-link text-uppercase fw-normal py-4 rounded-0 w-100" id="profile-tab-<?php echo $post->ID?>" data-bs-toggle="tab" data-bs-target="#profile-tab-<?php echo $post->ID?>-pane" type="button" role="tab" aria-controls="profile-tab-<?php echo $post->ID?>-pane" aria-selected="false">
-                                        Políticas
+                                        <?php pll_e('Políticas');?>
                                     </button>
                                 </li>
                             </ul>
@@ -241,44 +241,44 @@
                                             <div class="d-flex justify-content-start mb-4">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-1.png"></div>
                                                 <div>
-                                                    1 cama King size y tapanco con 2 camas individuales.
+                                                    1 <?php pll_e('cama King size y tapanco con 2 camas individuales.');?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-2.png"></div>
                                                 <div>
-                                                    Regadera y baño con luz solar natural
+                                                    <?php pll_e('Regadera y baño con luz solar natural');?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-3.png"></div>
                                                 <div>
-                                                    Aire Acondicionado y ventilador
+                                                    <?php pll_e('Aire Acondicionado y ventilador');?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-4.png"></div>
                                                 <div>
-                                                    El hotel cuenta con bar.
-                                                    <small><i>(Nos reservamos el derecho de venta de bebidas alcohólicas que se cobran separadamente del hospedaje)</i></small>
+                                                    <?php pll_e('El hotel cuenta con bar.');?>
+                                                    <small><i><?php pll_e('(Nos reservamos el derecho de venta de bebidas alcohólicas que se cobran separadamente del hospedaje)');?></i></small>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-5.png"></div>
                                                 <div>
-                                                    Cabaña con vista a la selva.
+                                                    <?php pll_e('Vista de la selva.');?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-6.png"></div>
                                                 <div>
-                                                    Amplio “deck” de madera techado.
+                                                    <?php pll_e('Amplio “deck” de madera techado.');?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-7.png"></div>
                                                 <div>
-                                                    Todas las Cabañas de lujo cuentan con Frigobar.
+                                                    <?php pll_e('Todas las Cabañas de lujo cuentan con Frigobar.');?>
                                                 </div>
                                             </div>
                                         </div>
@@ -286,38 +286,38 @@
                                             <div class="d-flex justify-content-start mb-4">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-8.png"></div>
                                                 <div>
-                                                    El hotel es <span class="medium-font text-underline">Pet Friendly</span>.
+                                                    <?php pll_e('El hotel es');?> <span class="medium-font text-underline">Pet Friendly</span>.
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-9.png"></div>
                                                 <div>
-                                                    El hotel cuenta con sistema doméstico satelital de wifi.
-                                                    <small><i>(Cuando el cupo está lleno y los huéspedes usan el internet al mismo tiempo, el sistema colapsa. Si sólo se usa para mensajes de WhatsApp y correos electrónicos la señal es suficiente)</i></small>
+                                                    WiFi
+                                                    <small><i><?php pll_e('(Cuando el cupo está lleno y los huéspedes usan el internet al mismo tiempo, el sistema colapsa. Si sólo se usa para mensajes de WhatsApp y correos electrónicos la señal es suficiente)');?></i></small>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-10.png"></div>
                                                 <div>
-                                                    No hay señal telefónica en el hotel.
+                                                    <?php pll_e('No hay señal telefónica en el hotel.');?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/yoga.png"></div>
                                                 <div>
-                                                    Junto a la sala de Yoga.
+                                                    <?php pll_e('Junto a la sala de Yoga.');?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/comida.png"></div>
                                                 <div>
-                                                     Incluye 3 comidas al día.
+                                                    <?php pll_e('Incluye 3 comidas al día.');?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/est.png"></div>
                                                 <div>
-                                                     Estacionamiento gratis.
+                                                    <?php pll_e('Estacionamiento gratis.');?>
                                                 </div>
                                             </div>
                                         </div>
@@ -329,18 +329,18 @@
                                     <div class="row p-5 fs-5">
                                         <div class="col-lg-6">
                                             <ul class="room-list">
-                                                <li class="mb-4">Registrarse a la 2 pm.</li>
-                                                <li class="mb-4">Salida 12 pm.</li>
-                                                <li class="mb-4">Máximo 2 personas en la habitación.</li>
-                                                <li class="mb-4">Está prohibido alimentar a las mascotas en la habitación.</li>
-                                                <li class="mb-4">Nos reservamos el derecho de admisión.</li>
+                                                <li class="mb-4"><?php pll_e('Registrarse a la 2 pm.');?></li>
+                                                <li class="mb-4"><?php pll_e('Salida 12 pm.');?></li>
+                                                <li class="mb-4"><?php pll_e('Máximo 2 personas en la habitación.');?></li>
+                                                <li class="mb-4"><?php pll_e('Está prohibido alimentar a las mascotas en la habitación.');?></li>
+                                                <li class="mb-4"><?php pll_e('Nos reservamos el derecho de admisión.');?></li>
                                             </ul>
                                         </div>
                                         <div class="col-lg-6">
                                             <ul class="room-list">
-                                                <li class="mb-4">Se aplican políticas de cancelación.</li>
-                                                <li class="mb-4">Está prohibido hacer ruido en las habitaciones después de las 22:00 horas.</li>
-                                                <li class="mb-4">Tenemos un menú vegetariano, por favor avísanos al hacer la reserva.</li>
+                                                <li class="mb-4"><?php pll_e('Se aplican políticas de cancelación.');?></li>
+                                                <li class="mb-4"><?php pll_e('Está prohibido hacer ruido en las habitaciones después de las 22:00 horas.');?></li>
+                                                <li class="mb-4"><?php pll_e('Tenemos un menú vegetariano, por favor avísanos al hacer la reserva.');?></li>
                                             </ul>
                                         </div>
                                     </div>

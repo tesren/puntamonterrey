@@ -284,9 +284,8 @@
         <div class="text-center">
             <h4 class="le-5 fw-superbold fs-2 my-5"><?php pll_e('TESTIMONIOS');?></h4>
             <div class="mb-4 fs-5 fw-normal col-11 col-lg-6 mx-auto"><?php pll_e('NUESTRA MEJOR PUBLICIDAD LA HACEN USTEDES,¡SUEÑOS QUE SE HACEN REALIDAD!');?></div>
-            <div class="home-review-slider">
-                <div class="elfsight-app-3a18efa3-ce0f-41b6-a125-01e555f60da1"></div>
-                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+            <div class="w-100 position-relative">
+                <?php echo do_shortcode('[trustindex no-registration=tripadvisor]'); ?>
             </div>
 
             <div>
@@ -320,7 +319,7 @@
 
 <!-- Mapa -->
 <div class="bg-black pb-1">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.3929581366665!2d-105.38917408473944!3d20.936728796288907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x41b203849aefa439!2sPunta%20Monterrey%20Tropical%20Beach%20Resort!5e0!3m2!1ses-419!2smx!4v1675359887863!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe title="Mapa de Google" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.3929581366665!2d-105.38917408473944!3d20.936728796288907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x41b203849aefa439!2sPunta%20Monterrey%20Tropical%20Beach%20Resort!5e0!3m2!1ses-419!2smx!4v1675359887863!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 <?php get_footer(); ?>

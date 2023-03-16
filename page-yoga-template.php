@@ -39,7 +39,9 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-evenly mb-6">
     <div class="col-11 col-lg-4 align-self-center order-2 order-lg-1 mt-3 mt-lg-0 text-center">
         <div class="fs-5 mb-5 text-start"><?php echo get_field('segundo_parrafo');?></div>
-        <a href="https://wa.me/523221509785?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Punta%20Monterrey" class="btn btn-outline-dark rounded-0 fw-bold border-3">RESERVA TU RETIRO</a>
+        <a href="https://wa.me/523221509785?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Punta%20Monterrey" class="btn btn-outline-dark rounded-0 fw-bold border-3">
+            <?php pll_e('RESERVA TU RETIRO')?>
+        </a>
     </div>
 
     <div class="col-12 col-lg-6 order-1 order-lg-2">
@@ -84,7 +86,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 <h2 class="text-center mb-4 mb-lg-5">
     <span class="fw-bold">Punta Monterrey</span>
-     cuenta con platillos
+    <?php pll_e('cuenta con platillos')?>
 </h2>
 
 <div class="row justify-content-center mb-6">
@@ -121,26 +123,26 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-center py-5"  style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp');">
 
     <div class="col-11 col-lg-10 col-xl-7 bg-light px-4 px-lg-5">
-        <h2 class="text-center fw-bold le-10 my-5">INSTALACIONES Y PROPS DE YOGA</h2>
+        <h2 class="text-center fw-bold le-10 my-5"><?php pll_e('INSTALACIONES Y PROPS DE YOGA')?></h2>
 
         <div class="row pb-5">
 
             <div class="col-12 col-lg-4">
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-34.png">
-                    <span class="ms-2">SALÓN DE YOGA</span>
+                    <span class="ms-2"><?php pll_e('SALÓN DE YOGA')?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-35.png">
-                    <span class="ms-2">TECHO DE PALAPA</span>
+                    <span class="ms-2"><?php pll_e('TECHO DE PALAPA')?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-36.png">
-                    <span class="ms-2">DECK DE MADERA</span>
+                    <span class="ms-2"><?php pll_e('DECK DE MADERA')?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-37.png">
-                    <span class="ms-2">VENTILADORES</span>
+                    <span class="ms-2"><?php pll_e('VENTILADORES')?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-38.png">
@@ -151,7 +153,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
             <div class="col-12 col-lg-4">
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-39.png">
-                    <span class="ms-2">TAPETES DE YOGA</span>
+                    <span class="ms-2"><?php pll_e('TAPETES DE YOGA')?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-40.png">
@@ -159,30 +161,30 @@ $images = acf_photo_gallery('gallery', get_the_ID());
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-41.png">
-                    <span class="ms-2">CINTURONES</span>
+                    <span class="ms-2"><?php pll_e('CINTURONES')?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-42.png">
-                    <span class="ms-2">BLOQUES</span>
+                    <span class="ms-2"><?php pll_e('BLOQUES')?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-43.png">
-                    <span class="ms-2">COBIJAS</span>
+                    <span class="ms-2"><?php pll_e('COBIJAS')?></span>
                 </div>
             </div>
 
             <div class="col-12 col-lg-4">
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-44.png">
-                    <span class="ms-2">MASAJES</span>
+                    <span class="ms-2"><?php pll_e('MASAJES')?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-45.png">
-                    <span class="ms-2">OPCIONES GLUTEN FREE</span>
+                    <span class="ms-2"><?php pll_e('OPCIONES GLUTEN FREE')?></span>
                 </div>
                 <div class="mb-3 d-flex align-items-center justify-content-start">
                     <img width="35px" alt="" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/icon-46.png">
-                    <span class="ms-2">DIETA VEGANA &amp; VEGETARIANA</span>
+                    <span class="ms-2"><?php pll_e('DIETA VEGANA & VEGETARIANA')?></span>
                 </div>
             </div>
 
