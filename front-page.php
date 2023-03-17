@@ -288,9 +288,6 @@
                 <?php echo do_shortcode('[trustindex no-registration=tripadvisor]'); ?>
             </div>
 
-            <div>
-                <?php// echo do_shortcode( '[trustindex no-registration=tripadvisor]' ); ?>
-            </div>
         </div>
 
         

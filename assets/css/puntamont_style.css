@@ -67,6 +67,11 @@ body{
     color: rgba(0, 62, 111, 0.9);
 }
 
+.navbar .nav-link:hover, .navbar .nav-link:focus {
+    color: #6fc401 !important;
+    transition: 0.3s;
+}
+
 #myTab .nav-item .nav-link:after {
     content: '';
     position: absolute;

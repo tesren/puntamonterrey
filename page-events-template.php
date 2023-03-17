@@ -1,9 +1,18 @@
 <?php
-/*
- Template Name: Plantilla de Eventos
-  */
-get_header();
-$images = acf_photo_gallery('gallery', get_the_ID());
+    /*
+    Template Name: Plantilla de Eventos
+    */
+    get_header();
+    $images = acf_photo_gallery('gallery', get_the_ID());
+
+    $args = array(
+        'post_type' => 'wedding',
+        'numberposts' => '-1',
+        'orderby' => 'wed_date',
+        'order' => 'ASC',
+    );
+
+    $wedding_dates = get_posts($args);
 ?>
 
 <div class="position-relative">
@@ -39,9 +48,9 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-evenly mb-6">
     <div class="col-11 col-lg-4 align-self-center order-2 order-lg-1 mt-3 mt-lg-0 text-center">
         <div class="fs-5 mb-0 text-start mb-5"><?php echo get_field('segundo_parrafo');?></div>
-        <a href="https://wa.me/523221509785?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Punta%20Monterrey" class="btn btn-outline-dark rounded-0 fw-bold border-3">
-            <?php pll_e('PÓNTE EN CONTACTO');?>
-        </a>
+        <!-- <a href="https://wa.me/523221509785?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Punta%20Monterrey" class="btn btn-outline-dark rounded-0 fw-bold border-3">
+            <?php// pll_e('PÓNTE EN CONTACTO');?>
+        </a> -->
     </div>
 
     <div class="col-12 col-lg-6 order-1 order-lg-2">
@@ -82,6 +91,27 @@ $images = acf_photo_gallery('gallery', get_the_ID());
     </div>
 </div>
 
+
+<?php if($wedding_dates):?>
+    <!-- Fechas de bodas -->
+    <div class="row justify-content-center mb-6">
+        <div class="col-11 col-lg-8">
+            <h2 class="text-uppercase fw-bold mb-4"><?php pll_e('Fechas para Bodas'); ?></h2>
+            <ul class="list-group list-group-flush">
+                <?php foreach($wedding_dates as $date):?>
+                    <li class="list-group-item d-flex">
+                        <span class="fs-4 me-2"><?php echo $date->wed_date ?></span>
+                        <span class="badge <?php if($date->status == 'Disponible'){ echo 'bg-success'; }else{ echo 'bg-warning'; }?> align-self-center fs-6 fw-normal">
+                            <?php pll_e($date->status); ?>
+                        </span>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+<?php endif; ?>
+
+
 <!-- Slides -->
 <?php if( count($images) > 4 ): ?>
     <section class="splide" id="slides-punta"  aria-label="Galería del Hotel Punta Monterrey">
@@ -103,7 +133,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 <div class="row justify-content-center py-5"  style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp');">
 
     <div class="col-11 col-lg-10 col-xl-7 bg-light px-4 px-lg-5">
-        <h2 class="text-center fw-bold le-10 mt-5 mb-4"><?php pll_e('AMENIDADES PARA BODAS');?></h2>
+        <h3 class="text-center fw-bold le-10 mt-5 mb-4"><?php pll_e('AMENIDADES PARA BODAS');?></h3>
 
         <h3 class="fs-6 text-center mb-5"><?php pll_e('Punta Monterrey cuenta con una cartera de proveedores para los siguientes servicios.');?></h3>
 
