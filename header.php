@@ -22,9 +22,14 @@
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/bootstrap.min.css" as="style">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/bootstrap.min.css">
+
     <?php if( !is_front_page() ): ?>
+      <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/splide.min.css" as="style">
       <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/splide.min.css">
     <?php endif; ?>
 
@@ -39,7 +44,7 @@
   <div class="container-fluid">
 
     <a class="navbar-brand ps-3" href="<?php echo get_home_url();?>">
-        <img src="<?php echo get_template_directory_uri();?>/assets/images/logo-punta.webp"
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/new-logo-punta.webp"
           width="205"
           height="auto"
           alt="Logo de Punta Monterrey">

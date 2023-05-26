@@ -37,6 +37,12 @@
 
     $posts = get_posts( $args );
 
+    $room_politics = get_posts([
+        'post_type' => 'politics',
+        'numberposts'=> 1,
+    ]);
+    $room_politics = $room_politics[0];
+
     get_header(); 
 ?>
 
@@ -283,24 +289,14 @@
 
                                 <!-- Políticas -->
                                 <div class="tab-pane fade" id="profile-tab-<?php echo $post->ID?>-pane" role="tabpanel" aria-labelledby="profile-tab-<?php echo $post->ID?>" tabindex="0">
-                                    <div class="row p-5 fs-5">
-                                        <div class="col-lg-6">
-                                            <ul class="room-list">
-                                                <li class="mb-4"><?php pll_e('Registrarse a la 2 pm.');?></li>
-                                                <li class="mb-4"><?php pll_e('Salida 12 pm.');?></li>
-                                                <li class="mb-4"><?php pll_e('Máximo 2 personas en la habitación.');?></li>
-                                                <li class="mb-4"><?php pll_e('Está prohibido alimentar a las mascotas en la habitación.');?></li>
-                                                <li class="mb-4"><?php pll_e('Nos reservamos el derecho de admisión.');?></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <ul class="room-list">
-                                                <li class="mb-4"><?php pll_e('Se aplican políticas de cancelación.');?></li>
-                                                <li class="mb-4"><?php pll_e('Está prohibido hacer ruido en las habitaciones después de las 22:00 horas.');?></li>
-                                                <li class="mb-4"><?php pll_e('Tenemos un menú vegetariano, por favor avísanos al hacer la reserva.');?></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <ul class="row p-5 fs-5">
+
+                                        <?php $politics = rwmb_meta('politics', [], $room_politics->ID);?>
+                                        <?php foreach($politics as $politic): ?>
+                                            <li class="col-12 col-lg-6 mb-3 px-1 px-lg-3"><?php echo $politic; ?></li>
+                                        <?php endforeach; ?>
+                                        
+                                    </ul>
                                 </div>
 
                             </div>

@@ -188,6 +188,8 @@ $images = acf_photo_gallery('gallery', get_the_ID());
                 </div>
             </div>
 
+            <div class="text-center mt-4"><?php pll_e('Para uso exclusivo dentro del salón')?></div>
+
         </div>
 
     </div>

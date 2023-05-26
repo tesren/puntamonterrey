@@ -194,7 +194,7 @@
         <div class="col-12 col-lg-5 text-center align-self-center <?php if($i%2==0){echo'order-2 order-lg-1';} ?>">
             <?php $term = rwmb_meta('taxonomy_type', [], $room->ID);?>
 
-            <h2 class="text-uppercase"><?php echo get_the_title($room->ID); ?></h2>
+            <h3 class="text-uppercase fs-2"><?php echo get_the_title($room->ID); ?></h3>
             <div class="fw-bold mb-3"><?php pll_e('Camas');?>: <?php echo $room->bedrooms ?> | <?php pll_e('Personas');?>: <?php echo $room->people ?></div>
             <p class="fs-5 mb-4"><?php echo $room->description; ?></p>
 

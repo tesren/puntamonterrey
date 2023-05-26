@@ -34,7 +34,7 @@ function puntamont_menus()
 {    
     $locations = array(
         'primary' => __( 'Primary Menu', 'PuntaMonterrey' ),
-		'footer' => "Footer menu Items",
+		//'footer' => "Footer menu Items",
     );
     
     register_nav_menus( $locations );
@@ -64,7 +64,7 @@ if ( ! function_exists( 'puntamont_theme_styles' ) ) :
 
 		// Enqueue theme stylesheet.
 		wp_enqueue_style( 'puntamonterrey-style' );
-    	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() .'/assets/css/bootstrap.min.css' );
+    	//wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() .'/assets/css/bootstrap.min.css' );
     	//wp_enqueue_style( 'splide-css', get_template_directory_uri() .'/assets/css/splide.min.css' );
     	wp_enqueue_style( 'puntamont-css', get_template_directory_uri() .'/assets/css/puntamont_style.css' );
 
@@ -89,8 +89,9 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 */
 
 require get_template_directory().'/inc/room-cpt.php';
-require get_template_directory().'/inc/wedding-cpt.php';
 require get_template_directory().'/inc/messages-cpt.php';
+require get_template_directory().'/inc/room-politics-cpt.php';
+require get_template_directory().'/inc/wedding-cpt.php';
 
 
 /**
@@ -920,7 +921,13 @@ function gyw_set_strings_transtaltion(){
 			'string'   =>'DIETA VEGANA & VEGETARIANA',
 			'group'    =>'Pages',
 			'multiline'=>false,
-		)
+		),
+		array(
+			'name'     =>'yoga_disclaimer',
+			'string'   =>'Para uso exclusivo dentro del salón',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
 	);
 
 	foreach ($strings as $string ) {

@@ -1,73 +1,54 @@
 <?php use Carbon\Carbon; ?>
 
 <!-- Boton de whatsapp -->
-<a href="https://wa.me/523221509785?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Punta%20Monterrey" id="whatsapp" target="_blank" rel="noopener" aria-label="Whatsapp contact"> 
+<a href="https://wa.me/523221509785?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Punta%20Monterrey" class="shadow-4" id="whatsapp" target="_blank" rel="noopener" aria-label="Whatsapp contact"> 
 	<img src="<?php echo get_template_directory_uri();?>/assets/icons/whatsapp-white.svg" alt="Contactar por Whatsapp">
 </a>
 
-<!-- Boton de Reservar -->
-<button type="button" class="btn btn-outline-dark rounded-4 text-uppercase fw-bold" id="reservation-button" data-bs-toggle="modal" data-bs-target="#reservationModal">
-  <?php pll_e('Reserva ya');?>
-</button>
-
-<!-- Modal de reservar -->
-<div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <div class="modal-title fs-5 fw-superbold text-uppercase" id="reservationModalLabel"><?php pll_e('Selecciona las fechas');?></div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <label for="check-in"><?php pll_e('Llegada');?></label>
-        <input class="form-control mb-3" type="date" name="check-in" id="check-in" min="<?php echo Carbon::now()->addDay()->format('Y-m-d'); ?>">
-
-        <label for="check-out"><?php pll_e('Salida');?></label>
-        <input class="form-control" type="date" name="check-out" id="check-out" min="<?php echo Carbon::now()->addDays(2)->format('Y-m-d'); ?>">
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" id="book_now" class="btn btn-outline-dark w-100 rounded-0 text-uppercase fw-bold"><?php pll_e('Reservar');?></button>
-      </div>
+<!-- Formulario de reservar de Reservar -->
+<div class="position-fixed bottom-0 start-50 bg-light px-2 px-lg-3 z-3 col-12 col-lg-6 shadow-up-3" style="transform: translateX(-50%);">
+    <div class="row py-2">
+        <div class="col-6 col-lg-4">
+            <label for="check-in"><?php pll_e('Llegada');?></label>
+            <input class="form-control" type="date" name="check-in" placeholder="Llegada" id="check-in" min="<?php echo Carbon::now()->addDay()->format('Y-m-d'); ?>">
+        </div>
+        <div class="col-6 col-lg-4 mb-3 mb-lg-0">
+            <label for="check-out"><?php pll_e('Salida');?></label>
+            <input class="form-control" type="date" name="check-out" id="check-out" min="<?php echo Carbon::now()->addDays(2)->format('Y-m-d'); ?>">
+        </div>
+        
+        <div class="col-12 col-lg-4 align-self-end">
+            <button type="button" id="book_now" class="btn btn-outline-dark w-100 mb-2 mb-lg-0 rounded-0 text-uppercase fw-bold"><?php pll_e('Reservar');?></button>
+        </div>
 
     </div>
-  </div>
 </div>
+
 
 
 <footer class="bg-black pt-5 text-white px-4 px-lg-5">
 
-    
-    <div class="row justify-content-evenly mb-5">
+    <div class="row justify-content-evenly pb-5">
 
-        <div class="col-12 col-lg-3">
-            <?php
-                wp_nav_menu( array(
-                    'theme_location'    => 'footer',
-                    'depth'             => 1,
-                    'container'         => 'div',
-                    'container_class'   => 'w-100',
-                    //'container_id'      => 'navbarSupportedContent',
-                    'menu_class'        => 'list-unstyled fw-bold',
-                    'menu_id'           => 'footer_menu',
-                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                    'walker'            => new WP_Bootstrap_Navwalker(),
-                ) );
-            ?>
-
-            <a href="<?php echo get_the_permalink( pll_get_post(511) );?>" class="text-decoration-none d-block mb-2 fw-bold" style="color:#6fc401">
+        <div class="col-12 col-lg-3 mb-4 mb-lg-0">
+            <a href="<?php echo get_the_permalink( pll_get_post(511) );?>" class="text-decoration-none d-block mb-3 fw-bold" style="color:#6fc401">
                 <img width="20px" src="<?php echo get_template_directory_uri();?>/assets/icons/hojas.webp" loading="lazy" alt=""> ECO FRIENDLY
             </a>
-            <a href="<?php echo get_the_permalink( pll_get_post(514) );?>" class="text-decoration-none d-block fw-bold" style="color:#40bcd0">
+            <a href="<?php echo get_the_permalink( pll_get_post(514) );?>" class="text-decoration-none d-block fw-bold mb-4" style="color:#40bcd0">
                 <img width="20px" src="<?php echo get_template_directory_uri();?>/assets/icons/huella.webp" loading="lazy" alt=""> PET FRIENDLY
             </a>
 
+            <a href="<?php echo get_the_permalink(pll_get_post(88)); ?>" class="link-light d-block"><?php echo get_the_title(pll_get_post(88));?></a>
+            <a href="<?php echo get_the_permalink(pll_get_post(3)); ?>" class="link-light d-block"><?php echo get_the_title(pll_get_post(3));?></a>
+
+            <a class="link-light d-block my-3 text-decoration-none d-none d-lg-block" href="https://punto401.com/">
+                <div class="align-self-center">Desarrollado por</div> 
+                <img width="150px" src="<?php echo get_template_directory_uri(); ?>/assets/icons/punto401.svg" alt="Punto401 Marketing">
+            </a>
         </div>
         
 
-        <div class="col-12 col-lg-3 text-center">
+        <div class="col-12 col-lg-3 text-center mb-4 mb-lg-0">
             <a href="<?php echo get_the_permalink( pll_get_post(525) ); ?>" class="link-light border border-2 border-white p-3 fw-bold d-block">puntamonterreyresort@gmail.com</a>
 
             <address class="mt-4 d-block">
@@ -75,8 +56,8 @@
             </address>
         </div>
 
-        <div class="col-12 col-lg-3 text-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_footer.webp" alt="Logo Punta Monterrey" class="w-75 mx-auto mb-5" loading="lazy">
+        <div class="col-12 col-lg-3 text-center mb-4 mb-lg-0">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/new_logo_footer.webp" alt="Logo Punta Monterrey" class="w-75 mx-auto mb-5" loading="lazy">
 
             <h6><?php pll_e('Síguenos en');?></h6>
             <div class="d-flex justify-content-center">
@@ -91,17 +72,14 @@
         </div>
 
     </div>
-    
-
-    <div class="d-flex justify-content-center text-center py-2">
-        <a href="<?php echo get_the_permalink(pll_get_post(88)); ?>" class="link-light d-block me-2"><?php echo get_the_title(pll_get_post(88));?></a>
-         | 
-        <a href="<?php echo get_the_permalink(pll_get_post(3)); ?>" class="link-light d-block ms-2"><?php echo get_the_title(pll_get_post(3));?></a>
-    </div>
 
 </footer>
 
 <?php wp_footer(); ?>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V2P7DHSVXK"></script>
+<script src="<?php echo get_template_directory_uri();?>/assets/js/third-party.js" defer></script>
 
 <?php if( !is_front_page() ): ?>
     <script src="<?php echo get_template_directory_uri();?>/assets/js/splide.min.js" defer></script>
