@@ -65,7 +65,7 @@
 
                 <?php for($i=1; $i<4; $i++): ?>
                     <div class="carousel-item <?php if($i==1){echo 'active';} ?>">
-                        <img src="<?php echo $images[$i]['full_image_url'];?>" class="d-block w-100" alt="Hotel Punta Monterrey" loading="lazy">
+                        <img src="<?php echo $images[$i]['full_image_url'];?>" class="d-block w-100" alt="Hotel Punta Monterrey" loading="lazy" data-fancybox="gallery-1">
                     </div>
                 <?php endfor; ?>
 
@@ -120,7 +120,7 @@
             <ul class="splide__list">
                 <?php for($i=4; $i < count($images); $i++): ?>
                     <li class="splide__slide px-2">
-                        <img src="<?php echo $images[$i]['full_image_url'];?>" alt="Galería Punta Monterrey <?php echo $i; ?>" class="w-100" loading="lazy" style="height:300px; object-fit:cover;">
+                        <img src="<?php echo $images[$i]['full_image_url'];?>" alt="Galería Punta Monterrey <?php echo $i; ?>" class="w-100" loading="lazy" data-fancybox="gallery-weddings" style="height:300px; object-fit:cover;">
                     </li>
                 <?php endfor; ?>
             </ul>

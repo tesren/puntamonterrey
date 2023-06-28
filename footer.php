@@ -6,19 +6,19 @@
 </a>
 
 <!-- Formulario de reservar de Reservar -->
-<div class="position-fixed bottom-0 start-50 bg-light px-2 px-lg-3 z-3 col-12 col-lg-6 shadow-up-3" style="transform: translateX(-50%);">
+<div class="position-fixed bottom-0 bg-secondary bg-gradient start-50 px-2 px-lg-3 z-3 col-12 col-lg-6 shadow-up-3" style="transform: translateX(-50%);">
     <div class="row py-2">
         <div class="col-6 col-lg-4">
-            <label for="check-in"><?php pll_e('Llegada');?></label>
+            <label for="check-in" class="text-white"><?php pll_e('Llegada');?></label>
             <input class="form-control" type="date" name="check-in" placeholder="Llegada" id="check-in" min="<?php echo Carbon::now()->addDay()->format('Y-m-d'); ?>">
         </div>
         <div class="col-6 col-lg-4 mb-3 mb-lg-0">
-            <label for="check-out"><?php pll_e('Salida');?></label>
+            <label for="check-out" class="text-white"><?php pll_e('Salida');?></label>
             <input class="form-control" type="date" name="check-out" id="check-out" min="<?php echo Carbon::now()->addDays(2)->format('Y-m-d'); ?>">
         </div>
         
         <div class="col-12 col-lg-4 align-self-end">
-            <button type="button" id="book_now" class="btn btn-outline-dark w-100 mb-2 mb-lg-0 rounded-0 text-uppercase fw-bold"><?php pll_e('Reservar');?></button>
+            <button type="button" id="book_now" class="btn btn-dark w-100 mb-2 mb-lg-0 rounded-0 text-uppercase fw-bold"><?php pll_e('Reservar');?></button>
         </div>
 
     </div>
@@ -49,7 +49,7 @@
         
 
         <div class="col-12 col-lg-3 text-center mb-4 mb-lg-0">
-            <a href="<?php echo get_the_permalink( pll_get_post(525) ); ?>" class="link-light border border-2 border-white p-3 fw-bold d-block">puntamonterreyresort@gmail.com</a>
+            <a href="<?php echo get_the_permalink( pll_get_post(525) ); ?>" id="footer_email" class="link-light border border-2 border-white p-3 fw-bold d-block">puntamonterreyresort@gmail.com</a>
 
             <address class="mt-4 d-block">
                 <?php pll_e('Carretera Intl.');?> Tepic - Vallarta Km. 113,Las Lomas, Bahía de Banderas, Nayarit, México.
@@ -86,6 +86,9 @@
 <?php endif; ?>
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.bundle.min.js" defer></script>
+
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/fancybox.umd.js" defer></script>
+
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/puntamont.js" defer></script>
 
 <script>

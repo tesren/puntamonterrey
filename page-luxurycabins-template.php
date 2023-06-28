@@ -184,7 +184,7 @@
                                 
                                 <?php $j=0; foreach($images as $img): ?>
                                     <div class="carousel-item <?php if($j==0){echo 'active';} ?>">
-                                        <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:cover;" loading="lazy">
+                                        <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:cover;" data-fancybox="gallery-<?php echo $post->ID ?>" loading="lazy">
                                     </div>
                                 <?php $j++; endforeach; ?>
                                 

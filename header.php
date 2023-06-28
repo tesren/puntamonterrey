@@ -28,6 +28,9 @@
     <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/bootstrap.min.css" as="style">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/bootstrap.min.css">
 
+    <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/fancybox.min.css" as="style">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/fancybox.min.css">
+
     <?php if( !is_front_page() ): ?>
       <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/splide.min.css" as="style">
       <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/splide.min.css">
@@ -38,6 +41,11 @@
 </head>
 
 <body <?php body_class(); ?> >
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DC33M7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <nav class="navbar bg-white navbar-expand-xl sticky-top">
 

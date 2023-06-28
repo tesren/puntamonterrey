@@ -23,7 +23,7 @@ $images = acf_photo_gallery('kitchen_gallery', get_the_ID());
 
     <div class="row position-relative z-2">
         <div class="col-12 col-lg-4 align-self-center">
-            <img src="<?php echo $images[0]['full_image_url'];?>" class="d-block w-100" alt="Hotel Punta Monterrey">
+            <img src="<?php echo $images[0]['full_image_url'];?>" class="d-block w-100" data-fancybox="gallery-kitchen" alt="Hotel Punta Monterrey">
         </div>
         <div class="col-12 col-lg-7 p-0">
             <div class="p-3 p-lg-5 border-white border-4 border-end border-bottom"><?php echo get_the_content(); ?></div>
@@ -41,9 +41,9 @@ $images = acf_photo_gallery('kitchen_gallery', get_the_ID());
         <div class="splide__track">
 
             <ul class="splide__list">
-                <?php for($i=0; $i < count($images); $i++): ?>
+                <?php for($i=1; $i < count($images); $i++): ?>
                     <li class="splide__slide px-2">
-                        <img src="<?php echo $images[$i]['full_image_url'];?>" alt="Galería Punta Monterrey <?php echo $i; ?>" class="w-100" loading="lazy" style="height:300px; object-fit:cover;">
+                        <img src="<?php echo $images[$i]['full_image_url'];?>" alt="Galería Punta Monterrey <?php echo $i; ?>" class="w-100" loading="lazy" data-fancybox="gallery-kitchen" style="height:300px; object-fit:cover;">
                     </li>
                 <?php endfor; ?>
             </ul>

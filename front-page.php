@@ -163,7 +163,7 @@
 <h2 class="text-center fw-superbold le-10 mb-3"><?php pll_e('NUESTRAS HABITACIONES');?></h2>
 <p class="col-11 col-lg-5 mx-auto text-center fw-bold fs-5 mb-5"><?php pll_e('NUESTRAS HABITACIONES ESTÁN DISEÑADAS EN FUNCIÓN DE LA COMODIDAD Y LA ARMONÍA CON NATURALEZA, SON PERFECTAS PARA RELAJARSE Y DISFRUTAR UNA VACACIÓN TROPICAL.');?></p>
 
-<?php $i==1; foreach($rooms as $room):?>
+<?php $i=1; foreach($rooms as $room):?>
     <div class="row position-relative justify-content-evenly py-5 mb-5">
 
         <img style="width:230px;" src="<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-small.webp" alt="" class="position-absolute top-0 mt-4 <?php if($i%2==0){echo'end-0 me-4';}else{echo'start-0 ms-4';} ?>" loading="lazy">
@@ -171,11 +171,11 @@
         <div class="col-12 col-lg-5 mb-3 <?php if($i%2==0){echo'order-1 order-lg-2';} ?>">
             <div id="carousel-cabin-<?php echo $room->ID; ?>" class="carousel slide">
                 <div class="carousel-inner">
-                    <?php $images = rwmb_meta('gallery', ['size'=>'large'], $room->ID); ?>
+                    <?php $images = rwmb_meta('gallery', ['size'=>'medium_large', 'limit'=>12], $room->ID); ?>
                     
                     <?php $j=0; foreach($images as $img): ?>
                         <div class="carousel-item <?php if($j==0){echo 'active';} ?>">
-                            <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:cover;" loading="lazy">
+                            <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:cover;" data-fancybox="gallery-room-<?php echo $room->ID ?>" loading="lazy">
                         </div>
                     <?php $j++; endforeach; ?>
                     
