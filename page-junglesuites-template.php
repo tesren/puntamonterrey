@@ -204,7 +204,8 @@
                         <h2 class="text-uppercase"><?php echo get_the_title($post->ID); ?></h2>
                         <div class="fw-bold mb-3"><?php pll_e('Camas');?>: <?php echo $post->bedrooms ?> | <?php pll_e('Personas');?>: <?php echo $post->people ?></div>
                         <p class="fs-5"><?php echo $post->description; ?></p>
-                        <div class="fw-bold">* <?php pll_e('El agua de todas las habitaciones es purificada.');?></div>
+                        <div class="fw-bold mb-4">* <?php pll_e('El agua de todas las habitaciones es purificada.');?></div>
+                        <a href="<?= get_the_permalink( ); ?>" class="btn btn-outline-dark col-12 col-lg-6 rounded-0 border-2 fw-bold"><?php pll_e('Más Información');?></a>
                     </div>
 
                 </div>

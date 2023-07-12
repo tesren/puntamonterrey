@@ -47,7 +47,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<nav class="navbar bg-white navbar-expand-xl sticky-top">
+<nav class="navbar bg-white navbar-expand-xl sticky-top shadow-2">
 
   <div class="container-fluid">
 

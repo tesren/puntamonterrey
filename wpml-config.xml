@@ -4,6 +4,15 @@
         <custom-field action="copy">bedrooms</custom-field>
         <custom-field action="copy">gallery</custom-field>
         <custom-field action="copy">people</custom-field>
+
+        <custom-field action="copy">two_people_low</custom-field>
+        <custom-field action="copy">three_people_low</custom-field>
+        <custom-field action="copy">four_people_low</custom-field>
+        <custom-field action="copy">two_people_high</custom-field>
+        <custom-field action="copy">three_people_high</custom-field>
+        <custom-field action="copy">four_people_high</custom-field>
+        <custom-field action="copy">currency</custom-field>
+
         
     </custom-fields>
 </wpml-config>

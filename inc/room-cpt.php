@@ -110,38 +110,6 @@ function punta_rooms_register_meta_boxes( $meta_boxes ) {
                 'required'=> true,
                 'size' => 30,
             ],
-            /* [
-                'name'  => 'Precio temporada BAJA',
-                'desc'  => 'Precio por noche en temporada baja',
-                'id'    => 'price_low',
-                'type'  => 'number',
-                'required'=> true,
-                'size' => 30,
-            ],
-            [
-                'name'  => 'Precio temporada ALTA',
-                'desc'  => 'Precio por noche en temporada alta',
-                'id'    => 'price_high',
-                'type'  => 'number',
-                'required'=> true,
-                'size' => 30,
-            ],
-            [
-                'name'            => 'Tipo de Moneda',
-                'id'              => 'currency',
-                'type'            => 'select',
-                // Array of 'value' => 'Label' pairs
-                'options'         => array(
-                    'USD'       => 'USD',
-                    'MXN'       => 'MXN',
-                ),
-                // Allow to select multiple value?
-                'multiple'        => false,
-                // Placeholder text
-                'placeholder'     => 'Seccione el tipo de moneda para los precios',
-                // Display "Select All / None" button?
-                'select_all_none' => false,
-            ], */
             [
                     'name'       => 'Tipo de Alojamiento',
                     'id'         => 'taxonomy_type',
@@ -162,16 +130,96 @@ function punta_rooms_register_meta_boxes( $meta_boxes ) {
                 'size' => 30,
             ],
             /* [
-                'name'    => 'Políticas',
-                'id'      => 'politics',
-                'type'    => 'text',
-                'placeholder'=> 'Escriba una Amenidad',
-                'clone'=> true,
-                'size' => 30,
+                'name'  => 'Amenidades',
+                'desc'  => 'Amenidades del alojamiento',
+                'placeholder'=> 'Una amenidad por campo',
+                'id'    => 'amenities',
+                'type'  => 'text',
+                'clone' => true,
+                'size' => 40,
             ], */
             
-            // More fields.
         ],
+    ];
+
+    // Add more field groups if you want
+    $meta_boxes[] = [
+        
+        'title' => 'Precios',
+        'post_types' => 'alojamiento',
+
+        'fields' => [
+            [
+                'type' => 'heading',
+                'name' => 'Temporada Baja',
+                'desc' => 'Precios para la temporada baja',
+            ],
+            [
+                'name'  => '2 Personas',
+                'desc'  => 'Precio para 2 personas',
+                'id'    => 'two_people_low',
+                'type'  => 'number',
+                'required'=> true,
+                'size' => 30,
+            ],
+            [
+                'name'  => '3 Personas',
+                'desc'  => 'Precio para 3 personas',
+                'id'    => 'three_people_low',
+                'type'  => 'number',
+                'size' => 30,
+            ],
+            [
+                'name'  => '4 Personas',
+                'desc'  => 'Precio para 4 personas',
+                'id'    => 'four_people_low',
+                'type'  => 'number',
+                'size' => 30,
+            ],
+            [
+                'type' => 'heading',
+                'name' => 'Temporada Alta',
+                'desc' => 'Precios para la temporada alta',
+            ],
+            [
+                'name'  => '2 Personas',
+                'desc'  => 'Precio para 2 personas',
+                'id'    => 'two_people_high',
+                'type'  => 'number',
+                'required'=> true,
+                'size' => 30,
+            ],
+            [
+                'name'  => '3 Personas',
+                'desc'  => 'Precio para 3 personas',
+                'id'    => 'three_people_high',
+                'type'  => 'number',
+                'size' => 30,
+            ],
+            [
+                'name'  => '4 Personas',
+                'desc'  => 'Precio para 4 personas',
+                'id'    => 'four_people_high',
+                'type'  => 'number',
+                'size' => 30,
+            ],
+            [
+                'name'            => 'Tipo de Moneda',
+                'id'              => 'currency',
+                'type'            => 'select',
+                // Array of 'value' => 'Label' pairs
+                'options'         => array(
+                    'USD'       => 'USD',
+                    'MXN'       => 'MXN',
+                ),
+                // Allow to select multiple value?
+                'multiple'        => false,
+                // Placeholder text
+                'placeholder'     => 'Seccione el tipo de moneda para los precios',
+                // Display "Select All / None" button?
+                'select_all_none' => false,
+            ], 
+        ]
     ];
 
 

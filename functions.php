@@ -928,6 +928,60 @@ function gyw_set_strings_transtaltion(){
 			'group'    =>'Pages',
 			'multiline'=>false,
 		),
+		array(
+			'name'     =>'more_info',
+			'string'   =>'Más Información',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'view_all_photos',
+			'string'   =>'VER TODAS LAS FOTOS',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'description',
+			'string'   =>'Descripción',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'guests',
+			'string'   =>'Huéspedes',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'prices_from',
+			'string'   =>'Precios desde',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'night',
+			'string'   =>'noche',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'hotel_location',
+			'string'   =>'Ubicación del Hotel',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'is_waiting',
+			'string'   =>'está esperando',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'for_you',
+			'string'   =>'por ti',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
 	);
 
 	foreach ($strings as $string ) {

@@ -6,7 +6,7 @@
 </a>
 
 <!-- Formulario de reservar de Reservar -->
-<div class="position-fixed bottom-0 bg-secondary bg-gradient start-50 px-2 px-lg-3 z-3 col-12 col-lg-6 shadow-up-3" style="transform: translateX(-50%);">
+<div class="position-fixed bottom-0 bg-secondary bg-gradient start-50 px-2 px-lg-3 z-3 col-12 col-lg-8 col-xl-6 shadow-up-3" style="transform: translateX(-50%);">
     <div class="row py-2">
         <div class="col-6 col-lg-4">
             <label for="check-in" class="text-white"><?php pll_e('Llegada');?></label>
@@ -18,7 +18,7 @@
         </div>
         
         <div class="col-12 col-lg-4 align-self-end">
-            <button type="button" id="book_now" class="btn btn-dark w-100 mb-2 mb-lg-0 rounded-0 text-uppercase fw-bold"><?php pll_e('Reservar');?></button>
+            <button type="button" id="book_now" class="btn btn-orange w-100 mb-2 mb-lg-0 rounded-0 text-uppercase fw-bold"><?php pll_e('Reservar');?></button>
         </div>
 
     </div>
@@ -48,8 +48,8 @@
         </div>
         
 
-        <div class="col-12 col-lg-3 text-center mb-4 mb-lg-0">
-            <a href="<?php echo get_the_permalink( pll_get_post(525) ); ?>" id="footer_email" class="link-light border border-2 border-white p-3 fw-bold d-block">puntamonterreyresort@gmail.com</a>
+        <div class="col-12 col-lg-5 col-xl-3 text-center mb-4 mb-lg-0">
+            <a href="<?php echo get_the_permalink( pll_get_post(525) ); ?>" id="footer_email" class="fw-bold btn btn-outline-light rounded-0 py-3">puntamonterreyresort@gmail.com</a>
 
             <address class="mt-4 d-block">
                 <?php pll_e('Carretera Intl.');?> Tepic - Vallarta Km. 113,Las Lomas, Bahía de Banderas, Nayarit, México.
@@ -130,7 +130,11 @@
     // Función para abrir la página de reservas del hotel en una nueva ventana
     function openReservationPage() {
     if (end !== "" && start !== "") {
-        window.open("https://hotels.cloudbeds.com/reservation/gcIxzG#checkin=" + start + "&checkout=" + end);
+        if (lang == "es") {
+            window.open("https://hotels.cloudbeds.com/es/reservation/gcIxzG#checkin=" + start + "&checkout=" + end);
+        } else {
+            window.open("https://hotels.cloudbeds.com/reservation/gcIxzG#checkin=" + start + "&checkout=" + end);
+        }
     } else {
         if (lang == "es") {
             alert("Debes de ingresar un rango de fechas.", "error");

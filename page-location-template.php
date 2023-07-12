@@ -24,7 +24,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
     <div class="row justify-content-center">
 
-        <div class="col-11 col-lg-6 align-self-center bg-black px-4 px-lg-5 py-3 py-lg-5 position-relative overflow-hidden my-2 my-lg-5 my-lg-0">
+        <div class="col-11 col-lg-7 align-self-center bg-black px-4 px-lg-5 py-3 py-lg-5 position-relative overflow-hidden my-2 my-lg-5 my-lg-0">
             <p class="text-white fs-6 fw-semibold mb-0"><?php echo get_field('primer_parrafo');?></p>
             <img src="<?php echo get_template_directory_uri();?>/assets/images/leave-bg.webp" alt="" class="position-absolute end-0 col-6 col-lg-3" style="top:10%;">
         </div>
@@ -32,14 +32,14 @@ $images = acf_photo_gallery('gallery', get_the_ID());
         <div class="w-100"></div>
 
 
-        <div class="col-11 col-lg-6 px-0">
+        <div class="col-11 col-lg-9 col-xl-7 px-0">
 
             <div class="row justify-content-between px-0">
                 <div class="col-12 col-lg-5 bg-light px-4 py-5 text-center mt-4" style="box-shadow: 8px 8px 0 0 #ccc;">
                     <a href="https://wa.me/523221509785?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Punta%20Monterrey" class="text-decoration-none link-dark">
                         <img width="60px" src="<?php echo get_template_directory_uri();?>/assets/icons/whatsapp.svg" alt="">
                         <div class="fs-5 fw-light my-3">Whatsapp:</div>
-                        <div class="fs-4 fw-bold">(+52) 322 150 9785</div>
+                        <div class="fs-5 fw-bold">(+52) 322 150 9785</div>
                     </a>
                 </div>
 
@@ -47,7 +47,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
                     <a href="mailto:puntamonterreyresort@gmail.com" class="text-decoration-none link-dark">
                         <img width="60px" src="<?php echo get_template_directory_uri();?>/assets/icons/mail-dark.svg" alt="">
                         <div class="fs-5 fw-light my-3">Email:</div>
-                        <div class="fs-6 fw-bold">puntamonterreyresort@gmail.com</div>
+                        <div class="fw-bold" style="font-size:0.9rem;">puntamonterreyresort@gmail.com</div>
                     </a>
                 </div>
             </div>
@@ -89,7 +89,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
     <div class="col-12 col-lg-6">
         <h3 class="text-uppercase text-center fs-4 mb-3"><?php pll_e('Desde')?> Guadalajara</h3>
         <p>
-            <?php echo get_field('vallarta_route') ?>
+            <?php echo get_field('gdl_route') ?>
         </p>
     </div>
 
