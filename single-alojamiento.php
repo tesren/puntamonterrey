@@ -49,7 +49,7 @@
 
                                 <div class="row position-absolute top-0 start-0 h-100 z-2">
                                     <div class="col-12 align-self-center text-center">
-                                        <a href="#gallery" class="link-light text-decoration-none fw-bold"><?php pll_e('VER TODAS LAS FOTOS'); ?></a>
+                                        <a href="#gallery-1" class="link-light text-decoration-none fw-bold"><?php pll_e('VER TODAS LAS FOTOS'); ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -58,6 +58,10 @@
                     </div>
 
                 </div>
+
+                <?php for($i=4; $i<count($images); $i++): ?>
+                    <img src="<?php echo $images[$i]['url']; ?>" alt="<?php echo get_the_title();?>" class="d-none" data-fancybox="gallery">
+                <?php endfor; ?>
 
             </div>
 
@@ -79,7 +83,9 @@
                 <div class="col-12 col-lg-5">
                     <div class="fs-5"><?php pll_e('Precios desde'); ?></div>
                     <div class="fs-2">
-                        $<?= number_format(rwmb_meta('two_people_low'),2) ?> <?= rwmb_meta('currency') ?>
+                        <span data-bs-toggle="tooltip" data-bs-title="<?php pll_e('Precio para 2 personas en TEMPORADA BAJA'); ?>">
+                            $<?= number_format(rwmb_meta('two_people_low'),2) ?> <?= rwmb_meta('currency') ?>
+                        </span>
                         <span class="fs-5">/ <?php pll_e('noche'); ?></span>
                     </div>
                 </div>
@@ -425,21 +431,21 @@
             <div class="text-secondary mb-3">Punta Monterrey, Nayarit</div>
             <iframe class="mb-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.3907141832815!2d-105.38706050541438!3d20.93681897514492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84213d41a5051e37%3A0x41b203849aefa439!2sPunta%20Monterrey%20Tropical%20Beach%20Resort!5e0!3m2!1ses-419!2smx!4v1689097014256!5m2!1ses-419!2smx" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-            <div class="text-center my-6">
-                <img class="rounded-circle mb-3" src="<?php echo $images[0]['url'];?>" alt="<?php echo $images[0]['title'];?>" style="object-fit:cover; width:200px; height:200px;">
-                <h4 class="text-uppercase fs-2 mb-3">
-                    <span class="fw-bold d-block">Punta Monterrey </span>
-                    <span class="fw-light"><?php pll_e('está esperando');?> </span>
-                    <span class="fw-bold"><?php pll_e('por ti');?></span>
-                </h4>
+        </div>
 
-                <?php if(pll_current_language() == 'es'): ?>
-                    <a href="https://hotels.cloudbeds.com/es/reservation/gcIxzG#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5"><?php pll_e('Reservar'); ?></a>
-                <?php else: ?>
-                    <a href="https://hotels.cloudbeds.com/reservation/gcIxzG#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5"><?php pll_e('Reservar'); ?></a>
-                <?php endif; ?>
+        <div class="text-center" style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp'); padding:90px 0;">
+            <img class="rounded-circle mb-3" src="<?php echo $images[0]['url'];?>" alt="<?php echo $images[0]['title'];?>" style="object-fit:cover; width:200px; height:200px;">
+            <h4 class="text-uppercase fs-2 mb-3">
+                <span class="fw-bold d-block">Punta Monterrey </span>
+                <span class="fw-light"><?php pll_e('está esperando');?> </span>
+                <span class="fw-bold"><?php pll_e('por ti');?></span>
+            </h4>
 
-            </div>
+            <?php if(pll_current_language() == 'es'): ?>
+                <a href="https://hotels.cloudbeds.com/es/reservation/gcIxzG#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5"><?php pll_e('Reservar'); ?></a>
+            <?php else: ?>
+                <a href="https://hotels.cloudbeds.com/reservation/gcIxzG#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5"><?php pll_e('Reservar'); ?></a>
+            <?php endif; ?>
 
         </div>
 

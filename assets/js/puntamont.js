@@ -32,3 +32,6 @@ function share(titulo, texto, url){
       .catch((error) => console.log('Error sharing', error));
   }
 }
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

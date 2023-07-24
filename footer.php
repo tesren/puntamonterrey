@@ -7,14 +7,12 @@
 
 <!-- Formulario de reservar de Reservar -->
 <div class="position-fixed bottom-0 bg-secondary bg-gradient start-50 px-2 px-lg-3 z-3 col-12 col-lg-8 col-xl-6 shadow-up-3" style="transform: translateX(-50%);">
-    <div class="row py-2">
+    <div class="row py-3">
         <div class="col-6 col-lg-4">
-            <label for="check-in" class="text-white"><?php pll_e('Llegada');?></label>
-            <input class="form-control" type="date" name="check-in" placeholder="Llegada" id="check-in" min="<?php echo Carbon::now()->addDay()->format('Y-m-d'); ?>">
+            <input class="form-control" type="date" name="check-in" placeholder="<?php pll_e('Llegada');?>" id="check-in" >
         </div>
         <div class="col-6 col-lg-4 mb-3 mb-lg-0">
-            <label for="check-out" class="text-white"><?php pll_e('Salida');?></label>
-            <input class="form-control" type="date" name="check-out" id="check-out" min="<?php echo Carbon::now()->addDays(2)->format('Y-m-d'); ?>">
+            <input class="form-control" type="date" name="check-out" placeholder="<?php pll_e('Salida');?>" id="check-out" >
         </div>
         
         <div class="col-12 col-lg-4 align-self-end">
@@ -89,6 +87,9 @@
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/fancybox.umd.js" defer></script>
 
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/flatpicker.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/flatpicker_es.min.js"></script>
+
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/puntamont.js" defer></script>
 
 <script>
@@ -97,9 +98,35 @@
     var end = "";
     var lang = '<?php echo pll_current_language(); ?>';
 
+    var fecha1Input = document.getElementById("check-in");
+    var fecha2Input = document.getElementById("check-out");
+
+    //flatpicker para ambas fechas
+    flatpickr(fecha1Input, {
+        minDate: "<?php echo Carbon::now()->addDay()->format('Y-m-d'); ?>",
+        locale : "<?php echo pll_current_language(); ?>",
+        onChange: function(selectedDates, dateStr, instance) {
+            if (selectedDates.length > 0) {
+            const nextDay = new Date(selectedDates[0]);
+            nextDay.setDate(nextDay.getDate() + 1);
+
+            const year = nextDay.getFullYear();
+            const month = (nextDay.getMonth() + 1).toString().padStart(2, "0");
+            const day = nextDay.getDate().toString().padStart(2, "0");
+
+            const nextDayFormatted = `${year}-${month}-${day}`;
+
+            fecha2Input._flatpickr.set("minDate", nextDayFormatted);
+            }
+        }
+    });
+
+    flatpickr(fecha2Input, {
+        minDate: "<?php echo Carbon::now()->addDay()->format('Y-m-d'); ?>",
+        locale : "<?php echo pll_current_language(); ?>",
+    });
 
     // Selección de fecha de llegada
-    var fecha1Input = document.getElementById("check-in");
     fecha1Input.addEventListener("input", function(e) {
         console.log(e.target.value);
         fecha1 = e.target.value;
@@ -107,25 +134,11 @@
     });
 
     // Selección de fecha de salida
-    var fecha2Input = document.getElementById("check-out");
     fecha2Input.addEventListener("input", function(e) {
         endDate = new Date(e.target.value);
         end = e.target.value;
     });
 
-    fecha1Input.addEventListener("change", () => {
-        const checkInDate = new Date(fecha1Input.value);
-        const nextDay = new Date(checkInDate);
-        nextDay.setDate(checkInDate.getDate() + 2);
-
-        const year = nextDay.getFullYear();
-        const month = (nextDay.getMonth() + 1).toString().padStart(2, "0");
-        const day = nextDay.getDate().toString().padStart(2, "0");
-
-        const nextDayFormatted = `${year}-${month}-${day}`;
-
-        fecha2Input.setAttribute("min", nextDayFormatted);
-    });
 
     // Función para abrir la página de reservas del hotel en una nueva ventana
     function openReservationPage() {

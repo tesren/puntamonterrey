@@ -31,6 +31,9 @@
     <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/fancybox.min.css" as="style">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/fancybox.min.css">
 
+    <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/flatpicker.min.css" as="style">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/flatpicker.min.css">
+
     <?php if( !is_front_page() ): ?>
       <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/splide.min.css" as="style">
       <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/splide.min.css">
