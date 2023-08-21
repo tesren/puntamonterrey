@@ -55,27 +55,29 @@
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'mail.puntamonterrey.com';              //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'info@puntamonterrey.com';                     //SMTP username
-                $mail->Password   = 'montPunta$23';                               //SMTP password
+                $mail->Username   = 'info@puntamonterrey.com';              //SMTP username
+                $mail->Password   = 'montPunta$23';                         //SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                 $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                $mail->CharSet = 'UTF-8';                                   // Set the character encoding to UTF-8
+                $mail->Encoding = 'base64';
 
                 //Recipients
                 $mail->setFrom('info@puntamonterrey.com', 'Punta Monterrey');
-                $mail->addAddress('puntamonterreyresort@gmail.com');               //Name is optional
+                $mail->addAddress('puntamonterreyresort@gmail.com');        //Name is optional
                 $mail->addReplyTo('info@puntamonterrey.com', 'Information');
                 $mail->addBCC('erick@punto401.com');
 
                 //Content
-                $mail->isHTML(false);                                  //Set email format to HTML
+                $mail->isHTML(true);
                 $mail->Subject = 'Contacto desde el sitio web de Punta Monterrey';
-                $mail->Body = "Un cliente ha dejado sus datos en un formulario del sitio web de Punta Monterrey"."\r\n"."\r\n";
-                $mail->Body .= "Info del cliente"."\r\n";
-                $mail->Body .= "Nombre: ".$client_name." \r\n";
-                $mail->Body .= "Email: ".$client_email." \r\n";
-                $mail->Body .= "Tel: ".$client_phone." \r\n";
-                $mail->Body .= "Mensaje: ".$client_message." \r\n"."\r\n";
-                $mail->Body .= "Contacto desde ".home_url()." \r\n";
+                $mail->Body = "<p>Un cliente ha dejado sus datos en un formulario del sitio web de Punta Monterrey</p>";
+                $mail->Body .= "<p>Info del cliente:</p>";
+                $mail->Body .= "<p>Nombre: " . htmlspecialchars($client_name) . "</p>";
+                $mail->Body .= "<p>Email: " . htmlspecialchars($client_email) . "</p>";
+                $mail->Body .= "<p>Tel: " . htmlspecialchars($client_phone) . "</p>";
+                $mail->Body .= "<p>Mensaje: " . htmlspecialchars($client_message) . "</p>";
+                $mail->Body .= "<p>Contacto desde " . home_url() . "</p>";
 
                 $mail->send();
                 

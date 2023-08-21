@@ -84,7 +84,7 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 <h2 class="text-center mb-4 mb-lg-5 px-4 px-lg-0">
     <span class="fw-bold">Punta Monterrey</span>
-     Beach Resort <?php pll_e('es')?>
+    <?php pll_e('Reserva ecológica y Comunidad es')?>
 </h2>
 
 <div class="row justify-content-center mb-6">

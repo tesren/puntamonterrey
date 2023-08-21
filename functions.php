@@ -982,6 +982,12 @@ function gyw_set_strings_transtaltion(){
 			'group'    =>'Single Rooms',
 			'multiline'=>false,
 		),
+		array(
+			'name'     =>'eco_reserve_community',
+			'string'   =>'Reserva ecológica y Comunidad es',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
 	);
 
 	foreach ($strings as $string ) {

@@ -129,6 +129,13 @@ function punta_rooms_register_meta_boxes( $meta_boxes ) {
                 'type'  => 'number',
                 'size' => 30,
             ],
+            [
+                'name'  => 'Enlace Único',
+                'desc'  => 'Link del sistema de reservas hotels cloudbeds',
+                'id'    => 'cloud_link',
+                'type'  => 'text',
+                'size' => 40,
+            ],
             /* [
                 'name'  => 'Amenidades',
                 'desc'  => 'Amenidades del alojamiento',

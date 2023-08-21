@@ -442,9 +442,29 @@
             </h4>
 
             <?php if(pll_current_language() == 'es'): ?>
-                <a href="https://hotels.cloudbeds.com/es/reservation/gcIxzG#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5"><?php pll_e('Reservar'); ?></a>
+
+                <?php if( rwmb_meta('cloud_link') ):?>
+                    <a href="<?php echo rwmb_meta('cloud_link'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5">
+                        <?php pll_e('Reservar'); ?>
+                    </a>
+                <?php else: ?>
+                    <a href="https://hotels.cloudbeds.com/es/reservation/gcIxzG#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5">
+                        <?php pll_e('Reservar'); ?>
+                    </a>
+                <?php endif; ?>
+
             <?php else: ?>
-                <a href="https://hotels.cloudbeds.com/reservation/gcIxzG#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5"><?php pll_e('Reservar'); ?></a>
+
+                <?php if( rwmb_meta('cloud_link') ):?>
+                    <a href="<?php echo rwmb_meta('cloud_link'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5">
+                        <?php pll_e('Reservar'); ?>
+                    </a>
+                <?php else: ?>
+                    <a href="https://hotels.cloudbeds.com/reservation/gcIxzG#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5">
+                        <?php pll_e('Reservar'); ?>
+                    </a>
+                <?php endif; ?>
+
             <?php endif; ?>
 
         </div>
