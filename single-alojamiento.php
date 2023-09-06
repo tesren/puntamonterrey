@@ -327,7 +327,11 @@
                                 <div class="d-flex justify-content-start mb-4">
                                     <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-1.png"></div>
                                     <div>
-                                        1 <?php pll_e('cama King size y tapanco con 2 camas individuales.');?>
+                                        <?php if($post->ID == 588 or $post->ID == 306 ): ?>
+                                            1 <?php pll_e('cama King size y tapanco con 1 cama queen size.');?>
+                                        <?php else: ?>
+                                            1 <?php pll_e('cama King size y tapanco con 2 camas individuales.');?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start mb-4 align-items-center">

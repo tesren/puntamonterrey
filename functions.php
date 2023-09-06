@@ -988,6 +988,66 @@ function gyw_set_strings_transtaltion(){
 			'group'    =>'Single Rooms',
 			'multiline'=>false,
 		),
+		array(
+			'name'     =>'king_size_queen_size',
+			'string'   =>'cama King size y tapanco con 1 cama queen size.',
+			'group'    =>'Single Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'mexican_bussines',
+			'string'   =>'Empresa 100% Mexicana',
+			'group'    =>'Footer',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'dates_validation_book',
+			'string'   =>'La fecha de salida debe ser después que la fecha de llegada.',
+			'group'    =>'Footer',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'send_us_a_message',
+			'string'   =>'Envíanos un mensaje',
+			'group'    =>'Contact Form',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'contact_name',
+			'string'   =>'Nombre',
+			'group'    =>'Contact Form',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'contact_phone',
+			'string'   =>'Teléfono',
+			'group'    =>'Contact Form',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'contact_message',
+			'string'   =>'Mensaje',
+			'group'    =>'Contact Form',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'contact_send',
+			'string'   =>'Enviar',
+			'group'    =>'Contact Form',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'developved_by',
+			'string'   =>'Desarrollado por',
+			'group'    =>'Footer',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'thanks_message',
+			'string'   =>'Gracias, su mensaje ha sido enviado',
+			'group'    =>'Contact Form',
+			'multiline'=>false,
+		),
 	);
 
 	foreach ($strings as $string ) {

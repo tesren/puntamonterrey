@@ -106,11 +106,11 @@
         <form action="" method="post">
             <?php wp_nonce_field( -1, '_wpnonce', true, true); ?>
 
-            <div class="fs-5 mb-3">Envíanos un mensaje</div>
+            <div class="fs-5 mb-3"><?php pll_e('Envíanos un mensaje')?></div>
 
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Nombre" required>
-                <label for="floatingInput">Nombre</label>
+                <label for="floatingInput"><?php pll_e('Nombre')?></label>
             </div>
 
             <div class="d-none">
@@ -119,26 +119,26 @@
 
             <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="client_email" name="client_email" placeholder="Email" required>
-                <label for="floatingInput">Email</label>
+                <label for="floatingInput"><?php pll_e('Email')?></label>
             </div>
 
             <div class="form-floating mb-3">
                 <input type="phone" class="form-control" id="client_phone" name="client_phone" placeholder="Teléfono">
-                <label for="client_phone">Teléfono</label>
+                <label for="client_phone"><?php pll_e('Teléfono')?></label>
             </div>
 
             <div class="form-floating mb-4">
                 <textarea class="form-control" placeholder="Escribe tu mensaje" id="client_message" name="client_message" style="height: 130px"></textarea>
-                <label for="floatingTextarea">Mensaje</label>
+                <label for="floatingTextarea"><?php pll_e('Mensaje')?></label>
             </div>
 
-            <input type="submit" name="submit" value="Enviar" <?php if(isset($_GET['form-submitted'])){echo 'disabled';}; ?> class="btn btn-dark w-100 rounded-0">
+            <input type="submit" name="submit" value="<?php pll_e('Enviar') ?>" <?php if(isset($_GET['form-submitted'])){echo 'disabled';}; ?> class="btn btn-dark w-100 rounded-0">
 
         </form>
 
         <?php if(isset($_GET['form-submitted'])):?>
             <div class="fs-5 text-success text-center my-3">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/icons/circle-check-regular.svg" alt="" width="20px"> Gracias, su mensaje ha sido enviado
+                <img src="<?php echo get_template_directory_uri() ?>/assets/icons/circle-check-regular.svg" alt="" width="20px"> <?php pll_e('Gracias, su mensaje ha sido enviado')?>
             </div>
         <?php endif;?>
 
