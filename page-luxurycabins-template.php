@@ -99,7 +99,7 @@
                 </div>
             </div>
 
-            <div class="row justify-content-center position-relative z-1 my-5">
+            <!-- <div class="row justify-content-center position-relative z-1 my-5">
                 <div class="col-11 col-lg-6 bg-white p-3 p-lg-5" style="box-shadow: 5px 5px 0 0 #ccc;">
                 
                     <div class="pt-2 mb-4 text-center text-uppercase">
@@ -165,7 +165,7 @@
                     <div class="fs-6 fw-bold text-center">* <?php pll_e('Tarifas sujetas a cambio sin previo aviso, aplican restricciones.');?></div>
 
                 </div>
-            </div>
+            </div> -->
 
         </div>
 

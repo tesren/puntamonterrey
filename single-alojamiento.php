@@ -80,7 +80,7 @@
                     <div class="fs-2"><?= rwmb_meta('bedrooms') ?></div>
                 </div>
 
-                <div class="col-12 col-lg-5">
+                <!-- <div class="col-12 col-lg-5">
                     <div class="fs-5"><?php pll_e('Precios desde'); ?></div>
                     <div class="fs-2">
                         <span data-bs-toggle="tooltip" data-bs-title="<?php pll_e('Precio para 2 personas en TEMPORADA BAJA'); ?>">
@@ -88,7 +88,8 @@
                         </span>
                         <span class="fs-5">/ <?php pll_e('noche'); ?></span>
                     </div>
-                </div>
+                </div> -->
+
             </div>
 
             <hr class="w-100 my-5">
@@ -448,7 +449,7 @@
             <?php if(pll_current_language() == 'es'): ?>
 
                 <?php if( rwmb_meta('cloud_link') ):?>
-                    <a href="<?php echo rwmb_meta('cloud_link'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5">
+                    <a href="https://hotels.cloudbeds.com/es/reservation/gcIxzG#room_type=<?php echo rwmb_meta('cloud_link'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5">
                         <?php pll_e('Reservar'); ?>
                     </a>
                 <?php else: ?>
@@ -460,7 +461,7 @@
             <?php else: ?>
 
                 <?php if( rwmb_meta('cloud_link') ):?>
-                    <a href="<?php echo rwmb_meta('cloud_link'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5">
+                    <a href="https://hotels.cloudbeds.com/reservation/gcIxzG#room_type=<?php echo rwmb_meta('cloud_link'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5">
                         <?php pll_e('Reservar'); ?>
                     </a>
                 <?php else: ?>

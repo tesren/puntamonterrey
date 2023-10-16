@@ -12,6 +12,7 @@
         <custom-field action="copy">three_people_high</custom-field>
         <custom-field action="copy">four_people_high</custom-field>
         <custom-field action="copy">currency</custom-field>
+        <custom-field action="copy">cloud_link</custom-field>
 
         
     </custom-fields>

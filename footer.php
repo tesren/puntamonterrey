@@ -119,20 +119,22 @@
             locale : "<?php echo pll_current_language(); ?>",
             onChange: function(selectedDates, dateStr, instance) {
                 if (selectedDates.length > 0) {
-                const nextDay = new Date(selectedDates[0]);
-                nextDay.setDate(nextDay.getDate() + 1);
+                    const nextDay = new Date(selectedDates[0]);
+                    nextDay.setDate(nextDay.getDate() + 1);
 
-                const year = nextDay.getFullYear();
-                const month = (nextDay.getMonth() + 1).toString().padStart(2, "0");
-                const day = nextDay.getDate().toString().padStart(2, "0");
+                    const year = nextDay.getFullYear();
+                    const month = (nextDay.getMonth() + 1).toString().padStart(2, "0");
+                    const day = nextDay.getDate().toString().padStart(2, "0");
 
-                const nextDayFormatted = `${year}-${month}-${day}`;
+                    const nextDayFormatted = `${year}-${month}-${day}`;
 
-                fecha2Input._flatpickr.set("minDate", nextDayFormatted);
-                fecha2Input.setAttribute('min', nextDayFormatted)
+                    fecha2Input._flatpickr.set("minDate", nextDayFormatted);
+                    fecha2Input.setAttribute('min', nextDayFormatted);
 
                     if( typeof fecha2Input._flatpickr.selectedDates[0] === 'undefined'){
                         fecha2Input._flatpickr.setDate(nextDayFormatted);
+                        fecha2Input.setAttribute('value', nextDayFormatted);
+                        end = nextDayFormatted;
                     }
 
                 }
@@ -171,7 +173,7 @@
     });
 
     // Selección de fecha de salida
-    fecha2Input.addEventListener("input", function(e) {
+    fecha2Input.addEventListener("change", function(e) {
         endDate = new Date(e.target.value);
         end = e.target.value;
     });
@@ -185,9 +187,9 @@
         }
     } else {
         if (lang == "es") {
-            alert("Debes de ingresar un rango de fechas.", "error");
+            alert("Debes de ingresar un rango de fechas válido.", "error");
         } else {
-            alert("You must enter a date range.", "error");
+            alert("You must enter a valid date range.", "error");
         }
     }
     }

@@ -130,8 +130,8 @@ function punta_rooms_register_meta_boxes( $meta_boxes ) {
                 'size' => 30,
             ],
             [
-                'name'  => 'Enlace Único',
-                'desc'  => 'Link del sistema de reservas hotels cloudbeds',
+                'name'  => 'Código Único',
+                'desc'  => 'Código del alojamiento del sistema de reservas hotels cloudbeds',
                 'id'    => 'cloud_link',
                 'type'  => 'text',
                 'size' => 40,
