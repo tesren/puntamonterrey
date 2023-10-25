@@ -99,8 +99,43 @@ $images = acf_photo_gallery('gallery', get_the_ID());
     <h3 class="text-uppercase fw-bold"><?php pll_e('Ubicación')?></h3>
     <iframe class="z-3 position-relative" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3791.5453481905665!2d-105.3868452196413!3d20.935452704446032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84213d41a5051e37%3A0x41b203849aefa439!2sPunta%20Monterrey%20Tropical%20Beach%20Resort!5e0!3m2!1ses-419!2smx!4v1678224348013!5m2!1ses-419!2smx" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <img class="d-none d-lg-block position-absolute z-1" style="width:300px; right:0; bottom:-25px;" src="<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-small.webp" alt="" loading="lazy">
-
 </div>
+
+<!-- Otros Hoteles -->
+<section class="container row justify-content-center mb-6">
+    <h3 class="text-uppercase text-center fw-bold mb-5"><?php pll_e('Otros hoteles que recomendamos')?></h3>
+
+    <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+
+        <a href="https://www.puntomita.com/" class="text-decoration-none link-dark">
+            <div class="card w-100 rounded-0 shadow-4">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/puntomita.webp" class="w-100" alt="Hotel Punto Mita en Nayarit" loading="lazy">
+                <div class="card-body">
+                    <div class="card-title text-center fw-bold fs-3">Punto Mita</div>
+                    <p class="card-text"><?php pll_e('Punto Mita el alojamiento más ecológico en el corazón de Punta de Mita a solo 4 cuadras de la playa. Un espacio innovador y amigable con 12 Suites de lujo y un Eco Hostal. En nuestra terraza encontrarás nuestra cafetería con vista panorámica al mar, las islas Marietas y el Cerro del Mono.')?></p>
+                    <div class="btn btn-outline-dark rounded-0 w-100"><?php pll_e('Visitar')?></div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+    <div class="col-12 col-lg-4">
+
+        <a href="https://palmartropical.com/" class="text-decoration-none link-dark">
+            <div class="card w-100 rounded-0 shadow-4">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/palmar.webp" class="w-100" alt="Hotel Punto Mita en Nayarit" loading="lazy">
+                <div class="card-body">
+                    <div class="card-title text-center fw-bold fs-3">Palmar Tropical</div>
+                    <p class="card-text"><?php pll_e('PALMAR Hotel Tropical es un hotel boutique en el corazón de San Pancho (San Francisco, Nayarit). A menos de cinco minutos a pie de la playa, cerca de restaurantes y tiendas y sigue siendo un santuario tranquilo. Toma una clase de yoga o simplemente relájate en la piscina. Concepto ecológico en el diseño contemporáneo mexicano.')?></p>
+                    <div class="btn btn-outline-dark rounded-0 w-100"><?php pll_e('Visitar')?></div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+</section>
 
 
 

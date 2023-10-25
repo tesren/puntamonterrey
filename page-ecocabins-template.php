@@ -59,7 +59,6 @@
                 <div class="col-12 col-lg-8 align-self-center text-center text-white">
                     <h1 class="fw-bold text-uppercase"><?php echo get_the_title(); ?></h1>
                     <hr class="col-10 col-lg-5 mx-auto">
-                    <h2 class="text-uppercase fw-normal"><?php pll_e('Tarifas');?></h2>
                 </div>
             </div>
 
@@ -93,7 +92,7 @@
                 <div class="col-10 col-lg-auto mb-3 text-center">
                     <div class="btn btn-outline-dark active rounded-0 px-5 py-3 w-100" style="box-shadow: 5px 5px 0 0 #ccc;">
                         <div class="fw-bold fs-5 text-uppercase"><?php echo get_the_title();?></div>
-                        2-4 <?php pll_e('Personas');?>
+                        2 <?php pll_e('Personas');?>
                     </div>
                 </div>
             </div>

@@ -71,7 +71,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="offcanvas-header">
         
         <div class="offcanvas-title" id="offcanvasNavbarLabel">
-          <img src="<?php echo get_template_directory_uri();?>/assets/images/logo-punta.webp"
+          <img src="<?php echo get_template_directory_uri();?>/assets/images/new-logo-punta.webp"
             width="185"
             height="auto"
             alt="Logo de Punta Monterrey">

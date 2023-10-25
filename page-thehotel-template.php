@@ -35,6 +35,13 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 </div>
 
+<!-- Misión y Visión -->
+<div class="row justify-content-center mb-6">
+    <div class="col-11 col-lg-10 fs-5">
+        <?php echo get_field('mision_vision'); ?>
+    </div>
+</div>
+
 <!--Segundo parrafo-->
 <div class="row justify-content-evenly mb-6">
     <div class="col-11 col-lg-4 align-self-center order-2 order-lg-1 mt-3 mt-lg-0 text-center">

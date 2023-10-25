@@ -1048,6 +1048,24 @@ function gyw_set_strings_transtaltion(){
 			'group'    =>'Contact Form',
 			'multiline'=>false,
 		),
+		array(
+			'name'     =>'other_hotels',
+			'string'   =>'Otros hoteles que recomendamos',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'punto_mita_desc',
+			'string'   =>'Punto Mita el alojamiento más ecológico en el corazón de Punta de Mita a solo 4 cuadras de la playa. Un espacio innovador y amigable con 12 Suites de lujo y un Eco Hostal. En nuestra terraza encontrarás nuestra cafetería con vista panorámica al mar, las islas Marietas y el Cerro del Mono.',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'palmar_desc',
+			'string'   =>'PALMAR Hotel Tropical es un hotel boutique en el corazón de San Pancho (San Francisco, Nayarit). A menos de cinco minutos a pie de la playa, cerca de restaurantes y tiendas y sigue siendo un santuario tranquilo. Toma una clase de yoga o simplemente relájate en la piscina. Concepto ecológico en el diseño contemporáneo mexicano.',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
 	);
 
 	foreach ($strings as $string ) {
