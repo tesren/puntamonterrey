@@ -90,6 +90,7 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 
 require get_template_directory().'/inc/room-cpt.php';
 require get_template_directory().'/inc/messages-cpt.php';
+require get_template_directory().'/inc/retreats-cpt.php';
 require get_template_directory().'/inc/room-politics-cpt.php';
 require get_template_directory().'/inc/wedding-cpt.php';
 
@@ -1066,6 +1067,102 @@ function gyw_set_strings_transtaltion(){
 			'group'    =>'Pages',
 			'multiline'=>false,
 		),
+		array(
+			'name'     =>'prox_retreats',
+			'string'   =>'Próximos retiros',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'retreat_dates',
+			'string'   =>'Fechas',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'organizer',
+			'string'   =>'Organizador',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'visit_website',
+			'string'   =>'Visitar sitio web',
+			'group'    =>'Pages',
+			'multiline'=>false,
+		),
+		array(
+			'name'     => 'january',
+			'string'   => 'January',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'february',
+			'string'   => 'February',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'march',
+			'string'   => 'March',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'april',
+			'string'   => 'April',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'may',
+			'string'   => 'May',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'june',
+			'string'   => 'June',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'july',
+			'string'   => 'July',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'august',
+			'string'   => 'August',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'september',
+			'string'   => 'September',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'october',
+			'string'   => 'October',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'november',
+			'string'   => 'November',
+			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'december',
+			'string'   => 'December',
+			'group'    => 'Months',
+			'multiline' => false,
+		)
 	);
 
 	foreach ($strings as $string ) {

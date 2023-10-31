@@ -1,9 +1,26 @@
 <?php
-/*
- Template Name: Plantilla Retiros de Yoga
-  */
-get_header();
-$images = acf_photo_gallery('gallery', get_the_ID());
+    /*
+        Template Name: Plantilla Retiros de Yoga
+    */
+    get_header();
+    $images = acf_photo_gallery('gallery', get_the_ID());
+
+    $current_date = date('Y-m-d'); // Obtiene la fecha actual en el formato YYYY-MM-DD
+
+    $retreats = get_posts([
+        'numberposts' => '-1',
+        'post_type' => 'retreat',
+        'orderby' => 'start_date',
+        'order' => 'asc',
+        'meta_query' => [
+            [
+                'key' => 'start_date', // Reemplaza 'start_date' con el nombre correcto del campo meta
+                'value' => $current_date,
+                'compare' => '>',
+                'type' => 'DATE', // Indica que estamos trabajando con fechas
+            ],
+        ],
+    ]);
 ?>
 
 <div class="position-relative">
@@ -75,6 +92,45 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 </div>
 
+<!-- Proximos eventos -->
+<?php if( count($retreats) > 0 ): ?>
+    <section class="container row justify-content-center mb-6">
+
+        <h2 class="text-center mb-5 fs-1"><?php pll_e('Próximos retiros'); ?></h2>
+
+        <?php foreach($retreats as $retreat): ?>
+
+            <?php 
+                $ret_imgs = rwmb_meta('retreat_gallery', ['limit'=>1, 'size'=>'medium_large'], $retreat->ID); 
+                $start = date('d/F/Y', strtotime($retreat->start_date));
+                $end_date = date('d/F/Y', strtotime($retreat->end_date));
+            ?>
+
+                <div class="col-11 px-0 card mb-3 rounded-0 shadow-2 retreat-card">
+                    <a href="<?php echo get_the_permalink( $retreat->ID ) ?>" class="link-dark text-decoration-none">
+
+                        <div class="row g-0">
+                            <div class="col-lg-4">
+                                <img src="<?php echo $ret_imgs[0]['url'];?>" class="w-100 h-100" alt="<?php echo get_the_title($retreat->ID); ?>" style="object-fit:cover;">
+                            </div>
+                            <div class="col-lg-8">
+                            <div class="card-body">
+                                <h3 class="card-title fs-4"><?php echo get_the_title($retreat->ID); ?></h3>
+                                <p class="card-text"><?php echo get_the_excerpt($retreat->ID); ?></p>
+                                <p class="card-text">
+                                    <small class="text-body-secondary"><?php pll_e('Fechas'); ?>: <?php echo $start.' - '.$end_date; ?></small>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+        <?php endforeach; ?>
+
+    </section>
+<?php endif; ?>
+
 <!--Tercer parrafo-->
 <div class="row justify-content-center mb-6">
     <div class="col-11 col-lg-10 fs-5">
@@ -84,10 +140,10 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 <!-- PET & ECO FRIENDLY -->
 
-<h2 class="text-center mb-4 mb-lg-5">
+<h4 class="text-center fs-2 mb-4 mb-lg-5">
     <span class="fw-bold">Punta Monterrey</span>
     <?php pll_e('cuenta con platillos')?>
-</h2>
+</h4>
 
 <div class="row justify-content-center mb-6">
 
