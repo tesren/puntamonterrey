@@ -90,6 +90,7 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 
 require get_template_directory().'/inc/room-cpt.php';
 require get_template_directory().'/inc/messages-cpt.php';
+require get_template_directory().'/inc/massage-cpt.php';
 require get_template_directory().'/inc/retreats-cpt.php';
 require get_template_directory().'/inc/room-politics-cpt.php';
 require get_template_directory().'/inc/wedding-cpt.php';
@@ -1161,6 +1162,18 @@ function gyw_set_strings_transtaltion(){
 			'name'     => 'december',
 			'string'   => 'December',
 			'group'    => 'Months',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'massage',
+			'string'   => 'Masaje',
+			'group'    => 'Masajes',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'available_massages',
+			'string'   => 'MASAJES DISPONIBLES',
+			'group'    => 'Masajes',
 			'multiline' => false,
 		)
 	);

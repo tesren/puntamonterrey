@@ -36,7 +36,7 @@
             </div>
         </div>
                        
-        <div class="container row justify-content-center my-5">
+        <div class="container row justify-content-center my-5 position-relative">
 
             <div class="col-12 col-lg-9 px-2 px-lg-5 mb-5 mb-lg-0 align-self-center">
                 <small><?php pll_e('Fechas'); ?></small>
@@ -47,7 +47,7 @@
             
             <?php $img_leader = rwmb_meta('leader_image', ['limit'=>1, 'size'=>'medium']); ?>
             <?php if( isset($img_leader) ): ?>
-                <div class="col-12 col-lg-3 mx-auto card my-5 align-self-center px-0">
+                <div class="col-12 col-lg-3 mx-auto card my-5 px-0 align-self-start">
                     <img src="<?php echo $img_leader[0]['url'] ?>" alt="<?php echo rwmb_meta('leader_name');?>" class="card-img-top">
                     <div class="card-body text-center">
                         <h5 class="card-title"><?php echo rwmb_meta('leader_name');?></h5>
@@ -78,31 +78,7 @@
             </section>
         <?php endif; ?>
 
-        <div class="text-center" style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/stripe-bg-min.webp'); padding:90px 0;">
-
-            <img class="rounded-circle mb-3" src="<?php echo get_template_directory_uri();?>/assets/images/home-1.webp" alt="<?php echo $images[0]['title'];?>" style="object-fit:cover; width:200px; height:200px;">
-            
-            <h4 class="text-uppercase fs-2 mb-3">
-                <span class="fw-bold d-block">Punta Monterrey </span>
-                <span class="fw-light"><?php pll_e('está esperando');?> </span>
-                <span class="fw-bold"><?php pll_e('por ti');?></span>
-            </h4>
-
-            <?php if(pll_current_language() == 'es'): ?>
-
-                <a href="https://hotels.cloudbeds.com/es/reservation/gcIxzG#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5">
-                    <?php pll_e('Reservar'); ?>
-                </a>
-               
-            <?php else: ?>
- 
-                <a href="https://hotels.cloudbeds.com/reservation/gcIxzG#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 py-3 px-5">
-                    <?php pll_e('Reservar'); ?>
-                </a>
-
-            <?php endif; ?>
-
-        </div>
+        
 
 
     <?php endwhile; ?>
