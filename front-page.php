@@ -112,6 +112,15 @@
         <div class="carousel-item">
         <img src="<?php echo get_template_directory_uri();?>/assets/images/home-3.webp" class="d-block w-100" alt="Punta Monterrey Recámara" style="height:86vh; object-fit:cover;" loading="lazy">
         </div>
+        <div class="carousel-item">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/home-4.webp" class="d-block w-100" alt="Punta Monterrey" style="height:86vh; object-fit:cover;" loading="lazy">
+        </div>
+        <div class="carousel-item">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/home-5.webp" class="d-block w-100" alt="Punta Monterrey" style="height:86vh; object-fit:cover;" loading="lazy">
+        </div>
+        <div class="carousel-item">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/home-6.webp" class="d-block w-100" alt="Punta Monterrey" style="height:86vh; object-fit:cover;" loading="lazy">
+        </div>
     </div>
 
     <button class="carousel-control-prev z-3" type="button" data-bs-target="#frontCarousel" data-bs-slide="prev" style="width:9%;">

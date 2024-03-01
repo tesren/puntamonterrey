@@ -80,6 +80,13 @@ function retreats_register_meta_boxes( $meta_boxes ) {
                 'desc' =>   'Sitio web del retiro',
             ],
             [
+                'name' => 'Redirigir a sitio web',
+                'desc' => 'Marque esta casilla si desea redirigir directamente al sitio web del anfitrión',
+                'id'   => 'redirect_web',
+                'type' => 'checkbox',
+                'std'  => 0, // 0 or 1
+            ],
+            [
                 'type' =>   'text',
                 'name' =>   'Nombre del organizador',
                 'id'   =>   'leader_name',

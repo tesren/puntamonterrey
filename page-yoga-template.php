@@ -23,15 +23,52 @@
     ]);
 ?>
 
-<div class="position-relative">
 
-    <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>" alt="<?php echo get_the_title(); ?>" class="w-100" style="height:87vh; object-fit:cover;">
+<div id="yogaCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
+
+    <div class="carousel-inner z-1">
+        <div class="carousel-item active">
+        <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>" alt="<?php echo get_the_title(); ?>" class="d-block w-100" style="height:86vh; object-fit:cover;">
+        </div>
+
+        <div class="carousel-item">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/yoga-1.webp" class="d-block w-100" alt="Punta Monterrey vista Alberca" style="height:86vh; object-fit:cover;" loading="lazy">
+        </div>
+
+        <div class="carousel-item">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/yoga-2.webp" class="d-block w-100" alt="Punta Monterrey Recámara" style="height:86vh; object-fit:cover;" loading="lazy">
+        </div>
+
+        <div class="carousel-item">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/yoga-3.webp" class="d-block w-100" alt="Punta Monterrey" style="height:86vh; object-fit:cover;" loading="lazy">
+        </div>
+
+        <div class="carousel-item">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/yoga-4.webp" class="d-block w-100" alt="Punta Monterrey" style="height:86vh; object-fit:cover;" loading="lazy">
+        </div>
+
+        <div class="carousel-item">
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/yoga-5.webp" class="d-block w-100" alt="Punta Monterrey" style="height:86vh; object-fit:cover;" loading="lazy">
+        </div>
+    </div>
+
+    <button class="carousel-control-prev z-3" type="button" data-bs-target="#yogaCarousel" data-bs-slide="prev" style="width:9%;">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next z-3" type="button" data-bs-target="#yogaCarousel" data-bs-slide="next"style="width:9%;">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    
     <div class="fondo-oscuro"></div>
 
-    <div class="row justify-content-center position-absolute top-0 start-0 h-100">
-        <div class="col-12 col-lg-6 text-center align-self-center z-3">
-            <h1 class="text-white le-5 fw-normal fs-0 text-uppercase"><?php echo get_the_title(); ?></h1>
+    <div class="row justify-content-center position-absolute top-0 start-0 h-100 z-2">
+
+        <div class="col-12 col-lg-5 align-self-center text-center">
+            <h1 class="fs-0 text-white le-10 fw-normal text-uppercase"><?php echo get_the_title() ?></h1>
         </div>
+        
     </div>
 
 </div>
@@ -104,17 +141,25 @@
                 $ret_imgs = rwmb_meta('retreat_gallery', ['limit'=>1, 'size'=>'medium_large'], $retreat->ID); 
                 $start = date('d/F/Y', strtotime($retreat->start_date));
                 $end_date = date('d/F/Y', strtotime($retreat->end_date));
+
+                $redirect = $retreat->redirect_web;
+
+                if($redirect){
+                    $permalink = $retreat->retreat_website;
+                }else{
+                    $permalink = get_the_permalink( $retreat->ID );
+                }
             ?>
 
                 <div class="col-11 px-0 card mb-3 rounded-0 shadow-2 retreat-card">
-                    <a href="<?php echo get_the_permalink( $retreat->ID ) ?>" class="link-dark text-decoration-none">
+                    <a href="<?php echo $permalink ?>" class="link-dark text-decoration-none">
 
                         <div class="row g-0">
                             <div class="col-lg-4">
                                 <img src="<?php echo $ret_imgs[0]['url'];?>" class="w-100 h-100" alt="<?php echo get_the_title($retreat->ID); ?>" style="object-fit:cover;">
                             </div>
-                            <div class="col-lg-8">
-                            <div class="card-body">
+                            <div class="col-lg-8 d-flex">
+                            <div class="card-body align-self-center">
                                 <h3 class="card-title fs-4"><?php echo get_the_title($retreat->ID); ?></h3>
                                 <p class="card-text"><?php echo get_the_excerpt($retreat->ID); ?></p>
                                 <p class="card-text">

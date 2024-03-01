@@ -113,7 +113,8 @@ function mostrar_contenido_columna_personalizada( $column_name, $post_id ) {
         echo  rwmb_meta('status', [], $post_id);
     }
 	elseif( 'wed_date' === $column_name ) {
-        echo  rwmb_meta('wed_date', [], $post_id);
+		$timestamp = rwmb_meta('wed_date', [], $post_id);
+        echo  date('d-M-Y', $timestamp);
 	}
 }
 
@@ -1167,6 +1168,12 @@ function gyw_set_strings_transtaltion(){
 		array(
 			'name'     => 'massage',
 			'string'   => 'Masaje',
+			'group'    => 'Masajes',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'massages',
+			'string'   => 'Masajes',
 			'group'    => 'Masajes',
 			'multiline' => false,
 		),

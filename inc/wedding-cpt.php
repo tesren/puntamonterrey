@@ -72,7 +72,7 @@ function punta_weddings_register_meta_boxes( $meta_boxes ) {
                     'showButtonPanel' => false,
                 ],
                 'inline'    => false,
-                'timestamp' => false,
+                'timestamp' => true,
                 'size'      => 35,
                 'required'  => true,
             ],

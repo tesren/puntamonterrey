@@ -103,7 +103,7 @@
     <div class="col-11 col-lg-6 bg-white p-3 p-lg-5" style="box-shadow: 7px 7px 0 0 #CCCCCC;">
         <h1 class="text-center mb-5"><?php echo get_the_title(); ?></h1>
         
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="disableBtn()">
             <?php wp_nonce_field( -1, '_wpnonce', true, true); ?>
 
             <div class="fs-5 mb-3"><?php pll_e('Envíanos un mensaje')?></div>
@@ -132,7 +132,7 @@
                 <label for="floatingTextarea"><?php pll_e('Mensaje')?></label>
             </div>
 
-            <input type="submit" name="submit" value="<?php pll_e('Enviar') ?>" <?php if(isset($_GET['form-submitted'])){echo 'disabled';}; ?> class="btn btn-dark w-100 rounded-0">
+            <input type="submit" id="submit_btn" name="submit" value="<?php pll_e('Enviar') ?>" <?php if(isset($_GET['form-submitted'])){echo 'disabled';}; ?> class="btn btn-dark w-100 rounded-0">
 
         </form>
 
@@ -145,5 +145,12 @@
     </div>
 
 </div>
+
+<script>
+    function disableBtn(){
+        let submitBtn = document.getElementById('submit_btn');
+        submitBtn.disabled = true;
+    }
+</script>
 
 <?php get_footer(); ?>

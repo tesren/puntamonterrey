@@ -6,10 +6,11 @@
     $images = acf_photo_gallery('gallery', get_the_ID());
 
     $args = array(
-        'post_type' => 'wedding',
-        'numberposts' => '-1',
-        'orderby' => 'wed_date',
-        'order' => 'ASC',
+        'post_type'   => 'wedding',
+        'numberposts' => -1,
+        'meta_key'    => 'wed_date',
+        'orderby'     => 'meta_value_num',
+        'order'       => 'ASC',
     );
 
     $wedding_dates = get_posts($args);
@@ -100,7 +101,7 @@
             <ul class="list-group list-group-flush">
                 <?php foreach($wedding_dates as $date):?>
                     <li class="list-group-item d-flex">
-                        <span class="fs-4 me-2"><?php echo $date->wed_date ?></span>
+                        <span class="fs-4 me-2"><?php echo date("d-M-Y", $date->wed_date) ?></span>
                         <span class="badge <?php if($date->status == 'Disponible'){ echo 'bg-success'; }else{ echo 'bg-warning'; }?> align-self-center fs-6 fw-normal">
                             <?php pll_e($date->status); ?>
                         </span>
