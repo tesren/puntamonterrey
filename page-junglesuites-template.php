@@ -98,73 +98,25 @@
                 </div>
             </div>
 
-            <!-- <div class="row justify-content-center position-relative z-1 my-5">
-                <div class="col-11 col-lg-6 bg-white p-3 p-lg-5" style="box-shadow: 5px 5px 0 0 #ccc;">
-                
-                    <div class="pt-2 mb-4 text-center text-uppercase">
-                        <?php pll_e('TARIFAS POR HABITACIÓN POR NOCHE EN');?> <br>
-                        <?php echo get_the_title(); ?> <?php pll_e('desde');?>:
-                    </div>
+            <?php 
+                $description = get_the_content();
 
-                    <div class="table-responsive">
-                        <table class="table table-borderless mb-2">
-                            <tbody>
-                                <tr>
-                                    <td class=""></td>
-                                    <td class="">2 <?php pll_e('Personas');?></td>
-                                    <td class="">3 <?php pll_e('Personas');?></td>
-                                    <td class="">4 <?php pll_e('Personas');?></td>
-                                </tr>
-                                <tr>
-                                    <td class=""><?php pll_e('Temporada alta');?></td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_alta_2'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_alta_3'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_alta_4'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class=""><?php pll_e('Temporada baja');?></td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_baja_2'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_baja_3'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_baja_4'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                if( $description != '' ):
+            ?>
+                <div class="row justify-content-center position-relative z-1 my-5">
+                    <div class="col-11 col-lg-6 bg-white p-3 p-lg-5" style="box-shadow: 5px 5px 0 0 #ccc;">
                     
+                        <h2 class="pt-2 mb-4 text-center fw-bold fs-4">
+                            <?php pll_e('Descripción');?> <br>
+                        </h2>
 
-                    <table class="table table-borderless mb-5">
-                        <tr>
-                            <td class="col-6 col-lg-3"><?php pll_e('Temporada alta');?></td>
-                            <td class="col-6 col-lg-9">
-                                <?php pll_e('Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Octubre, Noviembre, Diciembre');?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-6 col-lg-3"><?php pll_e('Temporada baja');?></td>
-                            <td class="col-6 col-lg-9">
-                                <?php pll_e('Agosto, Septiembre');?>
-                            </td>
-                        </tr>
-                    </table>
+                        <div>
+                            <?php echo $description; ?>
+                        </div>
 
-                    <div class="fs-6 fw-bold text-center">* <?php pll_e('Incluye hospedaje y 3 comidas al día, ¡Dejate sorprender por el cheff!');?></div>
-                    <div class="fs-6 fw-bold text-center">* <?php pll_e('Las bebidas del bar se venden aparte');?></div>
-                    <div class="fs-6 fw-bold text-center">* <?php pll_e('Tarifas sujetas a cambio sin previo aviso, aplican restricciones.');?></div>
-
+                    </div>
                 </div>
-            </div> -->
+            <?php endif; ?>
 
         </div>
 
@@ -183,7 +135,7 @@
                                 
                                 <?php $j=0; foreach($images as $img): ?>
                                     <div class="carousel-item <?php if($j==0){echo 'active';} ?>">
-                                        <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:cover;" data-fancybox="gallery-<?php echo $post->ID ?>" loading="lazy">
+                                        <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:contain;" data-fancybox="gallery-<?php echo $post->ID ?>" loading="lazy">
                                     </div>
                                 <?php $j++; endforeach; ?>
                                 
@@ -265,8 +217,7 @@
                                             <div class="mb-4 d-flex">
                                                 <div><img width="25px" class="me-2" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-4.png"></div>
                                                 <div>
-                                                    <p class="mb-0"><?php pll_e('El hotel cuenta con bar.');?></p>
-                                                    <small><i><?php pll_e('(Nos reservamos el derecho de venta de bebidas alcohólicas que se cobran separadamente del hospedaje)');?></i></small>
+                                                    <p class="mb-0">Bar</p>
                                                 </div>
                                             </div>
                                             <div class="mb-4 d-flex align-items-center">
@@ -293,7 +244,6 @@
                                                 <div><img width="25px" class="me-2" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-9.png"></div>
                                                 <div>
                                                     <p class="mb-0">WiFi</p>
-                                                    <small><i><?php pll_e('(Cuando el cupo está lleno y los huéspedes usan el internet al mismo tiempo, el sistema colapsa. Si sólo se usa para mensajes de WhatsApp y correos electrónicos la señal es suficiente)');?></i></small>
                                                 </div>
                                             </div>
                                             <div class="mb-4 d-flex align-items-center">
@@ -302,12 +252,7 @@
                                                     <p class="mb-0"><?php pll_e('No hay señal telefónica en el hotel.');?></p>
                                                 </div>
                                             </div>
-                                            <div class="mb-4 d-flex align-items-center">
-                                                <div><img width="25px" class="me-2" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/comida.png"></div>
-                                                <div>
-                                                    <p class="mb-0"><?php pll_e('Incluye 3 comidas al día');?></p>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="mb-4 d-flex align-items-center">
                                                 <div><img width="25px" class="me-2" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/est.png"></div>
                                                 <div>

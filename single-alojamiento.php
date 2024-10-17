@@ -108,7 +108,7 @@
                         ?>
                         
                         <!-- Recordar ponerlo en inglés tambíen -->
-                        <?php if( $tipo == 'Master Suite'): ?>
+                        <?php if( $tipo == 'Master Suite Jaguar' or $tipo == 'Jaguar Master Suite'): ?>
 
                             <div class="col-12 col-lg-6">
                                 <div class="d-flex justify-content-start align-items-center mb-4">
@@ -147,12 +147,7 @@
                                         <?php pll_e('La mejor vista del lugar')?>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-start align-items-center mb-4">
-                                    <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-6.png">
-                                    <div>
-                                        <?php pll_e('Amplio deck de madera techado')?>
-                                    </div>
-                                </div>
+                                
                                 
                             </div>
 
@@ -181,16 +176,18 @@
                                         <?php pll_e('No hay señal telefónica en el hotel')?>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-start align-items-center mb-4">
-                                    <img width="25px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/comida.png">
-                                    <div>
-                                        <?php pll_e('Incluye las 3 comidas')?>
-                                    </div>
-                                </div>
+                                
                                 <div class="d-flex justify-content-start align-items-center mb-4">
                                     <img width="25px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/est.png">
                                     <div>
                                         <?php pll_e('Estacionamiento gratis')?>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-start align-items-center mb-4">
+                                    <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-6.png">
+                                    <div>
+                                        <?php pll_e('Amplio deck de madera techado')?>
                                     </div>
                                 </div>
                                                                                 
@@ -219,8 +216,7 @@
                                 <div class="mb-4 d-flex">
                                     <div><img width="25px" class="me-2" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-4.png"></div>
                                     <div>
-                                        <p class="mb-0"><?php pll_e('El hotel cuenta con bar.');?></p>
-                                        <small><i><?php pll_e('(Nos reservamos el derecho de venta de bebidas alcohólicas que se cobran separadamente del hospedaje)');?></i></small>
+                                        <p class="mb-0">Bar</p>
                                     </div>
                                 </div>
                                 <div class="mb-4 d-flex align-items-center">
@@ -247,7 +243,6 @@
                                     <div><img width="25px" class="me-2" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-9.png"></div>
                                     <div>
                                         <p class="mb-0">WiFi</p>
-                                        <small><i><?php pll_e('(Cuando el cupo está lleno y los huéspedes usan el internet al mismo tiempo, el sistema colapsa. Si sólo se usa para mensajes de WhatsApp y correos electrónicos la señal es suficiente)');?></i></small>
                                     </div>
                                 </div>
                                 <div class="mb-4 d-flex align-items-center">
@@ -256,12 +251,7 @@
                                         <p class="mb-0"><?php pll_e('No hay señal telefónica en el hotel.');?></p>
                                     </div>
                                 </div>
-                                <div class="mb-4 d-flex align-items-center">
-                                    <div><img width="25px" class="me-2" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/comida.png"></div>
-                                    <div>
-                                        <p class="mb-0"><?php pll_e('Incluye 3 comidas al día');?></p>
-                                    </div>
-                                </div>
+                                
                                 <div class="mb-4 d-flex align-items-center">
                                     <div><img width="25px" class="me-2" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/est.png"></div>
                                     <div>
@@ -269,7 +259,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php elseif($tipo == 'Cabañas Ecológicas' or $tipo == 'Ecological Cabins' ): ?>
+                        <?php elseif($tipo == 'Cabañas Palmas' or $tipo == 'Las Palmas Cabins' ): ?>
                             <div class="col-lg-6">
                                 <div class="mb-4 d-flex justify-content-start align-items-center">
                                     <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-2.png"></div>
@@ -303,12 +293,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">                                                      
-                                <div class="mb-4 d-flex justify-content-start align-items-center">
-                                    <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/comida.png"></div>
-                                    <div>
-                                        <p class="mb-0"><?php pll_e('Incluye 3 comidas al día.');?></p>
-                                    </div>
-                                </div>
+                                
                                 <div class="mb-4 d-flex justify-content-start align-items-center">
                                     <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/est.png"></div>
                                     <div>
@@ -319,17 +304,18 @@
                                     <div><img width="25px" class="me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-9.png"></div>
                                     <div>
                                         <p class="mb-0">WIFI.</p>
-                                        <small><i><?php pll_e('(Cuando el cupo está lleno y los huéspedes usan el internet al mismo tiempo, el sistema colapsa. Si sólo se usa para mensajes de WhatsApp y correos electrónicos la señal es suficiente)');?></i></small>
                                     </div>
                                 </div>                                                        
                             </div>
-                        <?php elseif($tipo == 'Cabañas de Lujo' or $tipo == 'Luxury Cabins' ): ?>
+                        <?php elseif($tipo == 'Cabañas de las Aves' or $tipo == 'Bird View Cabins' ): ?>
                             <div class="col-lg-6">
                                 <div class="d-flex justify-content-start mb-4">
                                     <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-1.png"></div>
                                     <div>
-                                        <?php if($post->ID == 588 or $post->ID == 306 ): ?>
+                                        <?php if($post->ID == pll_get_post(588) or $post->ID == pll_get_post(306) ): ?>
                                             1 <?php pll_e('cama King size y tapanco con 1 cama queen size.');?>
+                                        <?php elseif($post->ID == pll_get_post(326)): ?>
+                                            1 <?php pll_e('cama King size');?>
                                         <?php else: ?>
                                             1 <?php pll_e('cama King size y tapanco con 2 camas individuales.');?>
                                         <?php endif; ?>
@@ -350,8 +336,7 @@
                                 <div class="d-flex justify-content-start mb-4">
                                     <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-4.png"></div>
                                     <div>
-                                        <?php pll_e('El hotel cuenta con bar.');?>
-                                        <small><i><?php pll_e('(Nos reservamos el derecho de venta de bebidas alcohólicas que se cobran separadamente del hospedaje)');?></i></small>
+                                        Bar
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start mb-4 align-items-center">
@@ -366,12 +351,16 @@
                                         <?php pll_e('Amplio “deck” de madera techado.');?>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-start mb-4 align-items-center">
-                                    <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-7.png"></div>
-                                    <div>
-                                        <?php pll_e('Todas las Cabañas de lujo cuentan con Frigobar.');?>
+
+                                <?php if( $post->ID != pll_get_post(590) ): ?>
+                                    <div class="d-flex justify-content-start mb-4 align-items-center">
+                                        <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-7.png"></div>
+                                        <div>
+                                            <?php pll_e('Frigobar');?>
+                                        </div>
                                     </div>
-                                </div>
+                                <?php endif; ?>
+
                             </div>
                             <div class="col-lg-6">                                               
                                 <div class="d-flex justify-content-start mb-4">
@@ -384,7 +373,6 @@
                                     <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-9.png"></div>
                                     <div>
                                         WiFi
-                                        <small><i><?php pll_e('(Cuando el cupo está lleno y los huéspedes usan el internet al mismo tiempo, el sistema colapsa. Si sólo se usa para mensajes de WhatsApp y correos electrónicos la señal es suficiente)');?></i></small>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start mb-4 align-items-center">
@@ -399,12 +387,7 @@
                                         <?php pll_e('Junto a la sala de Yoga.');?>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-start mb-4 align-items-center">
-                                    <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/comida.png"></div>
-                                    <div>
-                                        <?php pll_e('Incluye 3 comidas al día.');?>
-                                    </div>
-                                </div>
+                                
                                 <div class="d-flex justify-content-start mb-4 align-items-center">
                                     <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/est.png"></div>
                                     <div>

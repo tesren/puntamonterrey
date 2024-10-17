@@ -12,7 +12,7 @@
                 array(
                     'taxonomy' => 'tipo',
                     'field' => 'slug',
-                    'terms' => 'luxury-cabins'
+                    'terms' => 'bird-view-cabins'
                 )
             ),
             'orderby' => 'date',
@@ -27,7 +27,7 @@
                 array(
                     'taxonomy' => 'tipo',
                     'field' => 'slug',
-                    'terms' => 'cabanas-de-lujo'
+                    'terms' => 'cabanas-de-las-aves'
                 )
             ),
             'orderby' => 'date',
@@ -45,6 +45,8 @@
     $room_politics = $room_politics[0];
     
     get_header(); 
+
+    //Cabañas de lujo ahora es Cabañas de las Aves
 ?>
 
     <article>
@@ -98,73 +100,25 @@
                 </div>
             </div>
 
-            <!-- <div class="row justify-content-center position-relative z-1 my-5">
-                <div class="col-11 col-lg-6 bg-white p-3 p-lg-5" style="box-shadow: 5px 5px 0 0 #ccc;">
-                
-                    <div class="pt-2 mb-4 text-center text-uppercase">
-                        <?php pll_e('TARIFAS POR HABITACIÓN POR NOCHE EN');?> <br>
-                        <?php echo get_the_title(); ?> <?php pll_e('desde');?>:
-                    </div>
+            <?php 
+                $description = get_the_content();
 
-                    <div class="table-responsive">
-                        <table class="table table-borderless mb-2">
-                            <tbody>
-                                <tr>
-                                    <td class=""></td>
-                                    <td class="">2 <?php pll_e('Personas');?></td>
-                                    <td class="">3 <?php pll_e('Personas');?></td>
-                                    <td class="">4 <?php pll_e('Personas');?></td>
-                                </tr>
-                                <tr>
-                                    <td class=""><?php pll_e('Temporada alta');?></td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_alta_2'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_alta_3'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_alta_4'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class=""><?php pll_e('Temporada baja');?></td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_baja_2'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_baja_3'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                    <td class="fw-bold text-decoration-underline">
-                                        $<?php echo number_format(get_field('tarifa_temporada_baja_4'), 2); ?> <?php echo get_field('currency'); ?>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                if( $description != '' ):
+            ?>
+                <div class="row justify-content-center position-relative z-1 my-5">
+                    <div class="col-11 col-lg-6 bg-white p-3 p-lg-5" style="box-shadow: 5px 5px 0 0 #ccc;">
                     
+                        <h2 class="pt-2 mb-4 text-center fw-bold fs-4">
+                            <?php pll_e('Descripción');?> <br>
+                        </h2>
 
-                    <table class="table table-borderless mb-5">
-                        <tr>
-                            <td class="col-6 col-lg-3"><?php pll_e('Temporada alta');?></td>
-                            <td class="col-6 col-lg-9">
-                                <?php pll_e('Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Octubre, Noviembre, Diciembre');?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-6 col-lg-3"><?php pll_e('Temporada baja');?></td>
-                            <td class="col-6 col-lg-9">
-                                <?php pll_e('Agosto, Septiembre');?>
-                            </td>
-                        </tr>
-                    </table>
+                        <div>
+                            <?php echo $description; ?>
+                        </div>
 
-                    <div class="fs-6 fw-bold text-center">* <?php pll_e('Incluye hospedaje y 3 comidas al día, ¡Dejate sorprender por el cheff!');?></div>
-                    <div class="fs-6 fw-bold text-center">* <?php pll_e('Las bebidas del bar se venden aparte');?></div>
-                    <div class="fs-6 fw-bold text-center">* <?php pll_e('Tarifas sujetas a cambio sin previo aviso, aplican restricciones.');?></div>
-
+                    </div>
                 </div>
-            </div> -->
+            <?php endif; ?>
 
         </div>
 
@@ -183,7 +137,7 @@
                                 
                                 <?php $j=0; foreach($images as $img): ?>
                                     <div class="carousel-item <?php if($j==0){echo 'active';} ?>">
-                                        <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:cover;" data-fancybox="gallery-<?php echo $post->ID ?>" loading="lazy">
+                                        <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:contain;" data-fancybox="gallery-<?php echo $post->ID ?>" loading="lazy">
                                     </div>
                                 <?php $j++; endforeach; ?>
                                 
@@ -247,8 +201,10 @@
                                             <div class="d-flex justify-content-start mb-4">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-1.png"></div>
                                                 <div>
-                                                    <?php if($post->ID == 588 or $post->ID == 306 ): ?>
+                                                    <?php if($post->ID == pll_get_post(588) or $post->ID == pll_get_post(306) ): ?>
                                                         1 <?php pll_e('cama King size y tapanco con 1 cama queen size.');?>
+                                                    <?php elseif($post->ID == pll_get_post(326)): ?>
+                                                        1 <?php pll_e('cama King size');?>
                                                     <?php else: ?>
                                                         1 <?php pll_e('cama King size y tapanco con 2 camas individuales.');?>
                                                     <?php endif; ?>
@@ -269,8 +225,7 @@
                                             <div class="d-flex justify-content-start mb-4">
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-4.png"></div>
                                                 <div>
-                                                    <?php pll_e('El hotel cuenta con bar.');?>
-                                                    <small><i><?php pll_e('(Nos reservamos el derecho de venta de bebidas alcohólicas que se cobran separadamente del hospedaje)');?></i></small>
+                                                    Bar
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
@@ -279,18 +234,16 @@
                                                     <?php pll_e('Vista de la selva.');?>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-6.png"></div>
-                                                <div>
-                                                    <?php pll_e('Amplio “deck” de madera techado.');?>
+
+                                            <?php if( $post->ID != pll_get_post(590) ): ?>
+                                                <div class="d-flex justify-content-start mb-4 align-items-center">
+                                                    <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-7.png"></div>
+                                                    <div>
+                                                        <?php pll_e('Frigobar');?>.
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-7.png"></div>
-                                                <div>
-                                                    <?php pll_e('Todas las Cabañas de lujo cuentan con Frigobar.');?>
-                                                </div>
-                                            </div>
+                                            <?php endif; ?>
+
                                         </div>
                                         <div class="col-lg-6">                                               
                                             <div class="d-flex justify-content-start mb-4">
@@ -303,7 +256,6 @@
                                                 <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-9.png"></div>
                                                 <div>
                                                     WiFi
-                                                    <small><i><?php pll_e('(Cuando el cupo está lleno y los huéspedes usan el internet al mismo tiempo, el sistema colapsa. Si sólo se usa para mensajes de WhatsApp y correos electrónicos la señal es suficiente)');?></i></small>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
@@ -319,9 +271,9 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">
-                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/comida.png"></div>
+                                                <div><img class="me-2" width="25px" loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/icons/amenities/room-icon-6.png"></div>
                                                 <div>
-                                                    <?php pll_e('Incluye 3 comidas al día.');?>
+                                                    <?php pll_e('Amplio “deck” de madera techado.');?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-start mb-4 align-items-center">

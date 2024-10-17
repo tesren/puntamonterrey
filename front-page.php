@@ -276,7 +276,7 @@
                         <div class="row position-absolute start-0 top-0 h-100">
                             <div class="col-12 align-self-center text-white">
                                 <img class="z-3 position-relative" width="50px" src="<?php echo get_template_directory_uri();?>/assets/icons/celebrations-icon.webp" alt="" loading="lazy">
-                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative"><?php pll_e('CELEBRACIONES');?></h3>
+                                <h3 class="fs-4 fw-normal mt-3 z-3 position-relative"><?php pll_e('Celebraciones');?></h3>
                             </div>
                         </div>
                     </div>
@@ -303,20 +303,28 @@
         
         <!-- Clima -->
         <div class="row justify-content-center mt-5">
-            <div class="col-12">
+            <div class="col-12 mb-4">
 
-            <?php if($lg == 'es'): ?>
-                <a class="weatherwidget-io" href="https://forecast7.com/es/20d90n105d41/san-francisco/" data-label_1="San Pancho" data-label_2="CLIMA" data-theme="original" >San Pancho CLIMA</a>
-                <script>
-                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-                </script>
-            <?php else: ?>
-                <a class="weatherwidget-io" href="https://forecast7.com/en/20d90n105d41/san-francisco/?unit=us" data-label_1="San Pancho" data-label_2="WEATHER" data-theme="original" >San Pancho WEATHER</a>
-                <script>
-                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-                </script>
-            <?php endif; ?>
+                <?php if( pll_current_language() == 'es'): ?>
+                    <a class="weatherwidget-io" href="https://forecast7.com/es/20d90n105d41/san-francisco/" data-label_1="San Pancho" data-label_2="CLIMA" data-theme="original" >San Pancho CLIMA</a>
+                    <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                    </script>
+                <?php else: ?>
+                    <a class="weatherwidget-io" href="https://forecast7.com/en/20d90n105d41/san-francisco/?unit=us" data-label_1="San Pancho" data-label_2="WEATHER" data-theme="original" >San Pancho WEATHER</a>
+                    <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                    </script>
+                <?php endif; ?>
 
+            </div>
+
+            <div class="col-12 my-3 text-center">
+                <p class="fs-5"><?php pll_e('A Punta Monterrey le encantaría recibir tus comentarios. Publica una opinión en nuestro perfil de Google.') ?></p>
+
+                <a href="https://g.page/r/CTmk75qEA7JBEBM/review" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-0 text-uppercase fw-bold border border-2 border-dark">
+                    <?php pll_e('Escribir una reseña en Google') ?>
+                </a>
             </div>
         </div>
     

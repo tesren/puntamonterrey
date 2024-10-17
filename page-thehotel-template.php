@@ -14,6 +14,9 @@ $images = acf_photo_gallery('gallery', get_the_ID());
     <div class="row justify-content-center position-absolute top-0 start-0 h-100">
         <div class="col-12 col-lg-6 text-center align-self-center z-3">
             <h1 class="text-white le-5 fw-normal fs-0 text-uppercase"><?php echo get_the_title(); ?></h1>
+            <a href="<?= get_template_directory_uri() ?>/assets/videos/punta-monterrey.mp4" data-fancybox  class="btn btn-light" id="hotel_playbtn">
+                <img width="15px" src="<?= get_template_directory_uri().'/assets/icons/play-solid.svg' ?>" alt=""> <?php pll_e('Ver video') ?>
+            </a>
         </div>
     </div>
 
@@ -108,9 +111,10 @@ $images = acf_photo_gallery('gallery', get_the_ID());
 
 </div>
 
+<!-- Tour virtual -->
 <div class="container mb-6">
     <h2 class="text-center fw-bold le-10 mb-4 fs-1"><?php pll_e('TOUR VIRTUAL')?></h2>
-    <iframe src="https://holoesferica.com/workshop/rv_360_PuntaMonterrey2/" frameborder="0" width="100%" height="550px" loading="lazy"></iframe>
+    <iframe src="https://tour.puntamonterrey.com/" frameborder="0" width="100%" height="550px" loading="lazy"></iframe>
 </div>
 
 <!-- Slides -->

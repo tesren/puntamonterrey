@@ -23,7 +23,7 @@
                 array(
                     'taxonomy' => 'tipo',
                     'field' => 'slug',
-                    'terms' => 'master-suite'
+                    'terms' => 'master-suite-jaguar'
                 )
             )
         );
@@ -134,7 +134,6 @@
                         </tbody>
                     </table>
 
-                    <div class="fs-6 fw-bold text-center">* <?php pll_e('Incluye hospedaje y 3 comidas al día, ¡Dejate sorprender por el cheff!');?></div>
                     <div class="fs-6 fw-bold text-center">* <?php pll_e('Las bebidas del bar se venden aparte');?></div>
                     <div class="fs-6 fw-bold text-center">* <?php pll_e('Tarifas sujetas a cambio sin previo aviso, aplican restricciones.');?></div>
 
@@ -158,7 +157,7 @@
                                 
                                 <?php $i=0; foreach($images as $img): ?>
                                     <div class="carousel-item <?php if($i==0){echo 'active';} ?>">
-                                        <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:cover;" data-fancybox="gallery" loading="lazy">
+                                        <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="<?php echo $img['title']; ?>" style="height:400px; object-fit:contain;" data-fancybox="gallery" loading="lazy">
                                     </div>
                                 <?php $i++; endforeach; ?>
                                 
@@ -251,12 +250,6 @@
                                                     <?php pll_e('La mejor vista del lugar')?>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-start align-items-center mb-4">
-                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-6.png">
-                                                <div>
-                                                    <?php pll_e('Amplio deck de madera techado')?>
-                                                </div>
-                                            </div>
                                             
                                         </div>
                                         <div class="col-12 col-lg-6">                                               
@@ -284,16 +277,18 @@
                                                     <?php pll_e('No hay señal telefónica en el hotel')?>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-start align-items-center mb-4">
-                                                <img width="25px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/comida.png">
-                                                <div>
-                                                    <?php pll_e('Incluye las 3 comidas')?>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="d-flex justify-content-start align-items-center mb-4">
                                                 <img width="25px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/est.png">
                                                 <div>
                                                     <?php pll_e('Estacionamiento gratis')?>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-start align-items-center mb-4">
+                                                <img width="20px" class="d-block me-2" loading="lazy" src="<?php echo get_template_directory_uri()?>/assets/icons/amenities/room-icon-6.png">
+                                                <div>
+                                                    <?php pll_e('Amplio deck de madera techado')?>
                                                 </div>
                                             </div>
                                                                                             

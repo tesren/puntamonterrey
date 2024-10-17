@@ -112,6 +112,12 @@
     var fecha2Input = document.getElementById('check-out');
 
     document.addEventListener("DOMContentLoaded", function () {
+
+        //video en pagina de hotel
+        var play_btn = document.getElementById('hotel_playbtn');
+        if(play_btn){
+            play_btn.click();
+        }
         
         //flatpicker para ambas fechas
         flatpickr(fecha1Input, {
@@ -158,8 +164,6 @@
                 }
             }
         });            
-    
-
         
     });
 

@@ -261,7 +261,7 @@ function gyw_set_strings_transtaltion(){
 		),
 		array(
 			'name'     =>'celebrations',
-			'string'   =>'CELEBRACIONES',
+			'string'   =>'Celebraciones',
 			'group'    =>'Front Page',
 			'multiline'=>false,
 		),
@@ -274,6 +274,18 @@ function gyw_set_strings_transtaltion(){
 		array(
 			'name'     =>'testimonials_desc',
 			'string'   =>'NUESTRA MEJOR PUBLICIDAD LA HACEN USTEDES,¡SUEÑOS QUE SE HACEN REALIDAD!',
+			'group'    =>'Front Page',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'get_google_reviews',
+			'string'   =>'A Punta Monterrey le encantaría recibir tus comentarios. Publica una opinión en nuestro perfil de Google.',
+			'group'    =>'Front Page',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'write_google_reviews',
+			'string'   =>'Escribir una reseña en Google',
 			'group'    =>'Front Page',
 			'multiline'=>false,
 		),
@@ -712,6 +724,12 @@ function gyw_set_strings_transtaltion(){
 		array(
 			'name'     =>'kitchennete_frigobar',
 			'string'   =>'Cocineta con frigobar y comedor',
+			'group'    =>'Rooms',
+			'multiline'=>false,
+		),
+		array(
+			'name'     =>'just_frigobar',
+			'string'   =>'Frigobar',
 			'group'    =>'Rooms',
 			'multiline'=>false,
 		),
