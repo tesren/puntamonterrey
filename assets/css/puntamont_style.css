@@ -1,3 +1,9 @@
+:root{
+    --green: #95C4AC;
+    --darkgreen: #5B755D;
+    --lightblue:#DDECF3; 
+}
+
 body{
     font-family: 'Montserrat', sans-serif !important;
 }
@@ -14,6 +20,28 @@ body{
 
 .fw-superbold{
     font-weight: 900;
+}
+
+.bg-lightblue{
+    background-color: var(--lightblue);
+}
+
+.text-green{
+    color: var(--green);
+}
+
+.text-darkgreen{
+    color: var(--darkgreen);
+}
+
+.btn-green{
+    background-color: var(--green);
+    color: white;
+}
+
+.btn-darkgreen{
+    background-color: var(--darkgreen);
+    color: white;
 }
 
 .le-10{
