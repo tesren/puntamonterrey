@@ -84,19 +84,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="offcanvas-body pe-4">
 
         
-            <?php
-                wp_nav_menu( array(
-                    'theme_location'    => 'primary',
-                    'depth'             => 2,
-                    'container'         => 'ul',
-                    //'container_class'   => ' list-unstyled',
-                    'container_id'      => 'navbarSupportedContent',
-                    'menu_class'        => 'navbar-nav justify-content-end flex-grow-1 pe-3 fw-bold',
-                    //'menu_id'           => '',
-                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                    'walker'            => new WP_Bootstrap_Navwalker(),
-                ) );
-            ?>
+        <?php
+          wp_nav_menu( array(
+            'theme_location'    => 'primary',
+            'depth'             => 2,
+            'container'         => 'ul',
+            //'container_class'   => ' list-unstyled',
+            'container_id'      => 'navbarSupportedContent',
+            'menu_class'        => 'navbar-nav justify-content-end flex-grow-1 pe-3 fw-bold',
+            //'menu_id'           => '',
+            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'            => new WP_Bootstrap_Navwalker(),
+          ) );
+        ?>
         
         
       </div>

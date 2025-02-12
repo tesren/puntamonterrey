@@ -18,6 +18,7 @@ if ( ! function_exists( 'puntamont_theme_support' ) ) :
 		add_theme_support('custom-logo');
 		add_theme_support('post-thumbnails');
 		add_theme_support( 'custom-header' );
+		add_theme_support('html5', array('comment-list', 'comment-form') );
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
@@ -66,7 +67,7 @@ if ( ! function_exists( 'puntamont_theme_styles' ) ) :
 		wp_enqueue_style( 'puntamonterrey-style' );
     	//wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() .'/assets/css/bootstrap.min.css' );
     	//wp_enqueue_style( 'splide-css', get_template_directory_uri() .'/assets/css/splide.min.css' );
-    	wp_enqueue_style( 'puntamont-css', get_template_directory_uri() .'/assets/css/puntamont_style.css' );
+    	wp_enqueue_style( 'puntamont-css', get_template_directory_uri() .'/assets/css/puntamont_style-v1.css' );
 
 	}
 
@@ -82,6 +83,14 @@ function register_navwalker(){
 	require_once get_template_directory() . '/classes/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
+/**
+ * Register Custom Comments Walker
+ */
+function register_commentswalker(){
+	require_once get_template_directory() . '/inc/walker-comments.php';
+}
+add_action( 'after_setup_theme', 'register_commentswalker' );
 
 
 /**
@@ -1200,7 +1209,105 @@ function gyw_set_strings_transtaltion(){
 			'string'   => 'MASAJES DISPONIBLES',
 			'group'    => 'Masajes',
 			'multiline' => false,
-		)
+		),
+		array(
+			'name'     => 'museum_title',
+			'string'   => 'Vive una experiencia única.',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'museum_desc',
+			'string'   => 'Sumérgete en la naturaleza mientras disfrutas de la tranquilidad y belleza de Punta Monterrey. Explora nuestro santuario natural a través del Museo Vivo y descubre de cerca la diversidad de flora y fauna que hace de este lugar un verdadero paraíso. Aprende, conecta y enamórate de la naturaleza mientras contribuyes a su conservación.',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'museum_subtitle',
+			'string'   => '¡Tu próxima aventura te espera!',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'eco_guide',
+			'string'   => 'Guía ecológica del Museo Vivo',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'soon',
+			'string'   => 'Proximamente',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'preview',
+			'string'   => 'Vista previa',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'features',
+			'string'   => 'Características',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'langs',
+			'string'   => 'Español, Inglés',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'guide_lang',
+			'string'   => 'Idioma',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'pages',
+			'string'   => 'Páginas',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'reading_time',
+			'string'   => 'Tiempo de lectura',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'summary',
+			'string'   => 'Sinopsis',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'take_a_look',
+			'string'   => 'Hecha un vistazo al demo de nuestra guía.',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'guide_subtitle',
+			'string'   => 'Un hermoso ecosistema que podemos apreciar como un museo lleno de colores, sonidos y vida.',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+
+		array(
+			'name'     => 'hours',
+			'string'   => 'horas',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		array(
+			'name'     => 'leave_a_comment',
+			'string'   => 'Deja un comentario',
+			'group'    => 'museum',
+			'multiline' => false,
+		),
+		
 	);
 
 	foreach ($strings as $string ) {

@@ -39,9 +39,25 @@ body{
     color: white;
 }
 
+.btn-green:hover{
+    background-color: #72a088;
+    color: white;
+    transition: 0.3s;
+}
+
 .btn-darkgreen{
     background-color: var(--darkgreen);
     color: white;
+}
+
+.btn-darkgreen:hover{
+    background-color: #4a5f4c;
+    color: white;
+    transition: 0.3s;
+}
+
+#rating-section .rating-text{
+    display: none;
 }
 
 .le-10{
@@ -203,6 +219,16 @@ label{
 .retreat-card:hover{
     transform: translateY(-5px);
     transition: 0.3s;
+}
+
+/* Plugin de comentarios */
+.form-submit{
+    text-align: end;
+}
+
+.rating-text{
+    display: block;
+    font-size: 28px;
 }
 
 @media (max-width: 992px) {

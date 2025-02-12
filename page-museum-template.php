@@ -7,9 +7,9 @@
 
 
 <!-- Inicio -->
-<div class="row justify-content-evenly py-5 bg-lightblue position-relative mb-6">
+<div class="row justify-content-evenly py-4 py-lg-5 bg-lightblue position-relative mb-6">
 
-    <div class="col-12 col-lg-5 align-self-center position-relative z-1">
+    <div class="col-12 col-lg-5 align-self-center position-relative z-1 order-2 order-lg-1">
         <h1 class="fw-bold text-green mb-5">
             <div class="d-flex">
                 <div class="align-self-end me-0 me-lg-2"><?= get_the_title() ?></div>
@@ -17,6 +17,7 @@
             </div>
 
             <div>PUNTA MONTERREY</div>
+
         </h1>
 
 
@@ -30,7 +31,7 @@
         
     </div>
 
-    <div class="col-lg-5 align-self-center position-relative z-1">
+    <div class="col-lg-5 align-self-center position-relative z-1 order-1 order-lg-2 mb-3 mb-lg-0">
         <img src="<?= get_template_directory_uri().'/assets/images/jaguar-guide.webp' ?>" alt="<?= get_the_title() ?> Punta Monterrey" class="w-100">
     </div>
 
@@ -57,29 +58,99 @@
             </div>
         </div>
 
-        <h3><?php pll_e('Sinopsis') ?></h3>
-        <div><?= get_the_content(); ?></div>
-
     </div>
 
-    <div class="col-12 col-lg-4">
-        <h3 class="fw-bold mb-3"><?php pll_e('Guia ecológica del Museo Vivo') ?> - Punta Monterrey</h3>
+    <div class="col-12 col-lg-4 position-relative">
 
-        <?php
-            $precio = 2300;
-        ?>
-
-        <div class="mb-3 fs-4">
-            <span class="text-green"><?php pll_e('Precio') ?>:</span> $<?= number_format($precio) ?> MXN
+        <div class="position-relative z-2">
+            <h3 class="fw-bold mb-3"><?php pll_e('Guía ecológica del Museo Vivo') ?> - Punta Monterrey</h3>
+    
+            <?php
+                $precio = 2300;
+            ?>
+    
+            <div class="mb-3 fs-4 d-flex">
+                <div id="rating-section"><?= do_shortcode( '[stars_rating_avg] ' )?></div>
+                <div class="align-self-center" style="min-width:50%;">
+                   <!--  <span class="text-green"><?php pll_e('Precio') ?>:</span> $<?= number_format($precio) ?> MXN -->
+                </div>
+            </div>
+    
+            <a href="#" class="btn btn-darkgreen w-100 mb-3 rounded-0 disabled">
+                <?php pll_e('Proximamente') ?>
+            </a>
+    
+            <a href="#preview" class="btn btn-green w-100 rounded-0">
+                <?php pll_e('Vista previa') ?>
+            </a>
         </div>
 
-        <a href="#" class="btn btn-darkgreen w-100 mb-3 rounded-0">
-            <?php pll_e('Comprar ahora') ?>
-        </a>
 
-        <a href="" class="btn btn-green w-100 rounded-0">
-            <?php pll_e('Vista previa') ?>
-        </a>
+        <div class="mt-6 text-darkgreen position-relative z-2">
+            <h3 class="fs-2"><?php pll_e('Características') ?></h3>
+
+            <ul class="list-unstyled fs-5">
+
+                <li>
+                    <strong><?php pll_e('Idioma') ?></strong>: <?php pll_e('Español, Inglés') ?>
+                </li>
+
+                <li>
+                    <strong><?php pll_e('Páginas') ?></strong>: 108
+                </li>
+
+                <li>
+                    <strong><?php pll_e('Tiempo de lectura') ?></strong>: 2 <?php pll_e('horas') ?>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <img src="<?= get_template_directory_uri().'/assets/images/arbol-guia.webp' ?>" alt="" class="position-absolute top-50 end-0 w-50 z-1 d-none d-xxl-block">
+    </div>
+
+    <div class="col-12 col-lg-7 mt-3 mt-lg-0">
+        <h3><?php pll_e('Sinopsis') ?></h3>
+        <?= get_the_content(); ?>
+    </div>
+
+    <div class="col-4"></div>
+
+</div>
+
+<div class="mb-6" id="preview">
+
+    <div class="row justify-content-center py-5" style="background-image: url('<?= get_template_directory_uri().'/assets/images/stripe-bg-min.webp' ?>');">
+    
+        <div class="col-12 col-lg-6 col-xxl-5 bg-black px-5 pt-4 pb-5 text-white position-relative">
+
+            <div class="d-flex justify-content-between mb-4">
+                <h4 class="mb-0 align-self-end"><?php pll_e('Hecha un vistazo al demo de nuestra guía.') ?></h4>
+                <img width="60px" src="<?= get_template_directory_uri().'/assets/images/sapo-guia.webp' ?>" class="ms-4" alt="">
+            </div>
+    
+            <p class="fs-5 mb-0"><?php pll_e('Un hermoso ecosistema que podemos apreciar como un museo lleno de colores, sonidos y vida.') ?></p>
+
+        </div>
+    
+    </div>
+
+    <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe" src="https://heyzine.com/flip-book/33f8374ad5.html" style="border: 1px solid lightgray; width: 100%; height: 75vh;"></iframe>
+
+</div>
+
+<div class="row justify-content-evenly">
+
+    <div class="col-12 col-lg-3 mb-5 mb-lg-0">
+        <div class="border border-secondary p-4 rounded-2">
+            <div><?= do_shortcode( '[stars_rating_avg] ' )?></div>
+            <img src="<?= get_template_directory_uri().'/assets/images/new-logo-punta.webp' ?>" alt="Logo de Punta Monterrey" class="w-75 d-block mx-auto mt-5">
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-8 col-xxl-7">
+        <?php comments_template(); ?>
     </div>
 
 </div>
